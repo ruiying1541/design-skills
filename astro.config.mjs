@@ -5,7 +5,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://liruiying.github.io',
+  site: 'https://ruiying1541.github.io',
   base: '/design-skills',
   integrations: [mdx()],
   vite: {
