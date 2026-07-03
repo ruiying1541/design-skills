@@ -1,0 +1,478 @@
+[
+  {
+    "name": "accessibility-check",
+    "title": "可访问性检查",
+    "description": "按 WCAG 2.1 标准检查产品的色彩对比度、键盘导航、语义标签和屏幕阅读器适配，让更多用户能无障碍使用产品。",
+    "category": "审查交付",
+    "tags": [
+      "可访问性",
+      "WCAG",
+      "对比度",
+      "a11y",
+      "无障碍",
+      "键盘导航",
+      "屏幕阅读器"
+    ],
+    "ai_trigger": [
+      "检查色彩对比度是否达标",
+      "WCAG 可访问性审查",
+      "无障碍设计检查",
+      "检查按钮是否符合可访问性规范",
+      "a11y 审计"
+    ],
+    "ai_output": "可访问性问题报告、对比度检测结果、修复优先级建议",
+    "difficulty": "intermediate",
+    "tools": [
+      "Contrast Checker",
+      "Figma A11y Plugin",
+      "axe DevTools",
+      "WAVE"
+    ],
+    "related": [
+      "color-system",
+      "typography"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/accessibility-check",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/accessibility-check.md"
+  },
+  {
+    "name": "color-system",
+    "title": "色彩系统设计",
+    "description": "为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。",
+    "category": "视觉生成",
+    "tags": [
+      "颜色",
+      "设计系统",
+      "品牌色",
+      "色板",
+      "语义色",
+      "Design Token"
+    ],
+    "ai_trigger": [
+      "需要为产品建立配色方案",
+      "检查色彩规范是否完整",
+      "生成色彩 token 命名体系",
+      "分析现有产品配色问题"
+    ],
+    "ai_output": "配色方案文档、色值对照表、语义色命名规范、Design Token 结构",
+    "difficulty": "intermediate",
+    "tools": [
+      "Figma",
+      "Coolors",
+      "Contrast Checker",
+      "Huemint"
+    ],
+    "related": [
+      "typography",
+      "accessibility-check"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/color-system",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/color-system.md"
+  },
+  {
+    "name": "component-audit",
+    "title": "组件库审计",
+    "description": "系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。",
+    "category": "组件打磨",
+    "tags": [
+      "组件库",
+      "审计",
+      "Figma",
+      "设计系统",
+      "组件一致性",
+      "缺口分析"
+    ],
+    "ai_trigger": [
+      "审计 Figma 组件库",
+      "分析设计系统完整性",
+      "找出组件库缺失的组件",
+      "检查组件命名是否规范",
+      "对比两个版本的组件库差异"
+    ],
+    "ai_output": "组件清单 + 缺口分析报告 + 优先级建议 + 重复/冲突项列表",
+    "difficulty": "intermediate",
+    "tools": [
+      "Figma",
+      "Figma API",
+      "Notion"
+    ],
+    "related": [
+      "color-system",
+      "design-handoff"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/component-audit",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/component-audit.md"
+  },
+  {
+    "name": "design-handoff",
+    "title": "设计交付规范",
+    "description": "建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。",
+    "category": "审查交付",
+    "tags": [
+      "设计交付",
+      "Figma",
+      "标注",
+      "切图",
+      "开发协作",
+      "还原度"
+    ],
+    "ai_trigger": [
+      "设计稿交付给开发",
+      "如何做设计标注",
+      "Figma 交付规范",
+      "检查设计稿交付完整度",
+      "切图命名规范"
+    ],
+    "ai_output": "交付 checklist、切图命名规范、Figma 规范文件结构建议",
+    "difficulty": "beginner",
+    "tools": [
+      "Figma",
+      "Figma Dev Mode",
+      "Zeplin"
+    ],
+    "related": [
+      "component-audit",
+      "spacing-grid"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/design-handoff",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/design-handoff.md"
+  },
+  {
+    "name": "designer-skills",
+    "title": "全链路设计工具箱",
+    "description": "63 个 Skills + 27 个命令，覆盖用户研究、设计系统、UX 策略、交互设计、原型测试、设计运营、Figma 集成全流程。",
+    "category": "研究洞察",
+    "tags": [
+      "用户研究",
+      "设计系统",
+      "UX策略",
+      "Figma",
+      "原型测试",
+      "设计运营"
+    ],
+    "ai_trigger": [
+      "用户研究怎么做",
+      "设计评审文档怎么写",
+      "设计系统怎么建立",
+      "Figma 文件怎么整理",
+      "设计师工作流程优化"
+    ],
+    "ai_output": "覆盖设计全流程的专业输出：用户研究报告、设计系统文档、评审材料、交付规范",
+    "difficulty": "advanced",
+    "tools": [
+      "Claude",
+      "Figma",
+      "CodeFlicker"
+    ],
+    "related": [
+      "ui-design-brain",
+      "design-handoff"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designer-skills",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designer-skills.md"
+  },
+  {
+    "name": "frontend-design",
+    "title": "前端界面设计",
+    "description": "解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。",
+    "category": "视觉生成",
+    "tags": [
+      "前端",
+      "UI生成",
+      "组件规范",
+      "视觉原则",
+      "Design System"
+    ],
+    "ai_trigger": [
+      "生成有设计感的界面",
+      "避免 AI 生成 UI 千篇一律",
+      "让界面更有品质感"
+    ],
+    "ai_output": "符合视觉规范的前端组件代码，包含颜色、字体、间距的完整设计决策说明",
+    "difficulty": "beginner",
+    "tools": [
+      "Claude",
+      "Cursor",
+      "CodeFlicker"
+    ],
+    "related": [
+      "color-system",
+      "typography"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/frontend-design",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/frontend-design.md"
+  },
+  {
+    "name": "impeccable",
+    "title": "设计精炼命令集",
+    "description": "17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。",
+    "category": "组件打磨",
+    "tags": [
+      "设计命令",
+      "polish",
+      "audit",
+      "细节优化",
+      "设计审查"
+    ],
+    "ai_trigger": [
+      "优化现有界面的细节",
+      "审查设计稿质量",
+      "精炼 UI 方案",
+      "提升界面品质感"
+    ],
+    "ai_output": "针对具体设计问题的精确修改建议，包含问题定位、修改方案和验证标准",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude",
+      "CodeFlicker"
+    ],
+    "related": [
+      "frontend-design",
+      "ui-ux-pro-max"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/impeccable",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/impeccable.md"
+  },
+  {
+    "name": "spacing-grid",
+    "title": "间距与栅格系统",
+    "description": "建立基于 4/8px 基准单位的间距系统和响应式栅格，让界面空间关系有规律可循，减少对齐决策成本。",
+    "category": "视觉生成",
+    "tags": [
+      "间距",
+      "栅格",
+      "布局",
+      "8pt",
+      "响应式",
+      "设计系统"
+    ],
+    "ai_trigger": [
+      "建立间距系统",
+      "设计栅格规范",
+      "检查界面元素对齐",
+      "响应式布局断点"
+    ],
+    "ai_output": "间距 token 表格、栅格规范文档、Figma 自动布局设置建议",
+    "difficulty": "beginner",
+    "tools": [
+      "Figma"
+    ],
+    "related": [
+      "typography",
+      "color-system"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/spacing-grid",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/spacing-grid.md"
+  },
+  {
+    "name": "taste-skill",
+    "title": "Taste 高级感审美",
+    "description": "让 AI 具备「高级感」审美判断。专注于让界面「看起来和感觉昂贵」——高级字体、宽阔留白、层叠卡片、弹簧动画。",
+    "category": "视觉生成",
+    "tags": [
+      "高级感",
+      "留白",
+      "字体",
+      "动效",
+      "品质感"
+    ],
+    "ai_trigger": [
+      "让界面更有高级感",
+      "界面看起来太廉价",
+      "提升设计品质感",
+      "让 UI 感觉昂贵"
+    ],
+    "ai_output": "包含字体选择、留白策略、卡片叠层方案和动画参数的高品质界面设计建议",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude",
+      "CodeFlicker",
+      "Figma"
+    ],
+    "related": [
+      "frontend-design",
+      "impeccable",
+      "typography"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/taste-skill",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/taste-skill.md"
+  },
+  {
+    "name": "typography",
+    "title": "排版规范",
+    "description": "建立产品字体系统，涵盖字号层级、行高、字重、字间距和中英文排版规则，让信息层次一目了然。",
+    "category": "视觉生成",
+    "tags": [
+      "字体",
+      "排版",
+      "字号",
+      "行高",
+      "设计系统",
+      "文字规范"
+    ],
+    "ai_trigger": [
+      "需要建立字体规范",
+      "检查文字层级是否清晰",
+      "设计系统中的 typography token",
+      "中英文混排规则"
+    ],
+    "ai_output": "字体规范文档、Type Scale 表格、排版 token 定义",
+    "difficulty": "beginner",
+    "tools": [
+      "Figma",
+      "Type Scale 工具",
+      "Google Fonts"
+    ],
+    "related": [
+      "color-system",
+      "spacing-grid"
+    ],
+    "updated": "2026-07-03",
+    "url": "/skills/typography",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/typography.md"
+  },
+  {
+    "name": "ui-design-brain",
+    "title": "UI Design Brain",
+    "description": "60+ 组件最佳实践，像资深设计师一样决策。用 component.gallery 精选知识库替代 AI 猜测，内含每个组件的最佳实践和反模式库。",
+    "category": "组件打磨",
+    "tags": [
+      "组件最佳实践",
+      "反模式",
+      "设计决策",
+      "component.gallery",
+      "知识库"
+    ],
+    "ai_trigger": [
+      "这个组件怎么设计才对",
+      "按钮/表单/导航的最佳实践",
+      "组件设计有哪些反模式",
+      "参考最佳实践重新设计"
+    ],
+    "ai_output": "基于真实产品最佳实践的组件设计方案，包含做法、避坑点和可访问性说明",
+    "difficulty": "beginner",
+    "tools": [
+      "Claude",
+      "CodeFlicker",
+      "Figma"
+    ],
+    "related": [
+      "frontend-design",
+      "accessibility-check"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/ui-design-brain",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/ui-design-brain.md"
+  },
+  {
+    "name": "ui-skills",
+    "title": "UI 专项检查库",
+    "description": "15 个专项 Skill，模块化解决 UI 问题。包含无障碍审计、SEO 优化、动画性能、响应式布局、颜色对比度检查等 15 个独立模块，按需安装。",
+    "category": "审查交付",
+    "tags": [
+      "无障碍",
+      "SEO",
+      "动画性能",
+      "响应式",
+      "对比度检查",
+      "模块化"
+    ],
+    "ai_trigger": [
+      "检查页面可访问性",
+      "优化响应式布局",
+      "检查颜色对比度",
+      "动画性能优化",
+      "UI 质量审查"
+    ],
+    "ai_output": "针对具体问题的专项检查报告和修复方案，包含代码示例和优先级建议",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude",
+      "CodeFlicker"
+    ],
+    "related": [
+      "accessibility-check",
+      "frontend-design"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/ui-skills",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/ui-skills.md"
+  },
+  {
+    "name": "ui-ux-pro-max",
+    "title": "UI/UX Pro Max",
+    "description": "从 Wireframe 到高保真一步到位。50+ UI 风格、97 种调色板、57 种字体搭配、99 条 UX 指南，给 AI 一个可搜索的设计数据库。",
+    "category": "组件打磨",
+    "tags": [
+      "UI风格",
+      "调色板",
+      "字体搭配",
+      "UX指南",
+      "高保真"
+    ],
+    "ai_trigger": [
+      "生成高保真设计稿",
+      "推荐 UI 风格和配色",
+      "从线框图到高保真",
+      "设计风格选择"
+    ],
+    "ai_output": "包含风格选择、配色方案、字体搭配的完整高保真界面设计，附 UX 决策说明",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude",
+      "Figma",
+      "CodeFlicker"
+    ],
+    "related": [
+      "color-system",
+      "typography",
+      "frontend-design"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/ui-ux-pro-max",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/ui-ux-pro-max.md"
+  },
+  {
+    "name": "ux-researcher",
+    "title": "UX 研究设计",
+    "description": "用户调研 + 设计改进一条龙。涵盖用户研究方法论、可用性测试、用户旅程映射、信息架构规划、设计决策文档化。",
+    "category": "研究洞察",
+    "tags": [
+      "用户研究",
+      "可用性测试",
+      "用户旅程",
+      "信息架构",
+      "调研方法"
+    ],
+    "ai_trigger": [
+      "帮我做用户研究",
+      "可用性测试怎么做",
+      "用户旅程地图",
+      "信息架构怎么规划",
+      "整理用户访谈"
+    ],
+    "ai_output": "完整的用户研究报告、用户旅程地图、可用性测试报告或信息架构图，格式化可直接使用",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude",
+      "CodeFlicker",
+      "Figma"
+    ],
+    "related": [
+      "designer-skills",
+      "design-handoff"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/ux-researcher",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/ux-researcher.md"
+  }
+]

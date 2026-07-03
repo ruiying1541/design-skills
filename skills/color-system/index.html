@@ -1,0 +1,459 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>色彩系统设计</title><meta name="description" content="为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--blue:#002fa7;--blue-light:#e8eeff;--text:#0a0a0a;--text-2:#525252;--text-3:#a3a3a3;--border:#e5e5e5;--bg:#fff;--bg-2:#f7f7f7;--bg-3:#f0f0f0;--radius:12px;--radius-sm:6px}[data-astro-cid-ju4pidww],[data-astro-cid-ju4pidww]:before,[data-astro-cid-ju4pidww]:after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:DM Sans,-apple-system,PingFang SC,Hiragino Sans GB,sans-serif;line-height:1.6}[data-astro-cid-ju4pidww]::-webkit-scrollbar{width:6px}[data-astro-cid-ju4pidww]::-webkit-scrollbar-track{background:0 0}[data-astro-cid-ju4pidww]::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}.prose[data-astro-cid-ju4pidww] h2[data-astro-cid-ju4pidww]{color:var(--text);margin:2rem 0 .75rem;font-size:1.25rem;font-weight:600}.prose[data-astro-cid-ju4pidww] h3[data-astro-cid-ju4pidww]{color:var(--text);margin:1.5rem 0 .5rem;font-size:1.05rem;font-weight:600}.prose[data-astro-cid-ju4pidww] p[data-astro-cid-ju4pidww]{color:var(--text-2);margin-bottom:1rem;line-height:1.75}.prose[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww],.prose[data-astro-cid-ju4pidww] ol[data-astro-cid-ju4pidww]{color:var(--text-2);margin-bottom:1rem;padding-left:1.5rem}.prose[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{margin-bottom:.4rem;line-height:1.7}.prose[data-astro-cid-ju4pidww] code[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);color:var(--blue);border-radius:4px;padding:.15em .4em;font-family:DM Mono,monospace;font-size:.85em}.prose[data-astro-cid-ju4pidww] pre[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;padding:1.25rem;overflow-x:auto}.prose[data-astro-cid-ju4pidww] pre[data-astro-cid-ju4pidww] code[data-astro-cid-ju4pidww]{color:var(--text);background:0 0;border:none;padding:0;font-size:.875rem}.prose[data-astro-cid-ju4pidww] blockquote[data-astro-cid-ju4pidww]{border-left:3px solid var(--blue);background:var(--blue-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:1rem;padding:.75rem 1rem}.prose[data-astro-cid-ju4pidww] blockquote[data-astro-cid-ju4pidww] p[data-astro-cid-ju4pidww]{color:var(--text);margin:0}.prose[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww]{color:var(--blue);text-decoration:none}.prose[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww]:hover{text-decoration:underline}.prose[data-astro-cid-ju4pidww] strong[data-astro-cid-ju4pidww]{color:var(--text);font-weight:600}.prose[data-astro-cid-ju4pidww] hr[data-astro-cid-ju4pidww]{border:none;border-top:1px solid var(--border);margin:2rem 0}.prose[data-astro-cid-ju4pidww] table[data-astro-cid-ju4pidww]{border-collapse:collapse;width:100%;margin-bottom:1rem;font-size:.9rem}.prose[data-astro-cid-ju4pidww] thead[data-astro-cid-ju4pidww] th[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);text-align:left;padding:.6rem .75rem;font-weight:600}.prose[data-astro-cid-ju4pidww] tbody[data-astro-cid-ju4pidww] td[data-astro-cid-ju4pidww]{border:1px solid var(--border);color:var(--text-2);padding:.6rem .75rem}.pagefind-ui[data-astro-cid-ju4pidww]{--pagefind-ui-primary:var(--blue)}html[data-page=index] #header-search-wrap[data-astro-cid-ju4pidww]{visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s}
+.ds-prose{color:#404040;font-size:14px;line-height:1.8}.ds-prose h2{color:#0a0a0a;letter-spacing:-.02em;border-bottom:1px solid #e5e5e5;margin:28px 0 10px;padding-bottom:6px;font-size:16px;font-weight:700}.ds-prose>:first-child{margin-top:0!important}.ds-prose h3{color:#262626;margin:18px 0 8px;font-size:14px;font-weight:700}.ds-prose p{margin:8px 0}.ds-prose ul,.ds-prose ol{margin:8px 0;padding-left:18px}.ds-prose li{margin:4px 0}.ds-prose strong{color:#0a0a0a;font-weight:600}.ds-prose a{color:var(--cat-dot);text-underline-offset:2px;text-decoration:underline}.ds-prose code{color:#262626;background:#f3f4f6;border:1px solid #e5e5e5;border-radius:4px;padding:1px 5px;font-family:DM Mono,monospace;font-size:12px}.ds-prose pre{background:#0f0f0f;border:1px solid #1e1e1e;border-radius:10px;margin:12px 0;padding:16px 20px;overflow-x:auto}.ds-prose pre code{color:#e2e8f0;background:0 0;border:none;padding:0;font-size:12.5px;line-height:1.7}.ds-prose table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13px}.ds-prose th{color:#525252;text-align:left;background:#f7f7f7;border:1px solid #e5e5e5;padding:8px 12px;font-size:12px;font-weight:600}.ds-prose td{border:1px solid #e5e5e5;padding:8px 12px}.ds-prose tr:hover td{background:#fafafa}.ds-prose blockquote{border-left:3px solid var(--cat-dot);background:var(--cat-bg);border-radius:0 8px 8px 0;margin:12px 0;padding:8px 14px}.ds-prose blockquote p{color:#525252;margin:0}.detail-body{grid-template-columns:1fr 280px;align-items:start;gap:24px;display:grid}@media (width<=800px){.detail-body{grid-template-columns:1fr}}
+</style></head><body data-astro-cid-ju4pidww><!-- Header --><header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);" data-astro-cid-ju4pidww><div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between;" data-astro-cid-ju4pidww><a href="/design-skills/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;" data-astro-cid-ju4pidww><img src="/design-skills/logo.svg" alt="Design Skills" style="width: 26px; height: 26px; border-radius: 6px; display: block;" data-astro-cid-ju4pidww><span style="font-weight: 600; color: var(--text); font-size: 15px; letter-spacing: -0.02em;" data-astro-cid-ju4pidww>Design Skills</span></a><!-- 搜索框 --><div id="header-search-wrap" style="flex: 1; max-width: 340px; margin: 0 32px; position: relative;" data-astro-cid-ju4pidww><svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; color: var(--text-3); pointer-events: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-ju4pidww><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" data-astro-cid-ju4pidww></path></svg><input id="header-search" type="text" placeholder="搜索 Skill…" autocomplete="off" style="
+            width: 100%;
+            padding: 7px 12px 7px 32px;
+            background: var(--bg-2);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+          " onfocus="this.style.borderColor='var(--blue)';this.style.background='#fff'" onblur="this.style.borderColor='var(--border)';this.style.background='var(--bg-2)'" data-astro-cid-ju4pidww></div><nav style="display: flex; align-items: center; gap: 6px;" data-astro-cid-ju4pidww><a href="/design-skills/about" style="font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: background 0.15s;" onmouseover="this.style.background='var(--bg-2)'" onmouseout="this.style.background='transparent'" data-astro-cid-ju4pidww>关于</a></nav></div></header><main data-astro-cid-ju4pidww><div style="max-width: 1060px; margin: 0 auto; padding: 28px 24px 80px;"><!-- 返回 --><a href="/design-skills/" style="display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: #525252; text-decoration: none; margin-bottom: 16px; font-weight: 500;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#A3A3A3'"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>返回</a><!-- ══ 头部：封面缩略图 + 标题行 + 描述 ══ --><div style="background: #E8EEFF; border: 1px solid #002FA722; border-radius: 16px; padding: 20px 24px; margin-bottom: 24px;"><!-- 标题行：封面小图 + 名称 + 标签 + 按钮 --><div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap;"><!-- 封面图标（分类主色）--><div style="width: 48px; height: 48px; border-radius: 10px; background: #002FA7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px #002FA744;"><span style="font-size: 8px; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 0.06em; font-family: 'DM Mono', monospace; text-transform: uppercase; line-height: 1.2; text-align: center;">VISUAL</span></div><!-- 名称 + 标签 --><div style="flex: 1; min-width: 0;"><div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;"><h1 style="font-size: 20px; font-weight: 800; color: #0A0A0A; letter-spacing: -0.03em; margin: 0;">色彩系统设计</h1><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #002FA7; background: #fff; padding: 2px 9px; border-radius: 20px;">视觉生成</span><span style="font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 20px; background: #fff; color: #B45309;">进阶</span></div></div><!-- 一键复制按钮 --><button id="install-btn" onclick="
+          const raw = document.getElementById('raw-content').textContent;
+          navigator.clipboard.writeText(raw).then(() => {
+            const btn = document.getElementById('install-btn');
+            btn.textContent = '✓ 已复制';
+            setTimeout(() => { btn.textContent = '一键复制 Skill'; }, 2000);
+          });
+        " style="background: #002FA7; color: #fff; border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; flex-shrink: 0;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">一键复制 Skill</button></div><!-- 描述 --><p style="font-size: 14px; color: #737373; line-height: 1.65; margin: 0 0 10px; max-width: 800px;">为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。</p><!-- Tags --><div style="display: flex; gap: 5px; flex-wrap: wrap;"><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#颜色</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#设计系统</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#品牌色</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#色板</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#语义色</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#Design Token</span><span style="font-size: 11px; color: #A3A3A3; font-family: 'DM Mono', monospace; padding: 2px 6px;">updated 2026-07-03</span></div></div><!-- ══ 主体：左内容 + 右侧边栏 ══ --><div class="detail-body"><!-- 左：内容区 --><div><!-- 隐藏的原文（供一键复制 Skill 使用）--><pre id="raw-content" style="display:none;">## 什么是色彩系统？
+
+色彩系统是产品设计语言的基础，它定义了产品中所有颜色的使用规则。一套好的色彩系统应当：
+
+- **可预测**：设计师知道在什么场景使用什么颜色
+- **可扩展**：新增组件时有明确的颜色可选
+- **可访问**：满足 WCAG 对比度标准
+- **可维护**：通过 Design Token 统一管理，一处修改全局生效
+
+---
+
+## 色彩分层架构
+
+### Layer 1：原始色板（Primitive）
+
+原始色板是最底层的颜色定义，通常是 50-900 的色阶梯度。不直接被组件引用，只被语义层引用。
+
+```
+brand-50:   #EEF2FF
+brand-100:  #E0E7FF
+brand-200:  #C7D2FE
+...
+brand-600:  #4F46E5   ← 主品牌色
+brand-700:  #4338CA
+brand-900:  #312E81
+```
+
+### Layer 2：语义色（Semantic）
+
+语义色是连接设计意图和原始色板的桥梁。按功能命名，而非按颜色命名。
+
+| 语义色名 | 含义 | 典型值 |
+|---------|------|-------|
+| `color-primary` | 品牌主色，主要交互元素 | brand-600 |
+| `color-primary-hover` | 主色悬停态 | brand-700 |
+| `color-success` | 成功/正向状态 | green-500 |
+| `color-warning` | 警告/注意状态 | yellow-500 |
+| `color-danger` | 错误/危险状态 | red-500 |
+| `color-text-primary` | 主要文本 | gray-900 |
+| `color-text-secondary` | 辅助文本 | gray-500 |
+| `color-text-disabled` | 禁用文本 | gray-300 |
+| `color-bg-base` | 页面背景 | white |
+| `color-bg-subtle` | 微弱背景 | gray-50 |
+| `color-border` | 标准描边 | gray-200 |
+
+### Layer 3：组件色（Component）
+
+组件层引用语义色，处理暗色模式适配。
+
+```css
+.button-primary {
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+.button-primary:hover {
+  background: var(--color-primary-hover);
+}
+```
+
+---
+
+## 中性色（Gray Scale）
+
+中性色是使用频率最高的颜色，承载文本、背景、描边、分隔线等大量基础角色。
+
+建议使用 **10 级中性色**：
+
+```
+gray-0:    #FFFFFF   ← 纯白
+gray-50:   #F9FAFB   ← 页面背景
+gray-100:  #F3F4F6   ← 卡片背景
+gray-200:  #E5E7EB   ← 描边
+gray-300:  #D1D5DB   ← 禁用描边
+gray-400:  #9CA3AF   ← placeholder
+gray-500:  #6B7280   ← 辅助文本
+gray-600:  #4B5563   ← 次要文本
+gray-700:  #374151   ← 主要文本（深色背景白字场景）
+gray-800:  #1F2937   ← 标题
+gray-900:  #111827   ← 最深文本
+```
+
+---
+
+## 功能色（Functional）
+
+除品牌色外，产品通常需要四类功能色：
+
+| 类型 | 用途 | 颜色参考 |
+|------|------|---------|
+| Success 成功 | 操作完成、上传成功、余额充足 | #10B981 |
+| Warning 警告 | 需要注意但未出错 | #F59E0B |
+| Danger 危险 | 错误、删除、高风险操作 | #EF4444 |
+| Info 信息 | 提示、说明、中性通知 | #3B82F6 |
+
+每种功能色需要 5 个色阶：浅背景色、深背景色、描边色、文字色、图标色。
+
+---
+
+## 暗色模式适配
+
+暗色模式不是简单的颜色取反，而是语义层的重新映射：
+
+```css
+:root {
+  --color-bg-base: #FFFFFF;
+  --color-text-primary: #111827;
+}
+
+[data-theme=&quot;dark&quot;] {
+  --color-bg-base: #0F172A;
+  --color-text-primary: #F8FAFC;
+}
+```
+
+原始色板保持不变，只改变语义色的指向。
+
+---
+
+## AI 辅助使用
+
+AI 可以帮助你：
+
+1. **生成 token 结构**：给 AI 品牌主色（HEX），它能生成完整的 50-900 色阶
+2. **检查对比度**：AI 可以计算前景色和背景色的对比度是否达标
+3. **分析色彩问题**：给 AI 截图，它能指出哪些颜色使用违反了语义
+4. **适配暗色模式**：AI 可以将亮色 token 映射为合适的暗色值
+
+**触发词示例：**
+&gt; &quot;帮我为主色 #6366F1 生成完整的设计系统色板，包括 50-900 所有色阶，以及对应的语义 token 命名&quot;</pre><!-- Markdown 正文 --><div class="ds-prose" style="--cat-dot: #002FA7; --cat-bg: #E8EEFF;"><h2 id="什么是色彩系统">什么是色彩系统？</h2>
+<p>色彩系统是产品设计语言的基础，它定义了产品中所有颜色的使用规则。一套好的色彩系统应当：</p>
+<ul>
+<li><strong>可预测</strong>：设计师知道在什么场景使用什么颜色</li>
+<li><strong>可扩展</strong>：新增组件时有明确的颜色可选</li>
+<li><strong>可访问</strong>：满足 WCAG 对比度标准</li>
+<li><strong>可维护</strong>：通过 Design Token 统一管理，一处修改全局生效</li>
+</ul>
+<hr>
+<h2 id="色彩分层架构">色彩分层架构</h2>
+<h3 id="layer-1原始色板primitive">Layer 1：原始色板（Primitive）</h3>
+<p>原始色板是最底层的颜色定义，通常是 50-900 的色阶梯度。不直接被组件引用，只被语义层引用。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>brand-50:   #EEF2FF</span></span>
+<span class="line"><span>brand-100:  #E0E7FF</span></span>
+<span class="line"><span>brand-200:  #C7D2FE</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>brand-600:  #4F46E5   ← 主品牌色</span></span>
+<span class="line"><span>brand-700:  #4338CA</span></span>
+<span class="line"><span>brand-900:  #312E81</span></span></code></pre>
+<h3 id="layer-2语义色semantic">Layer 2：语义色（Semantic）</h3>
+<p>语义色是连接设计意图和原始色板的桥梁。按功能命名，而非按颜色命名。</p>
+<table>
+<thead>
+<tr>
+<th>语义色名</th>
+<th>含义</th>
+<th>典型值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>color-primary</code></td>
+<td>品牌主色，主要交互元素</td>
+<td>brand-600</td>
+</tr>
+<tr>
+<td><code>color-primary-hover</code></td>
+<td>主色悬停态</td>
+<td>brand-700</td>
+</tr>
+<tr>
+<td><code>color-success</code></td>
+<td>成功/正向状态</td>
+<td>green-500</td>
+</tr>
+<tr>
+<td><code>color-warning</code></td>
+<td>警告/注意状态</td>
+<td>yellow-500</td>
+</tr>
+<tr>
+<td><code>color-danger</code></td>
+<td>错误/危险状态</td>
+<td>red-500</td>
+</tr>
+<tr>
+<td><code>color-text-primary</code></td>
+<td>主要文本</td>
+<td>gray-900</td>
+</tr>
+<tr>
+<td><code>color-text-secondary</code></td>
+<td>辅助文本</td>
+<td>gray-500</td>
+</tr>
+<tr>
+<td><code>color-text-disabled</code></td>
+<td>禁用文本</td>
+<td>gray-300</td>
+</tr>
+<tr>
+<td><code>color-bg-base</code></td>
+<td>页面背景</td>
+<td>white</td>
+</tr>
+<tr>
+<td><code>color-bg-subtle</code></td>
+<td>微弱背景</td>
+<td>gray-50</td>
+</tr>
+<tr>
+<td><code>color-border</code></td>
+<td>标准描边</td>
+<td>gray-200</td>
+</tr>
+</tbody>
+</table>
+<h3 id="layer-3组件色component">Layer 3：组件色（Component）</h3>
+<p>组件层引用语义色，处理暗色模式适配。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">.button-primary</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  background</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">var</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">--color-primary</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#79B8FF">  color</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">var</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">--color-text-on-primary</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#B392F0">.button-primary:hover</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">  background</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">var</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">--color-primary-hover</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<hr>
+<h2 id="中性色gray-scale">中性色（Gray Scale）</h2>
+<p>中性色是使用频率最高的颜色，承载文本、背景、描边、分隔线等大量基础角色。</p>
+<p>建议使用 <strong>10 级中性色</strong>：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>gray-0:    #FFFFFF   ← 纯白</span></span>
+<span class="line"><span>gray-50:   #F9FAFB   ← 页面背景</span></span>
+<span class="line"><span>gray-100:  #F3F4F6   ← 卡片背景</span></span>
+<span class="line"><span>gray-200:  #E5E7EB   ← 描边</span></span>
+<span class="line"><span>gray-300:  #D1D5DB   ← 禁用描边</span></span>
+<span class="line"><span>gray-400:  #9CA3AF   ← placeholder</span></span>
+<span class="line"><span>gray-500:  #6B7280   ← 辅助文本</span></span>
+<span class="line"><span>gray-600:  #4B5563   ← 次要文本</span></span>
+<span class="line"><span>gray-700:  #374151   ← 主要文本（深色背景白字场景）</span></span>
+<span class="line"><span>gray-800:  #1F2937   ← 标题</span></span>
+<span class="line"><span>gray-900:  #111827   ← 最深文本</span></span></code></pre>
+<hr>
+<h2 id="功能色functional">功能色（Functional）</h2>
+<p>除品牌色外，产品通常需要四类功能色：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>用途</th>
+<th>颜色参考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Success 成功</td>
+<td>操作完成、上传成功、余额充足</td>
+<td>#10B981</td>
+</tr>
+<tr>
+<td>Warning 警告</td>
+<td>需要注意但未出错</td>
+<td>#F59E0B</td>
+</tr>
+<tr>
+<td>Danger 危险</td>
+<td>错误、删除、高风险操作</td>
+<td>#EF4444</td>
+</tr>
+<tr>
+<td>Info 信息</td>
+<td>提示、说明、中性通知</td>
+<td>#3B82F6</td>
+</tr>
+</tbody>
+</table>
+<p>每种功能色需要 5 个色阶：浅背景色、深背景色、描边色、文字色、图标色。</p>
+<hr>
+<h2 id="暗色模式适配">暗色模式适配</h2>
+<p>暗色模式不是简单的颜色取反，而是语义层的重新映射：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#B392F0">:root</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  --color-bg-base</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#FFFFFF</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  --color-text-primary</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#111827</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">data-theme</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"dark"</span><span style="color:#E1E4E8">] {</span></span>
+<span class="line"><span style="color:#FFAB70">  --color-bg-base</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#0F172A</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  --color-text-primary</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">#F8FAFC</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>原始色板保持不变，只改变语义色的指向。</p>
+<hr>
+<h2 id="ai-辅助使用">AI 辅助使用</h2>
+<p>AI 可以帮助你：</p>
+<ol>
+<li><strong>生成 token 结构</strong>：给 AI 品牌主色（HEX），它能生成完整的 50-900 色阶</li>
+<li><strong>检查对比度</strong>：AI 可以计算前景色和背景色的对比度是否达标</li>
+<li><strong>分析色彩问题</strong>：给 AI 截图，它能指出哪些颜色使用违反了语义</li>
+<li><strong>适配暗色模式</strong>：AI 可以将亮色 token 映射为合适的暗色值</li>
+</ol>
+<p><strong>触发词示例：</strong></p>
+<blockquote>
+<p>“帮我为主色 #6366F1 生成完整的设计系统色板，包括 50-900 所有色阶，以及对应的语义 token 命名”</p>
+</blockquote>
+</div><!-- 相关 Skill --><div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #E5E5E5;"><h3 style="font-size: 14px; font-weight: 700; color: #0A0A0A; margin-bottom: 14px;">相关 Skill</h3><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;"><a href="/design-skills/skills/accessibility-check" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #FFF4ED;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #EA580C;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">REVIEW</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #EA580C;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">审查交付</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 30px;
+      font-weight: 700;
+      color: #431407;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">可访问性检查</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #EA580C; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #EA580C;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">accessibility check</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">可访问性检查</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">按 WCAG 2.1 标准检查产品的色彩对比度、键盘导航、语义标签和屏幕阅读器适配，让更多用户能无障碍使用产品。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">可访问性</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">WCAG</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a><a href="/design-skills/skills/typography" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">排版规范</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">typography</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">排版规范</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">建立产品字体系统，涵盖字号层级、行高、字重、字间距和中英文排版规则，让信息层次一目了然。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">字体</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">排版</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div></div></div><!-- ── 右：侧边栏 ── --><aside style="position: sticky; top: 80px; display: flex; flex-direction: column; gap: 16px;"><!-- 配置信息 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;"><div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;"><span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">配置信息</span></div><div style="padding: 0 16px;"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; "><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">分类</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">视觉生成</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">难度</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">进阶</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">适合人群</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">UI/UX 设计师</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">产出结果</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">配色方案文档、色值对照表、语义色命名规范、Design Token 结构</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">推荐工具</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">Figma · Coolors · Contrast Checker · Huemint</span></div></div><!-- 统计数字 --><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #F0F0F0; margin-top: 4px;"><div style="text-align: center; padding: 12px 8px; "><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">浏览量</div></div><div style="text-align: center; padding: 12px 8px; border-left: 1px solid #F0F0F0;"><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">关联应用</div></div><div style="text-align: center; padding: 12px 8px; border-left: 1px solid #F0F0F0;"><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">复制量</div></div></div></div><!-- 何时调用 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;"><div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;"><span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">何时调用</span></div><ul style="padding: 10px 16px; list-style: none; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>需要为产品建立配色方案</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>检查色彩规范是否完整</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>生成色彩 token 命名体系</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>分析现有产品配色问题</li></ul></div><!-- Raw 地址 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 12px 14px; background: #fff;"><div style="font-size: 11px; color: #A3A3A3; margin-bottom: 6px; font-family: 'DM Mono', monospace; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Raw 地址</div><code style="font-size: 10.5px; color: #002FA7; font-family: 'DM Mono', monospace; word-break: break-all; line-height: 1.6; display: block;">https://raw.githubusercontent.com/liruiying/design-skills/main/src/content/skills/color-system.md</code></div></aside></div></div></main><!-- Footer --><footer style="border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px;" data-astro-cid-ju4pidww><div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;" data-astro-cid-ju4pidww><div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;" data-astro-cid-ju4pidww><span style="font-size: 13px; color: var(--text-3);" data-astro-cid-ju4pidww>Design Skills — 设计师 + AI Agent 双栖平台</span><div style="display: flex; align-items: center; gap: 16px;" data-astro-cid-ju4pidww><a href="/design-skills/skills-index.json" target="_blank" style="font-size: 13px; color: var(--text-3); text-decoration: none; font-family: 'DM Mono', monospace;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text-3)'" data-astro-cid-ju4pidww>skills-index.json</a><a href="https://github.com/liruiying/design-skills" target="_blank" style="font-size: 13px; color: var(--text-3); text-decoration: none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text-3)'" data-astro-cid-ju4pidww>GitHub ↗</a></div></div></div></footer><script type="module">var e=document.getElementById(`header-search`);e&&e.addEventListener(`input`,()=>{let t=e.value.trim().toLowerCase(),n=document.querySelectorAll(`.skill-item`),r=document.getElementById(`empty-state`),i=document.getElementById(`skill-count-label`);if(!n.length)return;let a=0;n.forEach(e=>{e._currentCat&&(e._currentCat===`全部`||(e.dataset.category,e._currentCat));let n=!t||(e.dataset.title??``).includes(t)||(e.dataset.category??``).includes(t)||(e.dataset.tags??``).includes(t);e.dataset.searchHidden=n?`0`:`1`,e.style.display=n?``:`none`,n&&a++}),i&&(i.textContent=`${a} 个`),r&&(r.style.display=a>0?`none`:`block`),t&&document.getElementById(`skills-grid`)?.scrollIntoView({behavior:`smooth`,block:`start`})});</script></body></html><script>(function(){const skillId = "color-system";
+const skillCategory = "视觉生成";
+
+  try {
+    const KEY = 'ds_skill_views';
+    const raw = localStorage.getItem(KEY);
+    const views = raw ? JSON.parse(raw) : {};
+    views[skillId] = (views[skillId] ?? 0) + 1;
+    localStorage.setItem(KEY, JSON.stringify(views));
+  } catch (e) {}
+})();</script>
