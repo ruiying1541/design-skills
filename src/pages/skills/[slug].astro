@@ -1,0 +1,237 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SkillCover from '../../components/SkillCover.astro';
+import SkillCard from '../../components/SkillCard.astro';
+import { getCategoryColor } from '../../utils/categoryColors';
+
+export async function getStaticPaths() {
+  const skills = await getCollection('skills');
+  return skills.map(skill => ({ params: { slug: skill.id }, props: { skill } }));
+}
+
+const { skill } = Astro.props;
+const { Content } = await render(skill);
+const rawMarkdown = skill.body ?? '';
+
+const allSkills = await getCollection('skills');
+const relatedSkills = skill.data.related
+  ? allSkills.filter(s => skill.data.related!.includes(s.data.name))
+  : [];
+
+const diffMap: Record<string, { label: string; bg: string; color: string }> = {
+  beginner:     { label: '入门', bg: '#ECFDF5', color: '#059669' },
+  intermediate: { label: '进阶', bg: '#FFF7E6', color: '#B45309' },
+  advanced:     { label: '高阶', bg: '#FFF1F2', color: '#E11D48' },
+};
+const diffInfo = skill.data.difficulty ? diffMap[skill.data.difficulty] : null;
+const cat = getCategoryColor(skill.data.category);
+---
+
+<Layout title={skill.data.title} description={skill.data.description}>
+
+<style is:global>
+  .ds-prose { font-size: 14px; color: #404040; line-height: 1.8; }
+  .ds-prose h2 { font-size: 16px; font-weight: 700; color: #0A0A0A; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #E5E5E5; letter-spacing: -0.02em; }
+  .ds-prose > *:first-child { margin-top: 0 !important; }
+  .ds-prose h3 { font-size: 14px; font-weight: 700; color: #262626; margin: 18px 0 8px; }
+  .ds-prose p  { margin: 8px 0; }
+  .ds-prose ul, .ds-prose ol { padding-left: 18px; margin: 8px 0; }
+  .ds-prose li { margin: 4px 0; }
+  .ds-prose strong { color: #0A0A0A; font-weight: 600; }
+  .ds-prose a { color: var(--cat-dot); text-decoration: underline; text-underline-offset: 2px; }
+  .ds-prose code { font-size: 12px; font-family: 'DM Mono', monospace; background: #F3F4F6; border: 1px solid #E5E5E5; padding: 1px 5px; border-radius: 4px; color: #262626; }
+  .ds-prose pre { background: #0F0F0F; border-radius: 10px; padding: 16px 20px; margin: 12px 0; overflow-x: auto; border: 1px solid #1E1E1E; }
+  .ds-prose pre code { background: none; border: none; padding: 0; color: #E2E8F0; font-size: 12.5px; line-height: 1.7; }
+  .ds-prose table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 14px 0; }
+  .ds-prose th { background: #F7F7F7; font-weight: 600; color: #525252; padding: 8px 12px; border: 1px solid #E5E5E5; text-align: left; font-size: 12px; }
+  .ds-prose td { padding: 8px 12px; border: 1px solid #E5E5E5; }
+  .ds-prose tr:hover td { background: #FAFAFA; }
+  .ds-prose blockquote { border-left: 3px solid var(--cat-dot); margin: 12px 0; padding: 8px 14px; background: var(--cat-bg); border-radius: 0 8px 8px 0; }
+  .ds-prose blockquote p { color: #525252; margin: 0; }
+
+  .detail-body { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
+  @media (max-width: 800px) { .detail-body { grid-template-columns: 1fr; } }
+</style>
+
+<div style="max-width: 1060px; margin: 0 auto; padding: 28px 24px 80px;">
+
+  <!-- 返回 -->
+  <a href="/design-skills/"
+    style="display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: #525252; text-decoration: none; margin-bottom: 16px; font-weight: 500;"
+    onmouseover={`this.style.color='${cat.dot}'`}
+    onmouseout="this.style.color='#A3A3A3'"
+  >
+    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+    返回
+  </a>
+
+    <!-- ══ 头部：封面缩略图 + 标题行 + 描述 ══ -->
+  <div style={`background: ${cat.badgeBg}; border: 1px solid ${cat.dot}22; border-radius: 16px; padding: 20px 24px; margin-bottom: 24px;`}>
+
+    <!-- 标题行：封面小图 + 名称 + 标签 + 按钮 -->
+    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap;">
+
+      <!-- 封面图标（分类主色）-->
+      <div style={`width: 48px; height: 48px; border-radius: 10px; background: ${cat.dot}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px ${cat.dot}44;`}>
+        <span style="font-size: 8px; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 0.06em; font-family: 'DM Mono', monospace; text-transform: uppercase; line-height: 1.2; text-align: center;">{cat.en}</span>
+      </div>
+
+      <!-- 名称 + 标签 -->
+      <div style="flex: 1; min-width: 0;">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <h1 style="font-size: 20px; font-weight: 800; color: #0A0A0A; letter-spacing: -0.03em; margin: 0;">
+            {skill.data.title}
+          </h1>
+          <span style={`font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: ${cat.dot}; background: #fff; padding: 2px 9px; border-radius: 20px;`}>
+            {skill.data.category}
+          </span>
+          {diffInfo && (
+            <span style={`font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 20px; background: #fff; color: ${diffInfo.color};`}>
+              {diffInfo.label}
+            </span>
+          )}
+        </div>
+      </div>
+
+      <!-- 一键复制按钮 -->
+      <button
+        id="install-btn"
+        onclick={`
+          const raw = document.getElementById('raw-content').textContent;
+          navigator.clipboard.writeText(raw).then(() => {
+            const btn = document.getElementById('install-btn');
+            btn.textContent = '✓ 已复制';
+            setTimeout(() => { btn.textContent = '一键复制 Skill'; }, 2000);
+          });
+        `}
+        style={`background: ${cat.dot}; color: #fff; border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; flex-shrink: 0;`}
+        onmouseover="this.style.opacity='0.85'"
+        onmouseout="this.style.opacity='1'"
+      >
+        一键复制 Skill
+      </button>
+    </div>
+
+    <!-- 描述 -->
+    <p style="font-size: 14px; color: #737373; line-height: 1.65; margin: 0 0 10px; max-width: 800px;">
+      {skill.data.description}
+    </p>
+
+    <!-- Tags -->
+    <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+      {skill.data.tags.map(tag => (
+        <span style={`font-size: 11px; color: ${cat.dot}; background: ${cat.badgeBg}; border: 1px solid ${cat.dot}33; padding: 2px 10px; border-radius: 20px; font-weight: 500;`}>
+          #{tag}
+        </span>
+      ))}
+      {skill.data.updated && (
+        <span style="font-size: 11px; color: #A3A3A3; font-family: 'DM Mono', monospace; padding: 2px 6px;">
+          updated {skill.data.updated}
+        </span>
+      )}
+    </div>
+  </div>
+
+  <!-- ══ 主体：左内容 + 右侧边栏 ══ -->
+  <div class="detail-body">
+
+    <!-- 左：内容区 -->
+    <div>
+    <!-- 隐藏的原文（供一键复制 Skill 使用）-->
+      <pre id="raw-content" style="display:none;">{rawMarkdown}</pre>
+
+      <!-- Markdown 正文 -->
+      <div class="ds-prose" style={`--cat-dot: ${cat.dot}; --cat-bg: ${cat.badgeBg};`}>
+        <Content />
+      </div>
+
+      <!-- 相关 Skill -->
+      {relatedSkills.length > 0 && (
+        <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #E5E5E5;">
+          <h3 style="font-size: 14px; font-weight: 700; color: #0A0A0A; margin-bottom: 14px;">相关 Skill</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;">
+            {relatedSkills.map(s => <SkillCard skill={s} />)}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <!-- ── 右：侧边栏 ── -->
+    <aside style="position: sticky; top: 80px; display: flex; flex-direction: column; gap: 16px;">
+
+      <!-- 配置信息 -->
+      <div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;">
+        <div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;">
+          <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">配置信息</span>
+        </div>
+        <div style="padding: 0 16px;">
+          {([
+            ['分类', skill.data.category],
+            ['难度', diffInfo?.label ?? '通用'],
+            ['适合人群', skill.data.difficulty === 'beginner' ? '设计入门者' : skill.data.difficulty === 'advanced' ? '资深设计师' : 'UI/UX 设计师'],
+            ['产出结果', skill.data.ai_output ?? '规范文档'],
+            ['推荐工具', skill.data.tools?.join(' · ') ?? 'Figma'],
+          ] as [string,string][]).map(([label, value], i) => (
+            <div style={`display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; ${i > 0 ? 'border-top: 1px solid #F5F5F5;' : ''}`}>
+              <span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">{label}</span>
+              <span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">{value}</span>
+            </div>
+          ))}
+        </div>
+
+        <!-- 统计数字 -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #F0F0F0; margin-top: 4px;">
+          {[
+            ['—', '浏览量'],
+            ['—', '关联应用'],
+            ['—', '复制量'],
+          ].map(([num, label], i) => (
+            <div style={`text-align: center; padding: 12px 8px; ${i > 0 ? 'border-left: 1px solid #F0F0F0;' : ''}`}>
+              <div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">{num}</div>
+              <div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- 何时调用 -->
+      {skill.data.ai_trigger && skill.data.ai_trigger.length > 0 && (
+        <div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;">
+          <div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;">
+            <span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">何时调用</span>
+          </div>
+          <ul style="padding: 10px 16px; list-style: none; margin: 0; display: flex; flex-direction: column; gap: 6px;">
+            {skill.data.ai_trigger.map(trigger => (
+              <li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;">
+                <span style={`color: ${cat.dot}; font-weight: 700; flex-shrink: 0;`}>→</span>
+                {trigger}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <!-- Raw 地址 -->
+      <div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 12px 14px; background: #fff;">
+        <div style="font-size: 11px; color: #A3A3A3; margin-bottom: 6px; font-family: 'DM Mono', monospace; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Raw 地址</div>
+        <code style={`font-size: 10.5px; color: ${cat.dot}; font-family: 'DM Mono', monospace; word-break: break-all; line-height: 1.6; display: block;`}>
+          https://raw.githubusercontent.com/liruiying/design-skills/main/src/content/skills/{skill.id}.md
+        </code>
+      </div>
+
+    </aside>
+  </div>
+
+</div>
+</Layout>
+
+<script define:vars={{ skillId: skill.id, skillCategory: skill.data.category }}>
+  try {
+    const KEY = 'ds_skill_views';
+    const raw = localStorage.getItem(KEY);
+    const views = raw ? JSON.parse(raw) : {};
+    views[skillId] = (views[skillId] ?? 0) + 1;
+    localStorage.setItem(KEY, JSON.stringify(views));
+  } catch (e) {}
+</script>

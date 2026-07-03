@@ -1,0 +1,478 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import SkillCard from '../components/SkillCard.astro';
+import GitHubSkillCard from '../components/GitHubSkillCard.astro';
+import githubSkills from '../data/github-skills.json';
+
+const allSkills = await getCollection('skills');
+const categories = ['全部', '研究洞察', '视觉生成', '组件打磨', '审查交付'];
+const skillCount = allSkills.length;
+const topGitHub = githubSkills.slice(0, 8);
+---
+
+<Layout title="Design Skills — 设计师 + AI Agent 双栖 Skill 平台">
+
+  <!-- ══ HERO ══════════════════════════════════ -->
+  <section style="
+    background-color: #EEF2FF;
+    background-image: linear-gradient(160deg, #EEF2FF 0%, #F0F7FF 40%, #EDF5FF 70%, #F5F0FF 100%);
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+  ">
+    <!-- 白点纹理层 -->
+    <div style="position: absolute; inset: 0; background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px); background-size: 22px 22px; opacity: 0.6; pointer-events: none;"></div>
+    <div style="max-width: 760px; margin: 0 auto; padding: 64px 24px 56px; text-align: center; position: relative;">
+
+      <!-- 顶标签 -->
+      <p style="font-size: 11px; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: #7C9CBF; margin-bottom: 20px; font-family: 'PingFang SC', 'Helvetica Neue', sans-serif;">
+        UX DESIGN · SKILLS · AI WORKFLOW
+      </p>
+
+      <!-- 主标题 -->
+      <h1 style="font-size: clamp(26px, 4.5vw, 46px); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 16px; color: #0A0A0A;">
+        设计师的<span style="color: #002FA7;">「Skill 工作台」</span>
+      </h1>
+
+      <!-- 辅助描述 -->
+      <p style="font-size: 15px; color: #A3A3A3; line-height: 1.7; max-width: 520px; margin: 0 auto 32px;">
+        从用户研究到体验评审，沉淀高频设计场景，让每一次设计判断都有方法可依
+      </p>
+
+      <!-- 搜索框 -->
+      <div style="position: relative; max-width: 480px; margin: 0 auto;">
+        <svg style="position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; color: #A3A3A3; pointer-events: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <input
+          id="hero-search"
+          type="text"
+          placeholder="搜索你感兴趣的 Skill…"
+          autocomplete="off"
+          style="
+            width: 100%; box-sizing: border-box;
+            padding: 13px 52px 13px 46px;
+            background: #fff;
+            border: 1.5px solid #E0E7FF;
+            border-radius: 50px;
+            color: #0A0A0A;
+            font-size: 14px;
+            font-family: inherit;
+            outline: none;
+            box-shadow: 0 2px 16px rgba(0,47,167,0.08);
+            transition: border-color 0.2s, box-shadow 0.2s;
+          "
+          onfocus="this.style.borderColor='#002FA7';this.style.boxShadow='0 2px 20px rgba(0,47,167,0.15)'"
+          onblur="this.style.borderColor='#E0E7FF';this.style.boxShadow='0 2px 16px rgba(0,47,167,0.08)'"
+        />
+        <button style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; background: #002FA7; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;"
+          onclick="document.getElementById('hero-search').dispatchEvent(new Event('input'))"
+        >
+          <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="white">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ 精选 SKILL ══════════════════════════════ -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;">
+    <!-- 区块标题行 -->
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">
+          精选 Skill
+        </h2>
+        <p style="font-size: 13px; color: #A3A3A3;" id="featured-label">按浏览频率自动排序</p>
+      </div>
+      <a href="#skills-grid" style="font-size: 13px; color: #737373; text-decoration: none;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#737373'">查看全部 →</a>
+    </div>
+
+    <div
+      id="featured-grid"
+      style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;"
+      data-skills={JSON.stringify(allSkills.map(s => ({
+        id: s.id,
+        title: s.data.title,
+        category: s.data.category,
+        description: s.data.description,
+        tags: s.data.tags,
+        difficulty: s.data.difficulty
+      })))}
+    >
+      {allSkills.slice(0, 4).map(skill => (
+        <SkillCard skill={skill} />
+      ))}
+    </div>
+  </section>
+
+  <!-- 分隔 -->
+  <div style="border-top: 1px solid #E5E5E5;"></div>
+
+  <!-- ══ GITHUB 热门 ══════════════════════════════ -->
+  {topGitHub.length > 0 && (
+    <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;">
+      <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;">
+        <div>
+          <h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">
+            GitHub 精选设计 Skill
+          </h2>
+          <p style="font-size: 13px; color: #A3A3A3;">构建时自动拉取 · 按 ⭐ 星数排序</p>
+        </div>
+        <a
+          href="https://github.com/search?q=design+skill&type=repositories&sort=stars"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size: 13px; color: #737373; text-decoration: none;"
+          onmouseover="this.style.color='#002FA7'"
+          onmouseout="this.style.color='#737373'"
+        >
+          在 GitHub 搜索更多 →
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;">
+        {topGitHub.map((repo: any) => (
+          <GitHubSkillCard
+            name={repo.name}
+            fullName={repo.fullName}
+            description={repo.description}
+            stars={repo.stars}
+            starsFormatted={repo.starsFormatted}
+            url={repo.url}
+            owner={repo.owner}
+            ownerAvatar={repo.ownerAvatar}
+            language={repo.language}
+            topics={repo.topics}
+            category={repo.category}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- 分隔 -->
+  <div style="border-top: 1px solid #E5E5E5;"></div>
+
+  <!-- ══ 全部 SKILL ══════════════════════════════ -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px;" id="skills-grid">
+    <!-- 标题行 -->
+    <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;">
+      <h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em;">全部 Skill</h2>
+      <span id="skill-count-label" style="font-size: 13px; color: #A3A3A3;">{skillCount} 个</span>
+    </div>
+
+    <!-- 分类 Tab（滚动时固定）-->
+    <div
+      style="display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 12px 0; position: sticky; top: 56px; background: #fff; z-index: 10; border-bottom: 1px solid #F0F0F0; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px;"
+      id="category-tabs"
+    >
+      <!-- 左侧分类 tabs -->
+      <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+        {categories.map((cat, i) => (
+          <button
+            class="cat-tab"
+            data-category={cat}
+            style={`
+              font-size: 13px;
+              font-weight: 500;
+              padding: 6px 14px;
+              border-radius: 20px;
+              border: 1.5px solid ${i === 0 ? '#002FA7' : '#E5E5E5'};
+              background: ${i === 0 ? '#002FA7' : 'transparent'};
+              color: ${i === 0 ? '#fff' : '#525252'};
+              cursor: pointer;
+              transition: all 0.15s;
+              font-family: inherit;
+            `}
+          >
+            {cat}
+            {cat !== '全部' && (
+              <span style={`margin-left: 4px; opacity: 0.6; font-size: 11px;`}>
+                {allSkills.filter(s => s.data.category === cat).length}
+              </span>
+            )}
+          </button>
+        ))}
+      </div>
+
+      <!-- 右侧排序下拉 -->
+      <div style="position: relative; flex-shrink: 0;" id="sort-dropdown-wrap">
+        <button
+          id="sort-trigger"
+          style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #525252; background: #F7F7F7; border: 1.5px solid #E5E5E5; border-radius: 20px; padding: 6px 14px; cursor: pointer; font-family: inherit; transition: border-color 0.15s;"
+        >
+          <span id="sort-label">综合排序</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="transition: transform 0.2s;" id="sort-arrow">
+            <path d="M2 4l4 4 4-4" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <!-- 下拉菜单 -->
+        <div
+          id="sort-menu"
+          style="display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid #E5E5E5; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 130px; overflow: hidden; z-index: 100;"
+        >
+          {[{key:'default',label:'综合排序'},{key:'newest',label:'最新发布'},{key:'views',label:'最多浏览'},{key:'az',label:'最多使用'}].map(opt => (
+            <button
+              class="sort-opt"
+              data-sort={opt.key}
+              style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;"
+              onmouseover="this.style.background='#F7F7F7'"
+              onmouseout="this.style.background='transparent'"
+            >{opt.label}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- 卡片网格 -->
+    <div
+      id="skills-grid-inner"
+      style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;"
+    >
+      {allSkills.map((skill, index) => (
+        <div
+          class="skill-item"
+          data-category={skill.data.category}
+          data-title={skill.data.title.toLowerCase()}
+          data-tags={skill.data.tags.join(' ').toLowerCase()}
+          data-id={skill.id}
+          data-updated={skill.data.updated ?? ''}
+        >
+          <SkillCard skill={skill} />
+        </div>
+      ))}
+    </div>
+
+    <!-- 空状态 -->
+    <div id="empty-state" style="display: none; text-align: center; padding: 80px 0;">
+      <p style="font-size: 14px; color: #A3A3A3;">搜不到相关 Skill，换个关键词试试吧</p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // 首页：Hero 搜索可见时隐藏 Header 搜索；滚出后显示 Header 搜索
+  const headerSearch = document.getElementById('header-search');
+  const headerSearchWrap = headerSearch?.closest('div') as HTMLElement | null;
+  const heroSearchEl = document.getElementById('hero-search');
+
+  if (headerSearchWrap) {
+    // 初始隐藏
+    headerSearchWrap.style.display = 'none';
+
+    if (heroSearchEl) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          // Hero 搜索不可见时，Header 搜索淡入显示
+          if (!entry.isIntersecting) {
+            headerSearchWrap.style.display = '';
+            // 同步搜索词
+            if (headerSearch) headerSearch.value = (heroSearchEl as HTMLInputElement).value;
+          } else {
+            headerSearchWrap.style.display = 'none';
+          }
+        },
+        { threshold: 0.1 }
+      );
+      observer.observe(heroSearchEl);
+
+      // Header 搜索也联动过滤
+      if (headerSearch) {
+        headerSearch.addEventListener('input', () => {
+          currentQuery = (headerSearch as HTMLInputElement).value.toLowerCase();
+          (heroSearchEl as HTMLInputElement).value = (headerSearch as HTMLInputElement).value;
+          applyFilter();
+        });
+      }
+    }
+  }
+
+  // 分类切换
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.cat-tab');
+  const items = document.querySelectorAll<HTMLElement>('.skill-item');
+  const empty = document.getElementById('empty-state')!;
+  const countLabel = document.getElementById('skill-count-label')!;
+
+  let currentCat = '全部';
+  let currentQuery = '';
+
+  function applyFilter() {
+    let vis = 0;
+    items.forEach(it => {
+      const catMatch = currentCat === '全部' || it.dataset.category === currentCat;
+      const q = currentQuery.trim().toLowerCase();
+      const searchMatch = !q ||
+        (it.dataset.title ?? '').includes(q) ||
+        (it.dataset.category ?? '').includes(q) ||
+        (it.dataset.tags ?? '').includes(q);
+      const show = catMatch && searchMatch;
+      it.style.display = show ? '' : 'none';
+      if (show) vis++;
+    });
+    countLabel.textContent = `${vis} 个`;
+    empty.style.display = vis > 0 ? 'none' : 'block';
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      currentCat = tab.dataset.category!;
+      tabs.forEach(t => {
+        t.style.background = 'transparent';
+        t.style.borderColor = '#E5E5E5';
+        t.style.color = '#525252';
+      });
+      tab.style.background = '#002FA7';
+      tab.style.borderColor = '#002FA7';
+      tab.style.color = '#fff';
+      applyFilter();
+    });
+  });
+
+  // Hero 搜索框联动
+  const heroInput = document.getElementById('hero-search') as HTMLInputElement | null;
+  if (heroInput) {
+    heroInput.addEventListener('input', () => {
+      currentQuery = heroInput.value.toLowerCase();
+      applyFilter();
+      // 有搜索词时滚动到 Skill 列表区域
+      if (currentQuery) {
+        document.getElementById('skill-count-label')?.closest('section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+
+  // 精选 Skill：localStorage 排序
+  (function () {
+    try {
+      const raw = localStorage.getItem('ds_skill_views');
+      if (!raw) return;
+      const views: Record<string, number> = JSON.parse(raw);
+      const topIds = Object.entries(views)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 4).map(([id]) => id);
+      if (topIds.length < 2) return;
+
+      const grid = document.getElementById('featured-grid')!;
+      const all: any[] = JSON.parse(grid.dataset.skills || '[]');
+      const map = Object.fromEntries(all.map(s => [s.id, s]));
+      const featured = topIds.map(id => map[id]).filter(Boolean);
+      if (featured.length < 2) return;
+
+      const label = document.getElementById('featured-label');
+      if (label) label.textContent = '根据你的浏览记录推荐';
+
+      // 轻量 HTML 替换
+      const catColors: Record<string, { bg: string; dot: string; textColor: string; en: string }> = {
+        '研究洞察': { bg: '#E0F6FF', dot: '#0284C7', textColor: '#082F49', en: 'RESEARCH' },
+        '视觉生成': { bg: '#E8EEFF', dot: '#002FA7', textColor: '#001057', en: 'VISUAL' },
+        '组件打磨': { bg: '#ECFDF5', dot: '#059669', textColor: '#064E3B', en: 'COMPONENT' },
+        '审查交付': { bg: '#FFF4ED', dot: '#EA580C', textColor: '#431407', en: 'REVIEW' },
+      };
+      grid.innerHTML = featured.map(s => {
+        const cc = catColors[s.category] || catColors['视觉生成'];
+        const titleLen = s.title.length;
+        const fontSize = titleLen <= 4 ? 34 : titleLen <= 6 ? 30 : 26;
+        return `
+        <a href="/design-skills/skills/${s.id}"
+          style="display:block;text-decoration:none;background:#fff;border:1px solid #E5E5E5;border-radius:12px;overflow:hidden;transition:box-shadow 0.2s,transform 0.2s;"
+          onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.transform='translateY(-2px)'"
+          onmouseout="this.style.boxShadow='none';this.style.transform='translateY(0)'"
+        >
+          <div style="width:100%;aspect-ratio:16/9;background:${cc.bg};border-radius:12px 12px 0 0;overflow:hidden;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:16px;user-select:none;">
+            <div style="position:absolute;right:-8px;bottom:-8px;font-size:80px;font-weight:900;line-height:1;color:${cc.dot};opacity:0.07;letter-spacing:-0.04em;font-family:'DM Sans',sans-serif;pointer-events:none;white-space:nowrap;">${cc.en}</div>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <span style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:${cc.dot};color:#fff;padding:3px 8px;border-radius:4px;font-family:'DM Mono',monospace;">${s.category}</span>
+            </div>
+            <div style="flex:1;display:flex;align-items:center;padding:8px 0;overflow:hidden;">
+              <span style="font-size:${fontSize}px;font-weight:700;color:${cc.textColor};line-height:1.15;letter-spacing:-0.03em;font-family:'DM Sans',-apple-system,'PingFang SC',sans-serif;position:relative;z-index:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${s.title}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;padding-top:4px;">
+              <div style="height:2px;width:24px;background:${cc.dot};border-radius:1px;flex-shrink:0;"></div>
+              <span style="font-size:10px;font-weight:500;letter-spacing:0.1em;color:${cc.dot};opacity:0.6;font-family:'DM Mono',monospace;text-transform:uppercase;">${s.id.replace(/-/g,' ')}</span>
+            </div>
+          </div>
+          <div style="padding:14px 16px 16px;">
+            <h2 style="font-size:15px;font-weight:600;color:#0A0A0A;line-height:1.35;margin-bottom:6px;letter-spacing:-0.01em;">${s.title}</h2>
+            <p style="font-size:13px;color:#737373;line-height:1.6;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin:0;">${s.description}</p>
+          </div>
+        </a>
+      `}).join('');
+    } catch (e) {}
+  })();
+
+  // ── 排序下拉 ────────────────────────────────────────
+  let currentSort = 'default';
+
+  function toggleSortMenu() {
+    const menu = document.getElementById('sort-menu')!;
+    const arrow = document.getElementById('sort-arrow')!;
+    const isOpen = menu.style.display === 'block';
+    menu.style.display = isOpen ? 'none' : 'block';
+    arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+
+  // 绑定触发按钮
+  document.getElementById('sort-trigger')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSortMenu();
+  });
+
+  // 点外部关闭
+  document.addEventListener('click', (e) => {
+    const wrap = document.getElementById('sort-dropdown-wrap');
+    if (wrap && !wrap.contains(e.target as Node)) {
+      const menu = document.getElementById('sort-menu')!;
+      const arrow = document.getElementById('sort-arrow')!;
+      menu.style.display = 'none';
+      arrow.style.transform = '';
+    }
+  });
+
+  function applySort() {
+    const grid = document.getElementById('skills-grid-inner')!;
+    const allItems = Array.from(grid.querySelectorAll<HTMLElement>('.skill-item'));
+    if (currentSort === 'default') {
+      // 恢复 DOM 顺序
+      allItems.sort((a, b) => {
+        return (parseInt(a.dataset.index || '0') - parseInt(b.dataset.index || '0'));
+      });
+    } else if (currentSort === 'newest') {
+      allItems.sort((a, b) => (b.dataset.updated || '').localeCompare(a.dataset.updated || ''));
+    } else if (currentSort === 'views') {
+      const raw = localStorage.getItem('ds_skill_views');
+      const views: Record<string, number> = raw ? JSON.parse(raw) : {};
+      allItems.sort((a, b) => (views[b.dataset.id || ''] || 0) - (views[a.dataset.id || ''] || 0));
+    } else if (currentSort === 'az') {
+      allItems.sort((a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '', 'zh'));
+    }
+    allItems.forEach(el => grid.appendChild(el));
+  }
+
+  // 给每个 skill-item 加 index / id / updated data 属性
+  document.querySelectorAll<HTMLElement>('.skill-item').forEach((el, i) => {
+    el.dataset.index = String(i);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentSort = btn.dataset.sort || 'default';
+      // 高亮选中项
+      document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(b => {
+        b.style.color = '#0A0A0A';
+        b.style.fontWeight = '400';
+      });
+      btn.style.color = '#002FA7';
+      btn.style.fontWeight = '600';
+      // 更新按钮文字
+      const labelEl = document.getElementById('sort-label');
+      if (labelEl) labelEl.textContent = btn.textContent?.trim() || '综合排序';
+      // 关闭菜单
+      toggleSortMenu();
+      applySort();
+    });
+  });
+</script>

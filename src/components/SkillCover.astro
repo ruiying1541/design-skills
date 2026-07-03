@@ -1,0 +1,105 @@
+---
+// SkillCover.astro — editorial 风格：浅色底 + 类别色块 + 超大标题
+import { getCategoryColor } from '../utils/categoryColors';
+
+interface Props {
+  category: string;
+  name: string;
+  tags: string[];
+  title: string;
+}
+
+const { category, title, name } = Astro.props;
+
+const c = getCategoryColor(category);
+const titleLen = title.length;
+const fontSize = titleLen <= 4 ? 34 : titleLen <= 6 ? 30 : 26;
+---
+
+<div
+  class="skill-cover-wrap"
+  style={`
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: ${c.bg};
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  `}
+>
+  <!-- 右下角装饰英文大字（极低透明度叠底）-->
+  <div style={`
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: ${c.dot};
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  `}>
+    {c.en}
+  </div>
+
+  <!-- 顶部：category label -->
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <span style={`
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: ${c.dot};
+      color: ${c.labelText};
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    `}>
+      {category}
+    </span>
+  </div>
+
+  <!-- 中间：主标题大字 -->
+  <div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;">
+    <h3 style={`
+      font-size: ${fontSize}px;
+      font-weight: 700;
+      color: ${c.titleColor};
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    `}>
+      {title}
+    </h3>
+  </div>
+
+  <!-- 底部：英文 name + 色条 -->
+  <div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;">
+    <div style={`height: 2px; width: 24px; background: ${c.dot}; border-radius: 1px; flex-shrink: 0;`}></div>
+    <span style={`
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: ${c.dot};
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    `}>
+      {name.replace(/-/g, ' ')}
+    </span>
+  </div>
+</div>

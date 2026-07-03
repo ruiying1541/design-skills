@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allSkills = await getCollection('skills');
+const categories = [...new Set(allSkills.map(s => s.data.category))];
+---
+
+<Layout title="关于 Design Skills">
+
+  <!-- Hero -->
+  <section style="background: linear-gradient(160deg,#EEF2FF 0%,#F0F7FF 50%,#F5F0FF 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 48px; text-align: center;">
+    <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.14em; color: #7C9CBF; margin-bottom: 16px; font-family: 'DM Mono', monospace;">DESIGN SKILLS · ABOUT</p>
+    <h1 style="font-size: clamp(24px, 4vw, 40px); font-weight: 800; color: #0A0A0A; letter-spacing: -0.03em; margin-bottom: 12px;">
+      关于 <span style="color: #002FA7;">Design Skills</span>
+    </h1>
+    <p style="font-size: 15px; color: #525252; max-width: 520px; margin: 0 auto; line-height: 1.75;">
+      面向设计师与 AI Agent 双栖的 Skill 平台，每一个 Skill 同时照顾人类阅读体验与 AI 调用需求。
+    </p>
+  </section>
+
+  <div style="max-width: 860px; margin: 0 auto; padding: 48px 24px 80px;">
+
+    <!-- 统计数字 -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 52px;">
+      {[
+        { num: String(allSkills.length), label: '个 Skill', dot: '#002FA7' },
+        { num: String(categories.length), label: '个分类', dot: '#059669' },
+        { num: '∞', label: '持续更新', dot: '#EA580C' },
+      ].map(item => (
+        <div style={`background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 28px 20px; text-align: center; position: relative; overflow: hidden;`}>
+          <div style={`position: absolute; top: 0; left: 0; right: 0; height: 3px; background: ${item.dot};`}></div>
+          <div style={`font-size: 36px; font-weight: 800; color: ${item.dot}; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; font-family: 'DM Sans', sans-serif;`}>{item.num}</div>
+          <div style="font-size: 13px; color: #737373;">{item.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- 核心理念 -->
+    <section style="margin-bottom: 48px;">
+      <h2 style="font-size: 18px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">核心理念</h2>
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        {[
+          { icon: '👁', title: '人可读', color: '#E8EEFF', dot: '#002FA7', desc: '每个 Skill 都有清晰的正文说明、示例和实践建议，设计师可以直接学习参考。' },
+          { icon: '🤖', title: 'AI 可调用', color: '#ECFDF5', dot: '#059669', desc: '每个 Skill 包含结构化 frontmatter，定义 AI 触发场景和预期产出，可直接被 AI Agent 调用。' },
+          { icon: '🔄', title: '持续更新', color: '#FFF4ED', dot: '#EA580C', desc: 'Skill 库随设计行业发展持续扩充，每个 Skill 跟随最新规范迭代。' },
+        ].map(item => (
+          <div style={`display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 20px;`}>
+            <div style={`width: 40px; height: 40px; border-radius: 10px; background: ${item.color}; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0;`}>{item.icon}</div>
+            <div>
+              <h3 style={`font-size: 14px; font-weight: 700; color: ${item.dot}; margin-bottom: 4px;`}>{item.title}</h3>
+              <p style="font-size: 14px; color: #525252; line-height: 1.7;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- AI 调用指南 -->
+    <section style="margin-bottom: 48px;">
+      <h2 style="font-size: 18px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">AI 调用指南</h2>
+      <div style="background: #fff; border: 1px solid var(--border); border-radius: 14px; overflow: hidden;">
+        <p style="font-size: 13px; color: #737373; padding: 20px 24px 0; line-height: 1.7;">所有 Skill 都可以通过以下方式被 AI Agent 直接调用：</p>
+        <div style="display: flex; flex-direction: column; gap: 0; padding: 16px 24px 24px;">
+
+          {[
+            { step: 'Step 1', label: '读取全量索引', lang: 'GET', code: 'GET https://liruiying.github.io/design-skills/skills-index.json', color: '#002FA7', bg: '#E8EEFF' },
+            { step: 'Step 2', label: '匹配 ai_trigger 字段找到合适的 Skill', lang: 'JSON', code: `{
+  "name": "color-system",
+  "ai_trigger": ["需要为产品建立配色方案"],
+  "raw_url": "https://raw.githubusercontent.com/..."
+}`, color: '#059669', bg: '#ECFDF5' },
+            { step: 'Step 3', label: '读取 raw_url 获取完整 Skill', lang: 'GET', code: 'GET {raw_url}  →  完整 Markdown Skill 文件', color: '#EA580C', bg: '#FFF4ED' },
+          ].map(item => (
+            <div style="margin-top: 16px;">
+              <div style={`display: flex; align-items: center; gap: 8px; margin-bottom: 8px;`}>
+                <span style={`font-size: 10px; font-weight: 700; letter-spacing: 0.08em; background: ${item.bg}; color: ${item.color}; padding: 2px 8px; border-radius: 4px; font-family: 'DM Mono', monospace;`}>{item.step}</span>
+                <span style="font-size: 12px; color: #737373; font-family: 'DM Mono', monospace;">{item.label}</span>
+              </div>
+              <pre style={`background: #F7F7F7; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; font-size: 12px; color: #0A0A0A; font-family: 'DM Mono', monospace; overflow-x: auto; margin: 0; white-space: pre-wrap; word-break: break-all;`}>{item.code}</pre>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 技术栈 -->
+    <section>
+      <h2 style="font-size: 18px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);">技术栈</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+        {['Astro v5', 'TypeScript', 'GitHub Pages', 'DM Sans', 'DM Mono'].map(tech => (
+          <span style="font-size: 13px; color: #525252; border: 1px solid var(--border); background: #fff; padding: 6px 14px; border-radius: 20px; font-family: 'DM Mono', monospace;">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,86 @@
+---
+// GitHubSkillCard.astro — 浅色 editorial 风格
+
+interface Props {
+  name: string;
+  fullName: string;
+  description: string;
+  stars: number;
+  starsFormatted: string;
+  url: string;
+  owner: string;
+  ownerAvatar: string;
+  language: string | null;
+  topics: string[];
+  category: string;
+}
+
+const { name, description, starsFormatted, url, owner, ownerAvatar, language, topics, category } = Astro.props;
+
+const catColor: Record<string, string> = {
+  '视觉规范': '#4F46E5', '组件设计': '#0284C7', '交互模式': '#B45309',
+  '可访问性': '#059669', '设计流程': '#C026A0', 'AI辅助': '#7C3AED', '平台规范': '#E11D48',
+};
+const accent = catColor[category] ?? '#002FA7';
+
+const langColor: Record<string, string> = {
+  JavaScript: '#F1E05A', TypeScript: '#3178C6', Python: '#3572A5',
+  CSS: '#563D7C', HTML: '#E34C26', Markdown: '#4CAF50', Vue: '#41B883',
+};
+const lColor = language ? (langColor[language] ?? '#999') : null;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 16px;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  "
+  onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'"
+  onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"
+>
+  <!-- 顶部：头像 + 名称 + Star -->
+  <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+      <img src={ownerAvatar} alt={owner} width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy" />
+      <div style="min-width: 0;">
+        <div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{owner}</div>
+        <div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{name}</div>
+      </div>
+    </div>
+    <div style={`display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;`}>
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      <span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">{starsFormatted}</span>
+    </div>
+  </div>
+
+  <!-- 描述 -->
+  <p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">
+    {description}
+  </p>
+
+  <!-- 底部：category + language + topics -->
+  <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;">
+    <span style={`font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: ${accent}14; color: ${accent}; border: 1px solid ${accent}25; letter-spacing: 0.02em;`}>
+      {category}
+    </span>
+    {lColor && language && (
+      <div style="display: flex; align-items: center; gap: 4px;">
+        <span style={`width: 8px; height: 8px; border-radius: 50%; background: ${lColor}; display: inline-block;`}></span>
+        <span style="font-size: 11px; color: #A3A3A3;">{language}</span>
+      </div>
+    )}
+    {topics.slice(0, 2).map(t => (
+      <span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+        #{t}
+      </span>
+    ))}
+  </div>
+</a>

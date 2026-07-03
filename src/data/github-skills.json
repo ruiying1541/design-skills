@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1106996539,
+    "name": "ui-ux-pro-max-skill",
+    "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "description": "An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms",
+    "stars": 100180,
+    "starsFormatted": "100.2k",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "owner": "nextlevelbuilder",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/246974152?v=4",
+    "language": "Python",
+    "topics": [
+      "ai-skills",
+      "antigravity",
+      "claude",
+      "claude-code"
+    ],
+    "updatedAt": "2026-07-03T09:36:07Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1162099055,
+    "name": "taste-skill",
+    "fullName": "Leonxlnx/taste-skill",
+    "description": "Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop ",
+    "stars": 55271,
+    "starsFormatted": "55.3k",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "owner": "Leonxlnx",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/219127460?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "agent",
+      "ai",
+      "claude",
+      "claude-code"
+    ],
+    "updatedAt": "2026-07-03T09:36:19Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1261650101,
+    "name": "baoyu-design",
+    "fullName": "JimLiu/baoyu-design",
+    "description": "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.",
+    "stars": 2251,
+    "starsFormatted": "2.3k",
+    "url": "https://github.com/JimLiu/baoyu-design",
+    "owner": "JimLiu",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/648674?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "agent-skills",
+      "claude",
+      "claude-code",
+      "claude-design"
+    ],
+    "updatedAt": "2026-07-03T08:22:45Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1175316550,
+    "name": "designer-skills",
+    "fullName": "Owl-Listener/designer-skills",
+    "description": "Designer Skills Collection: agentic skills, commands, and plugins for design — from research to systems, UI, interaction, and delivery.",
+    "stars": 1719,
+    "starsFormatted": "1.7k",
+    "url": "https://github.com/Owl-Listener/designer-skills",
+    "owner": "Owl-Listener",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/200631076?v=4",
+    "language": "Markdown",
+    "topics": [
+      "agentic",
+      "agentic-ai",
+      "ai",
+      "ai-tools"
+    ],
+    "updatedAt": "2026-07-03T08:04:43Z",
+    "category": "组件设计"
+  },
+  {
+    "id": 1203405919,
+    "name": "styleseed",
+    "fullName": "bitjaru/styleseed",
+    "description": "Design engine for Claude Code, Codex & Cursor — teaches design judgment, not just data. 74 rules, 48 components, 7 brand skins (Toss/Stripe/Linear/Notion/Raycast/Arc/Vercel), a named motion system (5 seeds + 20+ moves), 15 /ss-* skills. Stop shipping AI UI that looks generated. MIT.",
+    "stars": 637,
+    "starsFormatted": "637",
+    "url": "https://github.com/bitjaru/styleseed",
+    "owner": "bitjaru",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/23206862?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "ai-coding",
+      "ai-design",
+      "ai-ui",
+      "claude-code"
+    ],
+    "updatedAt": "2026-07-03T05:24:10Z",
+    "category": "组件设计"
+  },
+  {
+    "id": 991603125,
+    "name": "ICONIC",
+    "fullName": "YuheshPandian/ICONIC",
+    "description": "⚡A developer-oriented library of sleek, bubble-shaped skill icons designed for GitHub READMEs, portfolios, and resumes.",
+    "stars": 607,
+    "starsFormatted": "607",
+    "url": "https://github.com/YuheshPandian/ICONIC",
+    "owner": "YuheshPandian",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/168426680?v=4",
+    "language": "HTML",
+    "topics": [
+      "badges-markdown",
+      "frontend",
+      "github-profile-readme",
+      "hacktoberfest"
+    ],
+    "updatedAt": "2026-07-02T00:52:38Z",
+    "category": "平台规范"
+  },
+  {
+    "id": 618260101,
+    "name": "The-50-Front-end-Project",
+    "fullName": "SudeepAcharjee/The-50-Front-end-Project",
+    "description": "This git repository consists of a collection of 50 carefully curated frontend projects that showcase your skills and creativity as a frontend developer. Each project is unique and visually stunning, demonstrating your proficiency in a wide range of technologies and design principles",
+    "stars": 545,
+    "starsFormatted": "545",
+    "url": "https://github.com/SudeepAcharjee/The-50-Front-end-Project",
+    "owner": "SudeepAcharjee",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/112026180?v=4",
+    "language": "CSS",
+    "topics": [
+      "bootstrap",
+      "css",
+      "html5",
+      "js"
+    ],
+    "updatedAt": "2026-06-30T03:44:05Z",
+    "category": "视觉规范"
+  },
+  {
+    "id": 1183286798,
+    "name": "ux-ui-agent-skills",
+    "fullName": "plugin87/ux-ui-agent-skills",
+    "description": "Turn Claude into a Senior Design Architect — DTCG design tokens, 42 components, WCAG 2.2 accessibility, any-framework code, 138 design systems, and runnable skills.",
+    "stars": 438,
+    "starsFormatted": "438",
+    "url": "https://github.com/plugin87/ux-ui-agent-skills",
+    "owner": "plugin87",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/5790381?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "accessibility",
+      "ai-agents",
+      "claude",
+      "claude-code"
+    ],
+    "updatedAt": "2026-07-03T02:04:47Z",
+    "category": "可访问性"
+  },
+  {
+    "id": 1221781531,
+    "name": "opencode-power-pack",
+    "fullName": "waybarrios/opencode-power-pack",
+    "description": "Eleven Claude Code skills ported to OpenCode: code-review, security-review, feature-dev, frontend-design + 7 more. One config line, one plugin.",
+    "stars": 412,
+    "starsFormatted": "412",
+    "url": "https://github.com/waybarrios/opencode-power-pack",
+    "owner": "waybarrios",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/6794828?v=4",
+    "language": "JavaScript",
+    "topics": [
+      "ai-agents",
+      "anthropic",
+      "claude-code",
+      "code-review"
+    ],
+    "updatedAt": "2026-07-02T17:25:32Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1166239178,
+    "name": "Claude-Code-Frontend-Design-Toolkit",
+    "fullName": "wilwaldon/Claude-Code-Frontend-Design-Toolkit",
+    "description": "Everything I've found that actually makes Claude Code output better-looking frontends. Skills, plugins, MCP servers, CLAUDE.md tricks",
+    "stars": 396,
+    "starsFormatted": "396",
+    "url": "https://github.com/wilwaldon/Claude-Code-Frontend-Design-Toolkit",
+    "owner": "wilwaldon",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/491315?v=4",
+    "language": null,
+    "topics": [],
+    "updatedAt": "2026-06-29T09:49:11Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1209586916,
+    "name": "awesome-claude-code-skills",
+    "fullName": "helloianneo/awesome-claude-code-skills",
+    "description": "Claude Code 最实用的 Skills / Agents / Plugins 精选合集 | 50+ 精选 | 按场景分类 | 带推荐等级 | 复制即装",
+    "stars": 327,
+    "starsFormatted": "327",
+    "url": "https://github.com/helloianneo/awesome-claude-code-skills",
+    "owner": "helloianneo",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/89686060?v=4",
+    "language": null,
+    "topics": [
+      "ai-agents",
+      "awesome",
+      "awesome-list",
+      "claude"
+    ],
+    "updatedAt": "2026-07-03T07:15:20Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1219690829,
+    "name": "draw-ui",
+    "fullName": "oil-oil/draw-ui",
+    "description": "Claude Code skill: generate UI design mockups with GPT Image 2 via ZenMux",
+    "stars": 244,
+    "starsFormatted": "244",
+    "url": "https://github.com/oil-oil/draw-ui",
+    "owner": "oil-oil",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/57465570?v=4",
+    "language": "Python",
+    "topics": [],
+    "updatedAt": "2026-07-03T01:49:35Z",
+    "category": "AI辅助"
+  },
+  {
+    "id": 1225990269,
+    "name": "claude2figma",
+    "fullName": "senlindesign/claude2figma",
+    "description": "An enforcement layer for Claude Code + Figma — 4 skills that keep AI on your Design System rails. Components stay linked, tokens stay bound, nothing goes off-spec.",
+    "stars": 173,
+    "starsFormatted": "173",
+    "url": "https://github.com/senlindesign/claude2figma",
+    "owner": "senlindesign",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/29153002?v=4",
+    "language": null,
+    "topics": [],
+    "updatedAt": "2026-06-30T16:59:00Z",
+    "category": "组件设计"
+  },
+  {
+    "id": 1150376554,
+    "name": "refero_skill",
+    "fullName": "referodesign/refero_skill",
+    "description": "Research-first design skill for AI agents. 150K+ real app screens and flows via Refero MCP.",
+    "stars": 147,
+    "starsFormatted": "147",
+    "url": "https://github.com/referodesign/refero_skill",
+    "owner": "referodesign",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/103418527?v=4",
+    "language": null,
+    "topics": [
+      "agent",
+      "agent-skills",
+      "claude",
+      "cursor"
+    ],
+    "updatedAt": "2026-07-02T12:50:36Z",
+    "category": "设计流程"
+  },
+  {
+    "id": 1225207930,
+    "name": "swiftui-design-skill",
+    "fullName": "Wholiver/swiftui-design-skill",
+    "description": "SwiftUI Front-End Design Skills — Six Ironclad Rules Against AI Sloppiness, Design Direction Consulting, Brand Asset Guidelines, and Five-Dimensional Review. Supports all AI agent platforms, including Claude Code, Cursor, Codex, and OpenCode.",
+    "stars": 141,
+    "starsFormatted": "141",
+    "url": "https://github.com/Wholiver/swiftui-design-skill",
+    "owner": "Wholiver",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/126302682?v=4",
+    "language": null,
+    "topics": [
+      "accessibility",
+      "agent-skill",
+      "ai-slop",
+      "claude-code"
+    ],
+    "updatedAt": "2026-07-03T01:26:59Z",
+    "category": "可访问性"
+  },
+  {
+    "id": 1242899551,
+    "name": "anydesign",
+    "fullName": "uxKero/anydesign",
+    "description": "Claude skill that analyzes images, websites, and Figma files and generates a structured design.md with token system, component inventory, and reconstruction notes.",
+    "stars": 126,
+    "starsFormatted": "126",
+    "url": "https://github.com/uxKero/anydesign",
+    "owner": "uxKero",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/85013037?v=4",
+    "language": "Python",
+    "topics": [
+      "ai-agents",
+      "anthropic",
+      "claude-code",
+      "claude-skill"
+    ],
+    "updatedAt": "2026-07-02T20:11:46Z",
+    "category": "组件设计"
+  },
+  {
+    "id": 1176803291,
+    "name": "design-md-figma",
+    "fullName": "bergside/design-md-figma",
+    "description": "Figma plugin that extracts local style guidelines and generates DESIGN.md and SKILL.md files for AI tools such as Claude Code, Codex, Cursor, and other AI tools",
+    "stars": 125,
+    "starsFormatted": "125",
+    "url": "https://github.com/bergside/design-md-figma",
+    "owner": "bergside",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/109292896?v=4",
+    "language": "TypeScript",
+    "topics": [
+      "agentic",
+      "agents",
+      "agentskills",
+      "design"
+    ],
+    "updatedAt": "2026-07-01T19:38:21Z",
+    "category": "组件设计"
+  },
+  {
+    "id": 1209719234,
+    "name": "prototype-to-figma-skill",
+    "fullName": "alima-max/prototype-to-figma-skill",
+    "description": "Claude skill: Prototype → Figma. Analyzes a Claude Code prototype, maps components to your Figma design system via search + Code Connect, explodes each interaction flow into state-by-state frames, and annotates triggers, transitions, and edge cases, making prototypes reviewable by PMs, designers, and engineers without running code.",
+    "stars": 123,
+    "starsFormatted": "123",
+    "url": "https://github.com/alima-max/prototype-to-figma-skill",
+    "owner": "alima-max",
+    "ownerAvatar": "https://avatars.githubusercontent.com/u/243645778?v=4",
+    "language": null,
+    "topics": [],
+    "updatedAt": "2026-07-02T12:28:03Z",
+    "category": "组件设计"
+  }
+]
