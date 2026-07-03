@@ -94,6 +94,8 @@ const base = '/design-skills';
 
     /* ── Pagefind ── */
     .pagefind-ui { --pagefind-ui-primary: var(--blue); }
+    /* 首页隐藏 Header 搜索（由 JS 控制，先隐藏防闪烁）*/
+    html[data-page="index"] #header-search-wrap { visibility: hidden; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
   </style>
 </head>
 <body>
@@ -105,7 +107,7 @@ const base = '/design-skills';
         <span style="font-weight: 600; color: var(--text); font-size: 15px; letter-spacing: -0.02em;">Design Skills</span>
       </a>
       <!-- 搜索框 -->
-      <div style="flex: 1; max-width: 340px; margin: 0 32px; position: relative;">
+      <div id="header-search-wrap" style="flex: 1; max-width: 340px; margin: 0 32px; position: relative;">
         <svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; color: var(--text-3); pointer-events: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
         </svg>
@@ -153,42 +155,5 @@ const base = '/design-skills';
     </div>
   </footer>
 
-  <script>
-    // Header 搜索框：触发首页卡片过滤
-    const headerSearch = document.getElementById('header-search') as HTMLInputElement | null;
-    if (headerSearch) {
-      headerSearch.addEventListener('input', () => {
-        const q = headerSearch.value.trim().toLowerCase();
-        // 同步到首页搜索逻辑（如果在首页）
-        const items = document.querySelectorAll<HTMLElement>('.skill-item');
-        const empty = document.getElementById('empty-state');
-        const countLabel = document.getElementById('skill-count-label');
-        if (!items.length) return;
-
-        let vis = 0;
-        items.forEach(it => {
-          const catMatch = (it as any)._currentCat
-            ? (it as any)._currentCat === '全部' || it.dataset.category === (it as any)._currentCat
-            : true;
-          const searchMatch = !q ||
-            (it.dataset.title ?? '').includes(q) ||
-            (it.dataset.category ?? '').includes(q) ||
-            (it.dataset.tags ?? '').includes(q);
-          // 只用搜索过滤，不干扰 cat tab 状态
-          const show = searchMatch;
-          it.dataset.searchHidden = show ? '0' : '1';
-          it.style.display = show ? '' : 'none';
-          if (show) vis++;
-        });
-        if (countLabel) countLabel.textContent = `${vis} 个`;
-        if (empty) empty.style.display = vis > 0 ? 'none' : 'block';
-
-        // 有内容时滚到卡片区
-        if (q) {
-          document.getElementById('skills-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    }
-  </script>
 </body>
 </html>

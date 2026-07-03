@@ -12,6 +12,8 @@ const topGitHub = githubSkills.slice(0, 8);
 ---
 
 <Layout title="Design Skills — 设计师 + AI Agent 双栖 Skill 平台">
+  <!-- 首页：立即隐藏 Header 搜索框，防止闪现 -->
+  <script is:inline>document.documentElement.setAttribute('data-page','index');</script>
 
   <!-- ══ HERO ══════════════════════════════════ -->
   <section style="
@@ -255,52 +257,18 @@ const topGitHub = githubSkills.slice(0, 8);
 </Layout>
 
 <script>
-  // 首页：Hero 搜索可见时隐藏 Header 搜索；滚出后显示 Header 搜索
-  const headerSearch = document.getElementById('header-search');
-  const headerSearchWrap = headerSearch?.closest('div') as HTMLElement | null;
-  const heroSearchEl = document.getElementById('hero-search');
-
-  if (headerSearchWrap) {
-    // 初始隐藏
-    headerSearchWrap.style.display = 'none';
-
-    if (heroSearchEl) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          // Hero 搜索不可见时，Header 搜索淡入显示
-          if (!entry.isIntersecting) {
-            headerSearchWrap.style.display = '';
-            // 同步搜索词
-            if (headerSearch) headerSearch.value = (heroSearchEl as HTMLInputElement).value;
-          } else {
-            headerSearchWrap.style.display = 'none';
-          }
-        },
-        { threshold: 0.1 }
-      );
-      observer.observe(heroSearchEl);
-
-      // Header 搜索也联动过滤
-      if (headerSearch) {
-        headerSearch.addEventListener('input', () => {
-          currentQuery = (headerSearch as HTMLInputElement).value.toLowerCase();
-          (heroSearchEl as HTMLInputElement).value = (headerSearch as HTMLInputElement).value;
-          applyFilter();
-        });
-      }
-    }
-  }
-
-  // 分类切换
+document.addEventListener('DOMContentLoaded', () => {
+  // ── 核心状态和过滤函数（最先声明）────────────────────────
   const tabs = document.querySelectorAll<HTMLButtonElement>('.cat-tab');
   const items = document.querySelectorAll<HTMLElement>('.skill-item');
-  const empty = document.getElementById('empty-state')!;
-  const countLabel = document.getElementById('skill-count-label')!;
+  const empty = document.getElementById('empty-state');
+  const countLabel = document.getElementById('skill-count-label');
 
   let currentCat = '全部';
   let currentQuery = '';
 
   function applyFilter() {
+    if (!countLabel || !empty) return;
     let vis = 0;
     items.forEach(it => {
       const catMatch = currentCat === '全部' || it.dataset.category === currentCat;
@@ -317,6 +285,7 @@ const topGitHub = githubSkills.slice(0, 8);
     empty.style.display = vis > 0 ? 'none' : 'block';
   }
 
+  // ── 分类 Tab 切换 ───────────────────────────────────────
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       currentCat = tab.dataset.category!;
@@ -332,20 +301,115 @@ const topGitHub = githubSkills.slice(0, 8);
     });
   });
 
-  // Hero 搜索框联动
+  // ── Hero 搜索框 ─────────────────────────────────────────
   const heroInput = document.getElementById('hero-search') as HTMLInputElement | null;
   if (heroInput) {
     heroInput.addEventListener('input', () => {
       currentQuery = heroInput.value.toLowerCase();
       applyFilter();
-      // 有搜索词时滚动到 Skill 列表区域
       if (currentQuery) {
         document.getElementById('skill-count-label')?.closest('section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
 
-  // 精选 Skill：localStorage 排序
+  // ── Header 搜索框（随 Hero 可见性切换）─────────────────
+  const headerSearch = document.getElementById('header-search') as HTMLInputElement | null;
+  const headerSearchWrap = document.getElementById('header-search-wrap') as HTMLElement | null;
+
+  if (headerSearchWrap && heroInput) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          document.documentElement.removeAttribute('data-page');
+          headerSearchWrap.style.visibility = 'visible';
+          headerSearchWrap.style.opacity = '1';
+          headerSearchWrap.style.pointerEvents = '';
+          if (headerSearch) headerSearch.value = heroInput.value;
+        } else {
+          document.documentElement.setAttribute('data-page', 'index');
+          headerSearchWrap.style.visibility = 'hidden';
+          headerSearchWrap.style.opacity = '0';
+          headerSearchWrap.style.pointerEvents = 'none';
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(heroInput);
+
+    if (headerSearch) {
+      headerSearch.addEventListener('input', () => {
+        currentQuery = headerSearch.value.toLowerCase();
+        heroInput.value = headerSearch.value;
+        applyFilter();
+      });
+    }
+  }
+
+  // ── 排序下拉 ────────────────────────────────────────────
+  let currentSort = 'default';
+
+  function toggleSortMenu() {
+    const menu = document.getElementById('sort-menu')!;
+    const arrow = document.getElementById('sort-arrow')!;
+    const isOpen = menu.style.display === 'block';
+    menu.style.display = isOpen ? 'none' : 'block';
+    (arrow as HTMLElement).style.transform = isOpen ? '' : 'rotate(180deg)';
+  }
+
+  document.getElementById('sort-trigger')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleSortMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    const wrap = document.getElementById('sort-dropdown-wrap');
+    if (wrap && !wrap.contains(e.target as Node)) {
+      const menu = document.getElementById('sort-menu');
+      const arrow = document.getElementById('sort-arrow');
+      if (menu) menu.style.display = 'none';
+      if (arrow) (arrow as HTMLElement).style.transform = '';
+    }
+  });
+
+  function applySort() {
+    const grid = document.getElementById('skills-grid-inner')!;
+    const allItems = Array.from(grid.querySelectorAll<HTMLElement>('.skill-item'));
+    if (currentSort === 'default') {
+      allItems.sort((a, b) => parseInt(a.dataset.index || '0') - parseInt(b.dataset.index || '0'));
+    } else if (currentSort === 'newest') {
+      allItems.sort((a, b) => (b.dataset.updated || '').localeCompare(a.dataset.updated || ''));
+    } else if (currentSort === 'views') {
+      const raw = localStorage.getItem('ds_skill_views');
+      const views: Record<string, number> = raw ? JSON.parse(raw) : {};
+      allItems.sort((a, b) => (views[b.dataset.id || ''] || 0) - (views[a.dataset.id || ''] || 0));
+    } else if (currentSort === 'az') {
+      allItems.sort((a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '', 'zh'));
+    }
+    allItems.forEach(el => grid.appendChild(el));
+  }
+
+  document.querySelectorAll<HTMLElement>('.skill-item').forEach((el, i) => {
+    el.dataset.index = String(i);
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentSort = btn.dataset.sort || 'default';
+      document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(b => {
+        b.style.color = '#0A0A0A';
+        b.style.fontWeight = '400';
+      });
+      btn.style.color = '#002FA7';
+      btn.style.fontWeight = '600';
+      const labelEl = document.getElementById('sort-label');
+      if (labelEl) labelEl.textContent = btn.textContent?.trim() || '综合排序';
+      toggleSortMenu();
+      applySort();
+    });
+  });
+
+  // ── 精选 Skill：localStorage 排序 ─────────────────────
   (function () {
     try {
       const raw = localStorage.getItem('ds_skill_views');
@@ -365,7 +429,6 @@ const topGitHub = githubSkills.slice(0, 8);
       const label = document.getElementById('featured-label');
       if (label) label.textContent = '根据你的浏览记录推荐';
 
-      // 轻量 HTML 替换
       const catColors: Record<string, { bg: string; dot: string; textColor: string; en: string }> = {
         '研究洞察': { bg: '#E0F6FF', dot: '#0284C7', textColor: '#082F49', en: 'RESEARCH' },
         '视觉生成': { bg: '#E8EEFF', dot: '#002FA7', textColor: '#001057', en: 'VISUAL' },
@@ -403,76 +466,5 @@ const topGitHub = githubSkills.slice(0, 8);
       `}).join('');
     } catch (e) {}
   })();
-
-  // ── 排序下拉 ────────────────────────────────────────
-  let currentSort = 'default';
-
-  function toggleSortMenu() {
-    const menu = document.getElementById('sort-menu')!;
-    const arrow = document.getElementById('sort-arrow')!;
-    const isOpen = menu.style.display === 'block';
-    menu.style.display = isOpen ? 'none' : 'block';
-    arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
-  }
-
-  // 绑定触发按钮
-  document.getElementById('sort-trigger')?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    toggleSortMenu();
-  });
-
-  // 点外部关闭
-  document.addEventListener('click', (e) => {
-    const wrap = document.getElementById('sort-dropdown-wrap');
-    if (wrap && !wrap.contains(e.target as Node)) {
-      const menu = document.getElementById('sort-menu')!;
-      const arrow = document.getElementById('sort-arrow')!;
-      menu.style.display = 'none';
-      arrow.style.transform = '';
-    }
-  });
-
-  function applySort() {
-    const grid = document.getElementById('skills-grid-inner')!;
-    const allItems = Array.from(grid.querySelectorAll<HTMLElement>('.skill-item'));
-    if (currentSort === 'default') {
-      // 恢复 DOM 顺序
-      allItems.sort((a, b) => {
-        return (parseInt(a.dataset.index || '0') - parseInt(b.dataset.index || '0'));
-      });
-    } else if (currentSort === 'newest') {
-      allItems.sort((a, b) => (b.dataset.updated || '').localeCompare(a.dataset.updated || ''));
-    } else if (currentSort === 'views') {
-      const raw = localStorage.getItem('ds_skill_views');
-      const views: Record<string, number> = raw ? JSON.parse(raw) : {};
-      allItems.sort((a, b) => (views[b.dataset.id || ''] || 0) - (views[a.dataset.id || ''] || 0));
-    } else if (currentSort === 'az') {
-      allItems.sort((a, b) => (a.dataset.title || '').localeCompare(b.dataset.title || '', 'zh'));
-    }
-    allItems.forEach(el => grid.appendChild(el));
-  }
-
-  // 给每个 skill-item 加 index / id / updated data 属性
-  document.querySelectorAll<HTMLElement>('.skill-item').forEach((el, i) => {
-    el.dataset.index = String(i);
-  });
-
-  document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(btn => {
-    btn.addEventListener('click', () => {
-      currentSort = btn.dataset.sort || 'default';
-      // 高亮选中项
-      document.querySelectorAll<HTMLButtonElement>('.sort-opt').forEach(b => {
-        b.style.color = '#0A0A0A';
-        b.style.fontWeight = '400';
-      });
-      btn.style.color = '#002FA7';
-      btn.style.fontWeight = '600';
-      // 更新按钮文字
-      const labelEl = document.getElementById('sort-label');
-      if (labelEl) labelEl.textContent = btn.textContent?.trim() || '综合排序';
-      // 关闭菜单
-      toggleSortMenu();
-      applySort();
-    });
-  });
+}); // DOMContentLoaded
 </script>
