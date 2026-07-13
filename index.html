@@ -28,7 +28,7 @@
             outline: none;
             box-shadow: 0 2px 16px rgba(0,47,167,0.08);
             transition: border-color 0.2s, box-shadow 0.2s;
-          " onfocus="this.style.borderColor='#002FA7';this.style.boxShadow='0 2px 20px rgba(0,47,167,0.15)'" onblur="this.style.borderColor='#E0E7FF';this.style.boxShadow='0 2px 16px rgba(0,47,167,0.08)'"><button style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; background: #002FA7; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('hero-search').dispatchEvent(new Event('input'))"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path></svg></button></div></div></section><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;"><!-- 区块标题行 --><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;"><div><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">精选 Skill</h2><p style="font-size: 13px; color: #A3A3A3;" id="featured-label">按浏览频率自动排序</p></div><a href="#skills-grid" style="font-size: 13px; color: #737373; text-decoration: none;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#737373'">查看全部 →</a></div><div id="featured-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;" data-skills="[{&quot;id&quot;:&quot;accessibility-check&quot;,&quot;title&quot;:&quot;可访问性检查&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;按 WCAG 2.1 标准检查产品的色彩对比度、键盘导航、语义标签和屏幕阅读器适配，让更多用户能无障碍使用产品。&quot;,&quot;tags&quot;:[&quot;可访问性&quot;,&quot;WCAG&quot;,&quot;对比度&quot;,&quot;a11y&quot;,&quot;无障碍&quot;,&quot;键盘导航&quot;,&quot;屏幕阅读器&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;color-system&quot;,&quot;title&quot;:&quot;色彩系统设计&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。&quot;,&quot;tags&quot;:[&quot;颜色&quot;,&quot;设计系统&quot;,&quot;品牌色&quot;,&quot;色板&quot;,&quot;语义色&quot;,&quot;Design Token&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;component-audit&quot;,&quot;title&quot;:&quot;组件库审计&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。&quot;,&quot;tags&quot;:[&quot;组件库&quot;,&quot;审计&quot;,&quot;Figma&quot;,&quot;设计系统&quot;,&quot;组件一致性&quot;,&quot;缺口分析&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;design-handoff&quot;,&quot;title&quot;:&quot;设计交付规范&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。&quot;,&quot;tags&quot;:[&quot;设计交付&quot;,&quot;Figma&quot;,&quot;标注&quot;,&quot;切图&quot;,&quot;开发协作&quot;,&quot;还原度&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designer-skills&quot;,&quot;title&quot;:&quot;全链路设计工具箱&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;63 个 Skills + 27 个命令，覆盖用户研究、设计系统、UX 策略、交互设计、原型测试、设计运营、Figma 集成全流程。&quot;,&quot;tags&quot;:[&quot;用户研究&quot;,&quot;设计系统&quot;,&quot;UX策略&quot;,&quot;Figma&quot;,&quot;原型测试&quot;,&quot;设计运营&quot;],&quot;difficulty&quot;:&quot;advanced&quot;},{&quot;id&quot;:&quot;frontend-design&quot;,&quot;title&quot;:&quot;前端界面设计&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。&quot;,&quot;tags&quot;:[&quot;前端&quot;,&quot;UI生成&quot;,&quot;组件规范&quot;,&quot;视觉原则&quot;,&quot;Design System&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;impeccable&quot;,&quot;title&quot;:&quot;设计精炼命令集&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。&quot;,&quot;tags&quot;:[&quot;设计命令&quot;,&quot;polish&quot;,&quot;audit&quot;,&quot;细节优化&quot;,&quot;设计审查&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;spacing-grid&quot;,&quot;title&quot;:&quot;间距与栅格系统&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;建立基于 4/8px 基准单位的间距系统和响应式栅格，让界面空间关系有规律可循，减少对齐决策成本。&quot;,&quot;tags&quot;:[&quot;间距&quot;,&quot;栅格&quot;,&quot;布局&quot;,&quot;8pt&quot;,&quot;响应式&quot;,&quot;设计系统&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;taste-skill&quot;,&quot;title&quot;:&quot;Taste 高级感审美&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;让 AI 具备「高级感」审美判断。专注于让界面「看起来和感觉昂贵」——高级字体、宽阔留白、层叠卡片、弹簧动画。&quot;,&quot;tags&quot;:[&quot;高级感&quot;,&quot;留白&quot;,&quot;字体&quot;,&quot;动效&quot;,&quot;品质感&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;typography&quot;,&quot;title&quot;:&quot;排版规范&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;建立产品字体系统，涵盖字号层级、行高、字重、字间距和中英文排版规则，让信息层次一目了然。&quot;,&quot;tags&quot;:[&quot;字体&quot;,&quot;排版&quot;,&quot;字号&quot;,&quot;行高&quot;,&quot;设计系统&quot;,&quot;文字规范&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;ui-design-brain&quot;,&quot;title&quot;:&quot;UI Design Brain&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;60+ 组件最佳实践，像资深设计师一样决策。用 component.gallery 精选知识库替代 AI 猜测，内含每个组件的最佳实践和反模式库。&quot;,&quot;tags&quot;:[&quot;组件最佳实践&quot;,&quot;反模式&quot;,&quot;设计决策&quot;,&quot;component.gallery&quot;,&quot;知识库&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;ui-skills&quot;,&quot;title&quot;:&quot;UI 专项检查库&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;15 个专项 Skill，模块化解决 UI 问题。包含无障碍审计、SEO 优化、动画性能、响应式布局、颜色对比度检查等 15 个独立模块，按需安装。&quot;,&quot;tags&quot;:[&quot;无障碍&quot;,&quot;SEO&quot;,&quot;动画性能&quot;,&quot;响应式&quot;,&quot;对比度检查&quot;,&quot;模块化&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;ui-ux-pro-max&quot;,&quot;title&quot;:&quot;UI/UX Pro Max&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;从 Wireframe 到高保真一步到位。50+ UI 风格、97 种调色板、57 种字体搭配、99 条 UX 指南，给 AI 一个可搜索的设计数据库。&quot;,&quot;tags&quot;:[&quot;UI风格&quot;,&quot;调色板&quot;,&quot;字体搭配&quot;,&quot;UX指南&quot;,&quot;高保真&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;ux-researcher&quot;,&quot;title&quot;:&quot;UX 研究设计&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;用户调研 + 设计改进一条龙。涵盖用户研究方法论、可用性测试、用户旅程映射、信息架构规划、设计决策文档化。&quot;,&quot;tags&quot;:[&quot;用户研究&quot;,&quot;可用性测试&quot;,&quot;用户旅程&quot;,&quot;信息架构&quot;,&quot;调研方法&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;}]"><a href="/design-skills/skills/accessibility-check" class="skill-card" style="
+          " onfocus="this.style.borderColor='#002FA7';this.style.boxShadow='0 2px 20px rgba(0,47,167,0.15)'" onblur="this.style.borderColor='#E0E7FF';this.style.boxShadow='0 2px 16px rgba(0,47,167,0.08)'"><button style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; background: #002FA7; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;" onclick="document.getElementById('hero-search').dispatchEvent(new Event('input'))"><svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="white"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"></path></svg></button></div></div></section><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;"><!-- 区块标题行 --><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;"><div><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">精选 Skill</h2><p style="font-size: 13px; color: #A3A3A3;" id="featured-label">按浏览频率自动排序</p></div><a href="#skills-grid" style="font-size: 13px; color: #737373; text-decoration: none;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#737373'">查看全部 →</a></div><div id="featured-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;" data-skills="[{&quot;id&quot;:&quot;accessibility-check&quot;,&quot;title&quot;:&quot;可访问性检查&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;按 WCAG 2.1 标准检查产品的色彩对比度、键盘导航、语义标签和屏幕阅读器适配，让更多用户能无障碍使用产品。&quot;,&quot;tags&quot;:[&quot;可访问性&quot;,&quot;WCAG&quot;,&quot;对比度&quot;,&quot;a11y&quot;,&quot;无障碍&quot;,&quot;键盘导航&quot;,&quot;屏幕阅读器&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;color-system&quot;,&quot;title&quot;:&quot;色彩系统设计&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。&quot;,&quot;tags&quot;:[&quot;颜色&quot;,&quot;设计系统&quot;,&quot;品牌色&quot;,&quot;色板&quot;,&quot;语义色&quot;,&quot;Design Token&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;component-audit&quot;,&quot;title&quot;:&quot;组件库审计&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。&quot;,&quot;tags&quot;:[&quot;组件库&quot;,&quot;审计&quot;,&quot;Figma&quot;,&quot;设计系统&quot;,&quot;组件一致性&quot;,&quot;缺口分析&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;design-ai-cutout&quot;,&quot;title&quot;:&quot;智能抠图&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;基于 AI 精准识别主体边缘，自动去除背景，输出透明底图像，支持发丝、毛发等复杂边缘细节。&quot;,&quot;tags&quot;:[&quot;抠图&quot;,&quot;去背景&quot;,&quot;透明底&quot;,&quot;图片编辑&quot;,&quot;主体识别&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;design-handoff&quot;,&quot;title&quot;:&quot;设计交付规范&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。&quot;,&quot;tags&quot;:[&quot;设计交付&quot;,&quot;Figma&quot;,&quot;标注&quot;,&quot;切图&quot;,&quot;开发协作&quot;,&quot;还原度&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-competitor-analysis&quot;,&quot;title&quot;:&quot;竞品分析&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;输入竞品信息，从功能、体验、视觉、内容策略等多个维度进行系统性拆解，生成结构清晰的分析报告。&quot;,&quot;tags&quot;:[&quot;竞品分析&quot;,&quot;用户体验&quot;,&quot;产品分析&quot;,&quot;视觉分析&quot;,&quot;策略&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;designai-format-converter&quot;,&quot;title&quot;:&quot;格式转换&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;支持图片、文档等主流文件格式快速互转，适合设计交付、素材处理和跨工具协作。&quot;,&quot;tags&quot;:[&quot;格式转换&quot;,&quot;图片格式&quot;,&quot;文档格式&quot;,&quot;交付&quot;,&quot;文件处理&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-generate-image&quot;,&quot;title&quot;:&quot;通用图像生成&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;支持文本描述生成图像，以及基于参考图的风格延展与内容再创作，适用于海报、插画、场景渲染和营销物料。&quot;,&quot;tags&quot;:[&quot;图像生成&quot;,&quot;文生图&quot;,&quot;图生图&quot;,&quot;海报&quot;,&quot;插画&quot;,&quot;营销物料&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-image-expansion&quot;,&quot;title&quot;:&quot;比例扩图&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;基于 AI 理解图像内容与场景逻辑，智能补全画面边缘，将原图扩展为任意所需比例并自然融合。&quot;,&quot;tags&quot;:[&quot;扩图&quot;,&quot;比例调整&quot;,&quot;图片编辑&quot;,&quot;Outpainting&quot;,&quot;画面补全&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-infographic-image&quot;,&quot;title&quot;:&quot;信息图生成&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;输入文字内容或结构化数据，自动完成信息提炼、逻辑排版与视觉设计，生成清晰美观的信息图。&quot;,&quot;tags&quot;:[&quot;信息图&quot;,&quot;Infographic&quot;,&quot;信息可视化&quot;,&quot;排版&quot;,&quot;内容提炼&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-ppt-html&quot;,&quot;title&quot;:&quot;PPT HTML 生成&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;在图片模式基础上升级为 HTML 格式输出，生成的 PPT 支持在线演示、链接分享与内容编辑。&quot;,&quot;tags&quot;:[&quot;PPT&quot;,&quot;HTML&quot;,&quot;在线演示&quot;,&quot;可编辑&quot;,&quot;分享&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;designai-ppt-image&quot;,&quot;title&quot;:&quot;PPT 图片生成&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;输入主题或核心内容，AI 自动生成排版、配色、结构完整的 PPT，并以图片形式输出。&quot;,&quot;tags&quot;:[&quot;PPT&quot;,&quot;演示文稿&quot;,&quot;图片模式&quot;,&quot;汇报&quot;,&quot;视觉排版&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-process-map&quot;,&quot;title&quot;:&quot;流程图与思维导图&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;输入内容描述或大纲，自动梳理逻辑关系，生成结构清晰的流程图或思维导图。&quot;,&quot;tags&quot;:[&quot;流程图&quot;,&quot;思维导图&quot;,&quot;结构化&quot;,&quot;信息架构&quot;,&quot;逻辑梳理&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;designai-reports-1&quot;,&quot;title&quot;:&quot;数据报告与图表美化&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;输入原始数据或粗糙图表，自动完成图表类型优化、配色美化与排版标准化，输出专业级数据报告。&quot;,&quot;tags&quot;:[&quot;数据报告&quot;,&quot;图表美化&quot;,&quot;数据可视化&quot;,&quot;报告设计&quot;,&quot;可视化&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;designer-skills&quot;,&quot;title&quot;:&quot;全链路设计工具箱&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;63 个 Skills + 27 个命令，覆盖用户研究、设计系统、UX 策略、交互设计、原型测试、设计运营、Figma 集成全流程。&quot;,&quot;tags&quot;:[&quot;用户研究&quot;,&quot;设计系统&quot;,&quot;UX策略&quot;,&quot;Figma&quot;,&quot;原型测试&quot;,&quot;设计运营&quot;],&quot;difficulty&quot;:&quot;advanced&quot;},{&quot;id&quot;:&quot;frontend-design&quot;,&quot;title&quot;:&quot;前端界面设计&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。&quot;,&quot;tags&quot;:[&quot;前端&quot;,&quot;UI生成&quot;,&quot;组件规范&quot;,&quot;视觉原则&quot;,&quot;Design System&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;html-animator&quot;,&quot;title&quot;:&quot;HTML 微动效&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;为静态 HTML 页面注入微交互与动画，包括淡入淡出、滚动触发、悬停反馈等，提升页面活力与专业感。&quot;,&quot;tags&quot;:[&quot;HTML&quot;,&quot;动效&quot;,&quot;微交互&quot;,&quot;CSS 动画&quot;,&quot;页面增强&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;impeccable&quot;,&quot;title&quot;:&quot;设计精炼命令集&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。&quot;,&quot;tags&quot;:[&quot;设计命令&quot;,&quot;polish&quot;,&quot;audit&quot;,&quot;细节优化&quot;,&quot;设计审查&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;pixel2motion&quot;,&quot;title&quot;:&quot;SVG 转 GIF 动图&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;上传 SVG 矢量图，AI 自动分析图形结构并生成循环动态 GIF，无需手动设置关键帧。&quot;,&quot;tags&quot;:[&quot;SVG&quot;,&quot;GIF&quot;,&quot;动图&quot;,&quot;Logo 动效&quot;,&quot;动画&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;spacing-grid&quot;,&quot;title&quot;:&quot;间距与栅格系统&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;建立基于 4/8px 基准单位的间距系统和响应式栅格，让界面空间关系有规律可循，减少对齐决策成本。&quot;,&quot;tags&quot;:[&quot;间距&quot;,&quot;栅格&quot;,&quot;布局&quot;,&quot;8pt&quot;,&quot;响应式&quot;,&quot;设计系统&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;taste-skill&quot;,&quot;title&quot;:&quot;Taste 高级感审美&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;让 AI 具备「高级感」审美判断。专注于让界面「看起来和感觉昂贵」——高级字体、宽阔留白、层叠卡片、弹簧动画。&quot;,&quot;tags&quot;:[&quot;高级感&quot;,&quot;留白&quot;,&quot;字体&quot;,&quot;动效&quot;,&quot;品质感&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;typography&quot;,&quot;title&quot;:&quot;排版规范&quot;,&quot;category&quot;:&quot;视觉生成&quot;,&quot;description&quot;:&quot;建立产品字体系统，涵盖字号层级、行高、字重、字间距和中英文排版规则，让信息层次一目了然。&quot;,&quot;tags&quot;:[&quot;字体&quot;,&quot;排版&quot;,&quot;字号&quot;,&quot;行高&quot;,&quot;设计系统&quot;,&quot;文字规范&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;ui-design-brain&quot;,&quot;title&quot;:&quot;UI Design Brain&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;60+ 组件最佳实践，像资深设计师一样决策。用 component.gallery 精选知识库替代 AI 猜测，内含每个组件的最佳实践和反模式库。&quot;,&quot;tags&quot;:[&quot;组件最佳实践&quot;,&quot;反模式&quot;,&quot;设计决策&quot;,&quot;component.gallery&quot;,&quot;知识库&quot;],&quot;difficulty&quot;:&quot;beginner&quot;},{&quot;id&quot;:&quot;ui-skills&quot;,&quot;title&quot;:&quot;UI 专项检查库&quot;,&quot;category&quot;:&quot;审查交付&quot;,&quot;description&quot;:&quot;15 个专项 Skill，模块化解决 UI 问题。包含无障碍审计、SEO 优化、动画性能、响应式布局、颜色对比度检查等 15 个独立模块，按需安装。&quot;,&quot;tags&quot;:[&quot;无障碍&quot;,&quot;SEO&quot;,&quot;动画性能&quot;,&quot;响应式&quot;,&quot;对比度检查&quot;,&quot;模块化&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;ui-ux-pro-max&quot;,&quot;title&quot;:&quot;UI/UX Pro Max&quot;,&quot;category&quot;:&quot;组件打磨&quot;,&quot;description&quot;:&quot;从 Wireframe 到高保真一步到位。50+ UI 风格、97 种调色板、57 种字体搭配、99 条 UX 指南，给 AI 一个可搜索的设计数据库。&quot;,&quot;tags&quot;:[&quot;UI风格&quot;,&quot;调色板&quot;,&quot;字体搭配&quot;,&quot;UX指南&quot;,&quot;高保真&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;},{&quot;id&quot;:&quot;ux-researcher&quot;,&quot;title&quot;:&quot;UX 研究设计&quot;,&quot;category&quot;:&quot;研究洞察&quot;,&quot;description&quot;:&quot;用户调研 + 设计改进一条龙。涵盖用户研究方法论、可用性测试、用户旅程映射、信息架构规划、设计决策文档化。&quot;,&quot;tags&quot;:[&quot;用户研究&quot;,&quot;可用性测试&quot;,&quot;用户旅程&quot;,&quot;信息架构&quot;,&quot;调研方法&quot;],&quot;difficulty&quot;:&quot;intermediate&quot;}]"><a href="/design-skills/skills/accessibility-check" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -220,7 +220,7 @@
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">component audit</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">组件库审计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">组件库</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">审计</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a><a href="/design-skills/skills/design-handoff" class="skill-card" style="
+    ">component audit</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">组件库审计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">组件库</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">审计</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a><a href="/design-skills/skills/design-ai-cutout" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -231,7 +231,7 @@
   " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
     width: 100%;
     aspect-ratio: 16/9;
-    background: #FFF4ED;
+    background: #E8EEFF;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
     position: relative;
@@ -247,26 +247,26 @@
     font-size: 80px;
     font-weight: 900;
     line-height: 1;
-    color: #EA580C;
+    color: #002FA7;
     opacity: 0.07;
     letter-spacing: -0.04em;
     font-family: 'DM Sans', sans-serif;
     pointer-events: none;
     white-space: nowrap;
-  ">REVIEW</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
       font-size: 10px;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      background: #EA580C;
+      background: #002FA7;
       color: #fff;
       padding: 3px 8px;
       border-radius: 4px;
       font-family: 'DM Mono', monospace;
-    ">审查交付</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
-      font-size: 30px;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
       font-weight: 700;
-      color: #431407;
+      color: #001057;
       line-height: 1.15;
       letter-spacing: -0.03em;
       font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
@@ -276,15 +276,15 @@
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-    ">设计交付规范</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #EA580C; border-radius: 1px; flex-shrink: 0;"></div><span style="
+    ">智能抠图</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
       font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.1em;
-      color: #EA580C;
+      color: #002FA7;
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">design handoff</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">设计交付规范</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">设计交付</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">Figma</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div></section><div style="border-top: 1px solid #E5E5E5;"></div><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;"><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;"><div><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">GitHub 精选设计 Skill</h2><p style="font-size: 13px; color: #A3A3A3;">构建时自动拉取 · 按 ⭐ 星数排序</p></div><a href="https://github.com/search?q=design+skill&type=repositories&sort=stars" target="_blank" rel="noopener noreferrer" style="font-size: 13px; color: #737373; text-decoration: none;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#737373'">在 GitHub 搜索更多 →</a></div><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer" style="
+    ">design ai cutout</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">智能抠图</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">基于 AI 精准识别主体边缘，自动去除背景，输出透明底图像，支持发丝、毛发等复杂边缘细节。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">抠图</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">去背景</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div></section><div style="border-top: 1px solid #E5E5E5;"></div><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px;"><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 28px; flex-wrap: wrap; gap: 8px;"><div><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em; margin-bottom: 4px;">GitHub 精选设计 Skill</h2><p style="font-size: 13px; color: #A3A3A3;">构建时自动拉取 · 按 ⭐ 星数排序</p></div><a href="https://github.com/search?q=design+skill&type=repositories&sort=stars" target="_blank" rel="noopener noreferrer" style="font-size: 13px; color: #737373; text-decoration: none;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#737373'">在 GitHub 搜索更多 →</a></div><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;"><a href="https://github.com/nextlevelbuilder/ui-ux-pro-max-skill" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -292,7 +292,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/246974152?v=4" alt="nextlevelbuilder" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">nextlevelbuilder</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ui-ux-pro-max-skill</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">100.2k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3572A5; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">Python</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-skills</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#antigravity</span></div></a><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/246974152?v=4" alt="nextlevelbuilder" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">nextlevelbuilder</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ui-ux-pro-max-skill</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">104.9k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">An AI SKILL that provide design intelligence for building professional UI/UX multiple platforms</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3572A5; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">Python</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-skills</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#antigravity</span></div></a><a href="https://github.com/Leonxlnx/taste-skill" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -300,7 +300,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/219127460?v=4" alt="Leonxlnx" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Leonxlnx</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">taste-skill</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">55.3k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop </p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agent</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai</span></div></a><a href="https://github.com/JimLiu/baoyu-design" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/219127460?v=4" alt="Leonxlnx" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Leonxlnx</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">taste-skill</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">62.6k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Taste-Skill - gives your AI good taste. stops the AI from generating boring, generic slop </p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agent</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai</span></div></a><a href="https://github.com/JimLiu/baoyu-design" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -308,7 +308,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/648674?v=4" alt="JimLiu" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JimLiu</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">baoyu-design</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">2.3k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Run Claude Design locally as an Agent Skill — Cursor, Claude Code &amp; more. Produce polished UI mockups, prototypes, decks &amp; wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agent-skills</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#claude</span></div></a><a href="https://github.com/Owl-Listener/designer-skills" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/648674?v=4" alt="JimLiu" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">JimLiu</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">baoyu-design</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">2.6k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Run Claude Design locally as an Agent Skill — Cursor, Claude Code &amp; more. Produce polished UI mockups, prototypes, decks &amp; wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #7C3AED14; color: #7C3AED; border: 1px solid #7C3AED25; letter-spacing: 0.02em;">AI辅助</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agent-skills</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#claude</span></div></a><a href="https://github.com/Owl-Listener/designer-skills" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -316,7 +316,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/200631076?v=4" alt="Owl-Listener" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Owl-Listener</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">designer-skills</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">1.7k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Designer Skills Collection: agentic skills, commands, and plugins for design — from research to systems, UI, interaction, and delivery.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #0284C714; color: #0284C7; border: 1px solid #0284C725; letter-spacing: 0.02em;">组件设计</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">Markdown</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agentic</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agentic-ai</span></div></a><a href="https://github.com/bitjaru/styleseed" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/200631076?v=4" alt="Owl-Listener" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Owl-Listener</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">designer-skills</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">1.8k</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Designer Skills Collection: agentic skills, commands, and plugins for design — from research to systems, UI, interaction, and delivery.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #0284C714; color: #0284C7; border: 1px solid #0284C725; letter-spacing: 0.02em;">组件设计</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #4CAF50; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">Markdown</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agentic</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#agentic-ai</span></div></a><a href="https://github.com/bitjaru/styleseed" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -324,7 +324,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/23206862?v=4" alt="bitjaru" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">bitjaru</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">styleseed</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">637</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Design engine for Claude Code, Codex &amp; Cursor — teaches design judgment, not just data. 74 rules, 48 components, 7 brand skins (Toss/Stripe/Linear/Notion/Raycast/Arc/Vercel), a named motion system (5 seeds + 20+ moves), 15 /ss-* skills. Stop shipping AI UI that looks generated. MIT.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #0284C714; color: #0284C7; border: 1px solid #0284C725; letter-spacing: 0.02em;">组件设计</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3178C6; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">TypeScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-coding</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-design</span></div></a><a href="https://github.com/YuheshPandian/ICONIC" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/23206862?v=4" alt="bitjaru" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">bitjaru</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">styleseed</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">671</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Design engine for Claude Code, Codex &amp; Cursor — teaches design judgment, not just data. 74 rules, 48 components, 7 brand skins (Toss/Stripe/Linear/Notion/Raycast/Arc/Vercel), a named motion system (5 seeds + 20+ moves), 15 /ss-* skills. Stop shipping AI UI that looks generated. MIT.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #0284C714; color: #0284C7; border: 1px solid #0284C725; letter-spacing: 0.02em;">组件设计</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #3178C6; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">TypeScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-coding</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-design</span></div></a><a href="https://github.com/YuheshPandian/ICONIC" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -332,7 +332,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/168426680?v=4" alt="YuheshPandian" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YuheshPandian</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ICONIC</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">607</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">⚡A developer-oriented library of sleek, bubble-shaped skill icons designed for GitHub READMEs, portfolios, and resumes.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #E11D4814; color: #E11D48; border: 1px solid #E11D4825; letter-spacing: 0.02em;">平台规范</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #E34C26; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">HTML</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#badges-markdown</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#frontend</span></div></a><a href="https://github.com/SudeepAcharjee/The-50-Front-end-Project" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/168426680?v=4" alt="YuheshPandian" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YuheshPandian</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ICONIC</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">610</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">⚡A developer-oriented library of sleek, bubble-shaped skill icons designed for GitHub READMEs, portfolios, and resumes.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #E11D4814; color: #E11D48; border: 1px solid #E11D4825; letter-spacing: 0.02em;">平台规范</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #E34C26; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">HTML</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#badges-markdown</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#frontend</span></div></a><a href="https://github.com/SudeepAcharjee/The-50-Front-end-Project" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -340,7 +340,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/112026180?v=4" alt="SudeepAcharjee" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SudeepAcharjee</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">The-50-Front-end-Project</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">545</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">This git repository consists of a collection of 50 carefully curated frontend projects that showcase your skills and creativity as a frontend developer. Each project is unique and visually stunning, demonstrating your proficiency in a wide range of technologies and design principles</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #4F46E514; color: #4F46E5; border: 1px solid #4F46E525; letter-spacing: 0.02em;">视觉规范</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #563D7C; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">CSS</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#bootstrap</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#css</span></div></a><a href="https://github.com/plugin87/ux-ui-agent-skills" target="_blank" rel="noopener noreferrer" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/112026180?v=4" alt="SudeepAcharjee" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">SudeepAcharjee</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">The-50-Front-end-Project</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">548</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">This git repository consists of a collection of 50 carefully curated frontend projects that showcase your skills and creativity as a frontend developer. Each project is unique and visually stunning, demonstrating your proficiency in a wide range of technologies and design principles</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #4F46E514; color: #4F46E5; border: 1px solid #4F46E525; letter-spacing: 0.02em;">视觉规范</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #563D7C; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">CSS</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#bootstrap</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#css</span></div></a><a href="https://github.com/plugin87/ux-ui-agent-skills" target="_blank" rel="noopener noreferrer" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -348,7 +348,7 @@
     border-radius: 10px;
     padding: 16px;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
-  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/5790381?v=4" alt="plugin87" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">plugin87</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ux-ui-agent-skills</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">438</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Turn Claude into a Senior Design Architect — DTCG design tokens, 42 components, WCAG 2.2 accessibility, any-framework code, 138 design systems, and runnable skills.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #05966914; color: #059669; border: 1px solid #05966925; letter-spacing: 0.02em;">可访问性</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#accessibility</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-agents</span></div></a></div></section><div style="border-top: 1px solid #E5E5E5;"></div><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px;" id="skills-grid"><!-- 标题行 --><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;"><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em;">全部 Skill</h2><span id="skill-count-label" style="font-size: 13px; color: #A3A3A3;">14 个</span></div><!-- 分类 Tab（滚动时固定）--><div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 12px 0; position: sticky; top: 56px; background: #fff; z-index: 10; border-bottom: 1px solid #F0F0F0; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px;" id="category-tabs"><!-- 左侧分类 tabs --><div style="display: flex; gap: 6px; flex-wrap: wrap;"><button class="cat-tab" data-category="全部" style="
+  " onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-1px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 顶部：头像 + 名称 + Star --><div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 10px;"><div style="display: flex; align-items: center; gap: 8px; min-width: 0;"><img src="https://avatars.githubusercontent.com/u/5790381?v=4" alt="plugin87" width="24" height="24" style="border-radius: 50%; border: 1px solid #E5E5E5; flex-shrink: 0;" loading="lazy"><div style="min-width: 0;"><div style="font-size: 11px; color: #A3A3A3; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">plugin87</div><div style="font-size: 14px; font-weight: 600; color: #0A0A0A; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ux-ui-agent-skills</div></div></div><div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; background: #FFF9E6; border: 1px solid #F5E09A; padding: 3px 8px; border-radius: 20px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="#B8860B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg><span style="font-size: 11px; font-weight: 700; color: #B8860B; font-family: 'DM Mono', monospace;">452</span></div></div><!-- 描述 --><p style="font-size: 13px; color: #737373; line-height: 1.55; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 38px;">Turn Claude into a Senior Design Architect — DTCG design tokens, 42 components, WCAG 2.2 accessibility, any-framework code, 138 design systems, and runnable skills.</p><!-- 底部：category + language + topics --><div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding-top: 10px; border-top: 1px solid #F0F0F0;"><span style="font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 20px; background: #05966914; color: #059669; border: 1px solid #05966925; letter-spacing: 0.02em;">可访问性</span><div style="display: flex; align-items: center; gap: 4px;"><span style="width: 8px; height: 8px; border-radius: 50%; background: #F1E05A; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">JavaScript</span></div><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#accessibility</span><span style="font-size: 10px; color: #A3A3A3; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 6px; border-radius: 4px; font-family: 'DM Mono', monospace; max-width: 80px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">#ai-agents</span></div></a></div></section><div style="border-top: 1px solid #E5E5E5;"></div><section style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 80px;" id="skills-grid"><!-- 标题行 --><div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;"><h2 style="font-size: 22px; font-weight: 700; color: #0A0A0A; letter-spacing: -0.02em;">全部 Skill</h2><span id="skill-count-label" style="font-size: 13px; color: #A3A3A3;">26 个</span></div><!-- 分类 Tab（滚动时固定）--><div style="display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 12px 0; position: sticky; top: 56px; background: #fff; z-index: 10; border-bottom: 1px solid #F0F0F0; margin-left: -24px; margin-right: -24px; padding-left: 24px; padding-right: 24px;" id="category-tabs"><!-- 左侧分类 tabs --><div style="display: flex; gap: 6px; flex-wrap: wrap;"><button class="cat-tab" data-category="全部" style="
               font-size: 13px;
               font-weight: 500;
               padding: 6px 14px;
@@ -370,7 +370,7 @@
               cursor: pointer;
               transition: all 0.15s;
               font-family: inherit;
-            ">研究洞察<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">2</span></button><button class="cat-tab" data-category="视觉生成" style="
+            ">研究洞察<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">4</span></button><button class="cat-tab" data-category="视觉生成" style="
               font-size: 13px;
               font-weight: 500;
               padding: 6px 14px;
@@ -381,7 +381,7 @@
               cursor: pointer;
               transition: all 0.15s;
               font-family: inherit;
-            ">视觉生成<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">5</span></button><button class="cat-tab" data-category="组件打磨" style="
+            ">视觉生成<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">13</span></button><button class="cat-tab" data-category="组件打磨" style="
               font-size: 13px;
               font-weight: 500;
               padding: 6px 14px;
@@ -392,7 +392,7 @@
               cursor: pointer;
               transition: all 0.15s;
               font-family: inherit;
-            ">组件打磨<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">4</span></button><button class="cat-tab" data-category="审查交付" style="
+            ">组件打磨<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">5</span></button><button class="cat-tab" data-category="审查交付" style="
               font-size: 13px;
               font-weight: 500;
               padding: 6px 14px;
@@ -403,7 +403,7 @@
               cursor: pointer;
               transition: all 0.15s;
               font-family: inherit;
-            ">审查交付<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">3</span></button></div><!-- 右侧排序下拉 --><div style="position: relative; flex-shrink: 0;" id="sort-dropdown-wrap"><button id="sort-trigger" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #525252; background: #F7F7F7; border: 1.5px solid #E5E5E5; border-radius: 20px; padding: 6px 14px; cursor: pointer; font-family: inherit; transition: border-color 0.15s;"><span id="sort-label">综合排序</span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="transition: transform 0.2s;" id="sort-arrow"><path d="M2 4l4 4 4-4" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><!-- 下拉菜单 --><div id="sort-menu" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid #E5E5E5; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 130px; overflow: hidden; z-index: 100;"><button class="sort-opt" data-sort="default" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">综合排序</button><button class="sort-opt" data-sort="newest" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最新发布</button><button class="sort-opt" data-sort="views" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最多浏览</button><button class="sort-opt" data-sort="az" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最多使用</button></div></div></div><!-- 卡片网格 --><div id="skills-grid-inner" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;"><div class="skill-item" data-category="审查交付" data-title="可访问性检查" data-tags="可访问性 wcag 对比度 a11y 无障碍 键盘导航 屏幕阅读器" data-id="accessibility-check" data-updated="2026-07-03"><a href="/design-skills/skills/accessibility-check" class="skill-card" style="
+            ">审查交付<span style="margin-left: 4px; opacity: 0.6; font-size: 11px;">4</span></button></div><!-- 右侧排序下拉 --><div style="position: relative; flex-shrink: 0;" id="sort-dropdown-wrap"><button id="sort-trigger" style="display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: #525252; background: #F7F7F7; border: 1.5px solid #E5E5E5; border-radius: 20px; padding: 6px 14px; cursor: pointer; font-family: inherit; transition: border-color 0.15s;"><span id="sort-label">综合排序</span><svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="transition: transform 0.2s;" id="sort-arrow"><path d="M2 4l4 4 4-4" stroke="#737373" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg></button><!-- 下拉菜单 --><div id="sort-menu" style="display: none; position: absolute; right: 0; top: calc(100% + 6px); background: #fff; border: 1px solid #E5E5E5; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.10); min-width: 130px; overflow: hidden; z-index: 100;"><button class="sort-opt" data-sort="default" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">综合排序</button><button class="sort-opt" data-sort="newest" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最新发布</button><button class="sort-opt" data-sort="views" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最多浏览</button><button class="sort-opt" data-sort="az" style="display: block; width: 100%; text-align: left; padding: 11px 18px; font-size: 14px; color: #0A0A0A; background: transparent; border: none; cursor: pointer; font-family: inherit; transition: background 0.1s;" onmouseover="this.style.background='#F7F7F7'" onmouseout="this.style.background='transparent'">最多使用</button></div></div></div><!-- 卡片网格 --><div id="skills-grid-inner" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;"><div class="skill-item" data-category="审查交付" data-title="可访问性检查" data-tags="可访问性 wcag 对比度 a11y 无障碍 键盘导航 屏幕阅读器" data-id="accessibility-check" data-updated="2026-07-03"><a href="/design-skills/skills/accessibility-check" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -595,7 +595,71 @@
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">component audit</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">组件库审计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">组件库</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">审计</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="审查交付" data-title="设计交付规范" data-tags="设计交付 figma 标注 切图 开发协作 还原度" data-id="design-handoff" data-updated="2026-07-03"><a href="/design-skills/skills/design-handoff" class="skill-card" style="
+    ">component audit</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">组件库审计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">系统审查设计组件库的完整性、一致性和规范符合度，找出缺失组件、重复组件和不一致的设计决策。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">组件库</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">审计</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="智能抠图" data-tags="抠图 去背景 透明底 图片编辑 主体识别" data-id="design-ai-cutout" data-updated="2026-07"><a href="/design-skills/skills/design-ai-cutout" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">智能抠图</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">design ai cutout</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">智能抠图</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">基于 AI 精准识别主体边缘，自动去除背景，输出透明底图像，支持发丝、毛发等复杂边缘细节。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">抠图</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">去背景</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="审查交付" data-title="设计交付规范" data-tags="设计交付 figma 标注 切图 开发协作 还原度" data-id="design-handoff" data-updated="2026-07-03"><a href="/design-skills/skills/design-handoff" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -659,7 +723,583 @@
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">design handoff</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">设计交付规范</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">设计交付</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">Figma</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="研究洞察" data-title="全链路设计工具箱" data-tags="用户研究 设计系统 ux策略 figma 原型测试 设计运营" data-id="designer-skills" data-updated="2026-07"><a href="/design-skills/skills/designer-skills" class="skill-card" style="
+    ">design handoff</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">设计交付规范</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">设计交付</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">Figma</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="研究洞察" data-title="竞品分析" data-tags="竞品分析 用户体验 产品分析 视觉分析 策略" data-id="designai-competitor-analysis" data-updated="2026-07"><a href="/design-skills/skills/designai-competitor-analysis" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E0F6FF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #0284C7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">RESEARCH</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #0284C7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">研究洞察</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
+      font-weight: 700;
+      color: #082F49;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">竞品分析</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #0284C7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #0284C7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai competitor analysis</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">竞品分析</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">输入竞品信息，从功能、体验、视觉、内容策略等多个维度进行系统性拆解，生成结构清晰的分析报告。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">竞品分析</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">用户体验</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="审查交付" data-title="格式转换" data-tags="格式转换 图片格式 文档格式 交付 文件处理" data-id="designai-format-converter" data-updated="2026-07"><a href="/design-skills/skills/designai-format-converter" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #FFF4ED;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #EA580C;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">REVIEW</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #EA580C;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">审查交付</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
+      font-weight: 700;
+      color: #431407;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">格式转换</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #EA580C; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #EA580C;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai format converter</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">格式转换</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">支持图片、文档等主流文件格式快速互转，适合设计交付、素材处理和跨工具协作。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">格式转换</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">图片格式</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="通用图像生成" data-tags="图像生成 文生图 图生图 海报 插画 营销物料" data-id="designai-generate-image" data-updated="2026-07"><a href="/design-skills/skills/designai-generate-image" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 30px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">通用图像生成</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai generate image</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">通用图像生成</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">支持文本描述生成图像，以及基于参考图的风格延展与内容再创作，适用于海报、插画、场景渲染和营销物料。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">图像生成</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">文生图</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="比例扩图" data-tags="扩图 比例调整 图片编辑 outpainting 画面补全" data-id="designai-image-expansion" data-updated="2026-07"><a href="/design-skills/skills/designai-image-expansion" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 34px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">比例扩图</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai image expansion</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">比例扩图</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">基于 AI 理解图像内容与场景逻辑，智能补全画面边缘，将原图扩展为任意所需比例并自然融合。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">扩图</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">比例调整</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="信息图生成" data-tags="信息图 infographic 信息可视化 排版 内容提炼" data-id="designai-infographic-image" data-updated="2026-07"><a href="/design-skills/skills/designai-infographic-image" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 30px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">信息图生成</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai infographic image</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">信息图生成</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">输入文字内容或结构化数据，自动完成信息提炼、逻辑排版与视觉设计，生成清晰美观的信息图。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">信息图</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">Infographic</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="ppt html 生成" data-tags="ppt html 在线演示 可编辑 分享" data-id="designai-ppt-html" data-updated="2026-07"><a href="/design-skills/skills/designai-ppt-html" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">PPT HTML 生成</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai ppt html</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">PPT HTML 生成</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">在图片模式基础上升级为 HTML 格式输出，生成的 PPT 支持在线演示、链接分享与内容编辑。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">PPT</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">HTML</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="ppt 图片生成" data-tags="ppt 演示文稿 图片模式 汇报 视觉排版" data-id="designai-ppt-image" data-updated="2026-07"><a href="/design-skills/skills/designai-ppt-image" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">PPT 图片生成</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai ppt image</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">PPT 图片生成</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">输入主题或核心内容，AI 自动生成排版、配色、结构完整的 PPT，并以图片形式输出。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">PPT</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">演示文稿</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="研究洞察" data-title="流程图与思维导图" data-tags="流程图 思维导图 结构化 信息架构 逻辑梳理" data-id="designai-process-map" data-updated="2026-07"><a href="/design-skills/skills/designai-process-map" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E0F6FF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #0284C7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">RESEARCH</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #0284C7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">研究洞察</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #082F49;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">流程图与思维导图</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #0284C7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #0284C7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai process map</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">流程图与思维导图</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">输入内容描述或大纲，自动梳理逻辑关系，生成结构清晰的流程图或思维导图。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">流程图</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">思维导图</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="数据报告与图表美化" data-tags="数据报告 图表美化 数据可视化 报告设计 可视化" data-id="designai-reports-1" data-updated="2026-07"><a href="/design-skills/skills/designai-reports-1" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">数据报告与图表美化</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai reports 1</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">数据报告与图表美化</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">输入原始数据或粗糙图表，自动完成图表类型优化、配色美化与排版标准化，输出专业级数据报告。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">数据报告</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">图表美化</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="研究洞察" data-title="全链路设计工具箱" data-tags="用户研究 设计系统 ux策略 figma 原型测试 设计运营" data-id="designer-skills" data-updated="2026-07"><a href="/design-skills/skills/designer-skills" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -787,7 +1427,71 @@
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">frontend design</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">前端界面设计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">前端</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">UI生成</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="组件打磨" data-title="设计精炼命令集" data-tags="设计命令 polish audit 细节优化 设计审查" data-id="impeccable" data-updated="2026-07"><a href="/design-skills/skills/impeccable" class="skill-card" style="
+    ">frontend design</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">前端界面设计</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">前端</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">UI生成</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a></div><div class="skill-item" data-category="组件打磨" data-title="html 微动效" data-tags="html 动效 微交互 css 动画 页面增强" data-id="html-animator" data-updated="2026-07"><a href="/design-skills/skills/html-animator" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #ECFDF5;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #059669;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">COMPONENT</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #059669;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">组件打磨</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #064E3B;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">HTML 微动效</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #059669; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #059669;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">html animator</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">HTML 微动效</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">为静态 HTML 页面注入微交互与动画，包括淡入淡出、滚动触发、悬停反馈等，提升页面活力与专业感。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">HTML</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">动效</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="组件打磨" data-title="设计精炼命令集" data-tags="设计命令 polish audit 细节优化 设计审查" data-id="impeccable" data-updated="2026-07"><a href="/design-skills/skills/impeccable" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;
@@ -851,7 +1555,71 @@
       opacity: 0.6;
       font-family: 'DM Mono', monospace;
       text-transform: uppercase;
-    ">impeccable</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">设计精炼命令集</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">设计命令</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">polish</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="间距与栅格系统" data-tags="间距 栅格 布局 8pt 响应式 设计系统" data-id="spacing-grid" data-updated="2026-07-03"><a href="/design-skills/skills/spacing-grid" class="skill-card" style="
+    ">impeccable</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">设计精炼命令集</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">设计命令</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">polish</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="svg 转 gif 动图" data-tags="svg gif 动图 logo 动效 动画" data-id="pixel2motion" data-updated="2026-07"><a href="/design-skills/skills/pixel2motion" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">SVG 转 GIF 动图</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">pixel2motion</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">SVG 转 GIF 动图</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">上传 SVG 矢量图，AI 自动分析图形结构并生成循环动态 GIF，无需手动设置关键帧。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">SVG</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">GIF</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #B45309; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">进阶</span></div></div></div></a></div><div class="skill-item" data-category="视觉生成" data-title="间距与栅格系统" data-tags="间距 栅格 布局 8pt 响应式 设计系统" data-id="spacing-grid" data-updated="2026-07-03"><a href="/design-skills/skills/spacing-grid" class="skill-card" style="
     display: block;
     text-decoration: none;
     background: #fff;

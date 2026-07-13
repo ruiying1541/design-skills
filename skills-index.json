@@ -107,6 +107,38 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/component-audit.md"
   },
   {
+    "name": "design-ai-cutout",
+    "title": "智能抠图",
+    "description": "基于 AI 精准识别主体边缘，自动去除背景，输出透明底图像，支持发丝、毛发等复杂边缘细节。",
+    "category": "视觉生成",
+    "tags": [
+      "抠图",
+      "去背景",
+      "透明底",
+      "图片编辑",
+      "主体识别"
+    ],
+    "ai_trigger": [
+      "需要去除图片背景",
+      "需要把商品或人物抠成透明底",
+      "需要处理发丝、毛发等复杂边缘"
+    ],
+    "ai_output": "一张去除背景后的透明底图片，可继续用于海报、详情页或合成设计。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-generate-image",
+      "designai-image-expansion",
+      "designai-format-converter"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/design-ai-cutout",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/design-ai-cutout.md"
+  },
+  {
     "name": "design-handoff",
     "title": "设计交付规范",
     "description": "建立设计师向开发工程师交付设计稿的完整规范，减少沟通成本，确保还原度，避免「设计师画一套，开发做一套」。",
@@ -140,6 +172,289 @@
     "updated": "2026-07-03",
     "url": "/skills/design-handoff",
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/design-handoff.md"
+  },
+  {
+    "name": "designai-competitor-analysis",
+    "title": "竞品分析",
+    "description": "输入竞品信息，从功能、体验、视觉、内容策略等多个维度进行系统性拆解，生成结构清晰的分析报告。",
+    "category": "研究洞察",
+    "tags": [
+      "竞品分析",
+      "用户体验",
+      "产品分析",
+      "视觉分析",
+      "策略"
+    ],
+    "ai_trigger": [
+      "需要分析两个或多个竞品",
+      "需要从功能、体验、视觉维度拆解产品",
+      "需要生成结构化竞品分析报告"
+    ],
+    "ai_output": "一份包含分析维度、对比结论、机会点和设计建议的竞品分析报告。",
+    "difficulty": "intermediate",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "ux-researcher",
+      "designer-skills"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-competitor-analysis",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-competitor-analysis.md"
+  },
+  {
+    "name": "designai-format-converter",
+    "title": "格式转换",
+    "description": "支持图片、文档等主流文件格式快速互转，适合设计交付、素材处理和跨工具协作。",
+    "category": "审查交付",
+    "tags": [
+      "格式转换",
+      "图片格式",
+      "文档格式",
+      "交付",
+      "文件处理"
+    ],
+    "ai_trigger": [
+      "需要转换图片或文档格式",
+      "需要把素材改成适合交付的格式",
+      "需要批量处理设计文件格式"
+    ],
+    "ai_output": "转换后的目标格式文件，并说明转换结果和注意事项。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "design-ai-cutout",
+      "design-handoff"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-format-converter",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-format-converter.md"
+  },
+  {
+    "name": "designai-generate-image",
+    "title": "通用图像生成",
+    "description": "支持文本描述生成图像，以及基于参考图的风格延展与内容再创作，适用于海报、插画、场景渲染和营销物料。",
+    "category": "视觉生成",
+    "tags": [
+      "图像生成",
+      "文生图",
+      "图生图",
+      "海报",
+      "插画",
+      "营销物料"
+    ],
+    "ai_trigger": [
+      "需要根据文字描述生成一张图片",
+      "需要基于参考图延展风格或重新创作",
+      "需要快速生成海报、插画或营销视觉"
+    ],
+    "ai_output": "一张或多张符合描述的高质量图片，并说明使用的风格、构图和视觉要点。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-infographic-image",
+      "designai-image-expansion",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-generate-image",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-generate-image.md"
+  },
+  {
+    "name": "designai-image-expansion",
+    "title": "比例扩图",
+    "description": "基于 AI 理解图像内容与场景逻辑，智能补全画面边缘，将原图扩展为任意所需比例并自然融合。",
+    "category": "视觉生成",
+    "tags": [
+      "扩图",
+      "比例调整",
+      "图片编辑",
+      "Outpainting",
+      "画面补全"
+    ],
+    "ai_trigger": [
+      "需要把图片扩展成指定比例",
+      "需要补全图片边缘内容",
+      "需要把横图改成竖图或竖图改成横图"
+    ],
+    "ai_output": "一张按目标比例扩展后的图片，扩展区域与原图自然融合。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-generate-image",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-image-expansion",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-image-expansion.md"
+  },
+  {
+    "name": "designai-infographic-image",
+    "title": "信息图生成",
+    "description": "输入文字内容或结构化数据，自动完成信息提炼、逻辑排版与视觉设计，生成清晰美观的信息图。",
+    "category": "视觉生成",
+    "tags": [
+      "信息图",
+      "Infographic",
+      "信息可视化",
+      "排版",
+      "内容提炼"
+    ],
+    "ai_trigger": [
+      "需要把文档内容做成信息图",
+      "需要把数据或文章可视化表达",
+      "需要快速生成适合传播的信息图"
+    ],
+    "ai_output": "一张结构清晰、层级明确、视觉完整的信息图图片。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-generate-image",
+      "designai-reports-1",
+      "designai-process-map"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-infographic-image",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-infographic-image.md"
+  },
+  {
+    "name": "designai-ppt-html",
+    "title": "PPT HTML 生成",
+    "description": "在图片模式基础上升级为 HTML 格式输出，生成的 PPT 支持在线演示、链接分享与内容编辑。",
+    "category": "视觉生成",
+    "tags": [
+      "PPT",
+      "HTML",
+      "在线演示",
+      "可编辑",
+      "分享"
+    ],
+    "ai_trigger": [
+      "需要生成可在线演示的 PPT",
+      "需要把汇报内容做成可编辑 HTML 演示稿",
+      "需要方便分享链接的演示页面"
+    ],
+    "ai_output": "一套可在线访问、可编辑、可分享的 HTML 演示文稿。",
+    "difficulty": "intermediate",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-ppt-image",
+      "html-animator"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-ppt-html",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-ppt-html.md"
+  },
+  {
+    "name": "designai-ppt-image",
+    "title": "PPT 图片生成",
+    "description": "输入主题或核心内容，AI 自动生成排版、配色、结构完整的 PPT，并以图片形式输出。",
+    "category": "视觉生成",
+    "tags": [
+      "PPT",
+      "演示文稿",
+      "图片模式",
+      "汇报",
+      "视觉排版"
+    ],
+    "ai_trigger": [
+      "需要根据主题快速生成 PPT 图片",
+      "需要为汇报生成一组视觉统一的幻灯片",
+      "需要把内容整理成演示结构"
+    ],
+    "ai_output": "一组排版统一、视觉完整的 PPT 页面图片。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-ppt-html",
+      "designai-infographic-image"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-ppt-image",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-ppt-image.md"
+  },
+  {
+    "name": "designai-process-map",
+    "title": "流程图与思维导图",
+    "description": "输入内容描述或大纲，自动梳理逻辑关系，生成结构清晰的流程图或思维导图。",
+    "category": "研究洞察",
+    "tags": [
+      "流程图",
+      "思维导图",
+      "结构化",
+      "信息架构",
+      "逻辑梳理"
+    ],
+    "ai_trigger": [
+      "需要把流程描述转成流程图",
+      "需要把大纲整理成思维导图",
+      "需要梳理业务流程、用户流程或策略结构"
+    ],
+    "ai_output": "一张结构清晰的流程图或思维导图，展示节点关系、路径和分支。",
+    "difficulty": "beginner",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "ux-researcher",
+      "designai-infographic-image",
+      "designai-reports-1"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-process-map",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-process-map.md"
+  },
+  {
+    "name": "designai-reports-1",
+    "title": "数据报告与图表美化",
+    "description": "输入原始数据或粗糙图表，自动完成图表类型优化、配色美化与排版标准化，输出专业级数据报告。",
+    "category": "视觉生成",
+    "tags": [
+      "数据报告",
+      "图表美化",
+      "数据可视化",
+      "报告设计",
+      "可视化"
+    ],
+    "ai_trigger": [
+      "需要美化粗糙的数据图表",
+      "需要把原始数据整理成专业报告",
+      "需要优化图表类型、配色和排版"
+    ],
+    "ai_output": "一份结构清晰、图表美观、排版统一的数据报告或可视化方案。",
+    "difficulty": "intermediate",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-infographic-image",
+      "designai-process-map"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/designai-reports-1",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designai-reports-1.md"
   },
   {
     "name": "designer-skills",
@@ -209,6 +524,37 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/frontend-design.md"
   },
   {
+    "name": "html-animator",
+    "title": "HTML 微动效",
+    "description": "为静态 HTML 页面注入微交互与动画，包括淡入淡出、滚动触发、悬停反馈等，提升页面活力与专业感。",
+    "category": "组件打磨",
+    "tags": [
+      "HTML",
+      "动效",
+      "微交互",
+      "CSS 动画",
+      "页面增强"
+    ],
+    "ai_trigger": [
+      "需要给静态 HTML 页面增加动效",
+      "需要添加滚动触发、悬停反馈或淡入动画",
+      "需要让页面更有活力和专业感"
+    ],
+    "ai_output": "带有微交互和动画效果的 HTML/CSS/JS 代码，保持原有页面结构可用。",
+    "difficulty": "intermediate",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "designai-ppt-html",
+      "frontend-design"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/html-animator",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/html-animator.md"
+  },
+  {
     "name": "impeccable",
     "title": "设计精炼命令集",
     "description": "17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。",
@@ -239,6 +585,37 @@
     "updated": "2026-07",
     "url": "/skills/impeccable",
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/impeccable.md"
+  },
+  {
+    "name": "pixel2motion",
+    "title": "SVG 转 GIF 动图",
+    "description": "上传 SVG 矢量图，AI 自动分析图形结构并生成循环动态 GIF，无需手动设置关键帧。",
+    "category": "视觉生成",
+    "tags": [
+      "SVG",
+      "GIF",
+      "动图",
+      "Logo 动效",
+      "动画"
+    ],
+    "ai_trigger": [
+      "需要把 SVG 转成 GIF 动图",
+      "需要为 Logo 或图标生成循环动画",
+      "需要快速制作轻量级动效素材"
+    ],
+    "ai_output": "一个基于 SVG 结构生成的循环 GIF 动图，适合展示、运营或社媒传播。",
+    "difficulty": "intermediate",
+    "tools": [
+      "MyFlicker SkillHub",
+      "CodeFlicker"
+    ],
+    "related": [
+      "html-animator",
+      "designai-format-converter"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/pixel2motion",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/pixel2motion.md"
   },
   {
     "name": "spacing-grid",
