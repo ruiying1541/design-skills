@@ -13,6 +13,7 @@ difficulty: "beginner"
 tools: ["MyFlicker SkillHub", "CodeFlicker"]
 related: ["designai-generate-image", "design-ai-cutout"]
 updated: "2026-07"
+sortOrder: 2026071307
 ---
 
 ## 是什么

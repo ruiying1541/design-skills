@@ -243,6 +243,7 @@ const topGitHub = githubSkills.slice(0, 8);
           data-tags={skill.data.tags.join(' ').toLowerCase()}
           data-id={skill.id}
           data-updated={skill.data.updated ?? ''}
+          data-sort-order={skill.data.sortOrder ?? (1000 - index)}
         >
           <SkillCard skill={skill} />
         </div>
@@ -378,7 +379,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentSort === 'default') {
       allItems.sort((a, b) => parseInt(a.dataset.index || '0') - parseInt(b.dataset.index || '0'));
     } else if (currentSort === 'newest') {
-      allItems.sort((a, b) => (b.dataset.updated || '').localeCompare(a.dataset.updated || ''));
+      allItems.sort((a, b) => {
+        const bo = parseInt(b.dataset.sortOrder || '0');
+        const ao = parseInt(a.dataset.sortOrder || '0');
+        if (bo !== ao) return bo - ao;
+        return (b.dataset.updated || '').localeCompare(a.dataset.updated || '');
+      });
     } else if (currentSort === 'views') {
       const raw = localStorage.getItem('ds_skill_views');
       const views: Record<string, number> = raw ? JSON.parse(raw) : {};

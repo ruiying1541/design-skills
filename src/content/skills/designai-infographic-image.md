@@ -13,6 +13,7 @@ difficulty: "beginner"
 tools: ["MyFlicker SkillHub", "CodeFlicker"]
 related: ["designai-generate-image", "designai-reports-1", "designai-process-map"]
 updated: "2026-07"
+sortOrder: 2026071302
 ---
 
 ## 是什么

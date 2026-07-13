@@ -13,6 +13,7 @@ difficulty: "intermediate"
 tools: ["MyFlicker SkillHub", "CodeFlicker"]
 related: ["designai-infographic-image", "designai-process-map"]
 updated: "2026-07"
+sortOrder: 2026071310
 ---
 
 ## 是什么

@@ -13,6 +13,7 @@ difficulty: "beginner"
 tools: ["MyFlicker SkillHub", "CodeFlicker"]
 related: ["designai-ppt-html", "designai-infographic-image"]
 updated: "2026-07"
+sortOrder: 2026071303
 ---
 
 ## 是什么

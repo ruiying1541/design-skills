@@ -17,6 +17,7 @@ const skills = defineCollection({
     tools: z.array(z.string()).optional(),
     related: z.array(z.string()).optional(),
     updated: z.string().optional(),
+    sortOrder: z.number().optional(),
   }),
 });
 

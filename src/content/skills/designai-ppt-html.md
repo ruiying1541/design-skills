@@ -13,6 +13,7 @@ difficulty: "intermediate"
 tools: ["MyFlicker SkillHub", "CodeFlicker"]
 related: ["designai-ppt-image", "html-animator"]
 updated: "2026-07"
+sortOrder: 2026071304
 ---
 
 ## 是什么
