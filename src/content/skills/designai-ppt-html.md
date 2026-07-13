@@ -35,3 +35,9 @@ PPT HTML 生成 Skill 将演示稿输出为 HTML 页面，兼具演示、分享�
 ## 安装链接
 
 [安装 designai-ppt-html](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-ppt-html)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 根据一个汇报主题生成可在线演示的 HTML PPT | 文档暂无效果图 |

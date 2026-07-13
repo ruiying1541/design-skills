@@ -39,3 +39,10 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-process-map](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-process-map)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 虚拟数据：新用户注册流程（填写信息 → 同意协议 → 手机号去重检查 → 验证码发送与校验 → 创建账号 → 跳转欢迎页，含两条异常分支） | ![新用户注册流程图](/design-skills/skill-assets/图片-3860d9a2.jpg) |
+| 虚拟主题：快手电商 2025 下半年增长策略 | ![快手电商增长策略思维导图](/design-skills/skill-assets/图片-a0484915.svg) |

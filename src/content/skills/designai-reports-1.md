@@ -35,3 +35,9 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-reports-1](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-reports-1)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 电商平台 2025 年 H1 运营数据报告（虚拟数据） | [查看视频效果](https://bs3-hb1.corp.kuaishou.com/is-docsfile/docs_enclosure_e529bb1d-38e4-4cba-99da-da6ea1a3486e_drag-upload-1783057699825-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260713T061709Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=48ecc1cddad14b729200fd6a403d34d4%2F20260713%2Fhb1%2Fs3%2Faws4_request&X-Amz-Signature=7c4866fcd8c94de02bc8525b6ca529f2717e4026bce37e194bb7c21585965a37) |

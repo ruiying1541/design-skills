@@ -39,3 +39,11 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-generate-image](https://myflicker.corp.kuaishou.com/skillhub/skills/designai-generate-image)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 一张彩虹糖广告海报 | ![彩虹糖广告海报](/design-skills/skill-assets/图片-0a9038fe.png) |
+| 一张可爱手账拼贴风饮品海报，产品是草莓抹茶冰拿铁 | ![草莓抹茶冰拿铁海报](/design-skills/skill-assets/图片-dea474c1.png) |
+| 基于参考图，生成《极品飞车》风格的竖版 9:16 海报，主题是 2026 年世界杯，中国国家队在霓虹灯照亮的夜晚城市体育场中，画面有运动模糊、速度感光轨、都市街头赛车美学、大胆醒目的字体，整体充满能量和动态感 | ![世界杯速度感体育海报](/design-skills/skill-assets/图片-a0aca879.png) |

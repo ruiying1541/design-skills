@@ -35,3 +35,9 @@ HTML 微动效 Skill 面向已有静态页面，帮助补充动效层次和交�
 ## 安装链接
 
 [安装 html-animator](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=html-animator)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 为静态 HTML 页面增加微交互与动画 | [查看视频效果](https://bs3-hb1.corp.kuaishou.com/is-docsfile/docs_enclosure_67d6d1b6-f132-41bb-b4d2-0d6d98fadceb_drag-upload-1783057209704-0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260713T061709Z&X-Amz-SignedHeaders=host&X-Amz-Expires=604800&X-Amz-Credential=48ecc1cddad14b729200fd6a403d34d4%2F20260713%2Fhb1%2Fs3%2Faws4_request&X-Amz-Signature=6c1f51e3dd5099ce1589185cd856d677415a0b14e9e3a368815795cf69387fcd) |

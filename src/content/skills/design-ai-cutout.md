@@ -35,3 +35,10 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 design-ai-cutout](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=design-ai-cutout)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| ![输入图片](/design-skills/skill-assets/图片-01030c4d.png) | ![抠图结果](/design-skills/skill-assets/图片-9226c5aa.png) |
+| ![输入图片](/design-skills/skill-assets/图片-5ad602da.png) | ![抠图结果](/design-skills/skill-assets/图片-73655319.png) |

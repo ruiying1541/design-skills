@@ -39,3 +39,11 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-infographic-image](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-infographic-image)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| [AI设计资讯周刊（2026.06.10-06.16）【Vol.04】](https://docs.corp.kuaishou.com/d/home/fcAC1ITmDPMzV24WjYTkHkwPL?source=feed) | ![AI 设计资讯周刊信息图](/design-skills/skill-assets/图片-36a7a910.png) |
+| [大厂八卦日报——第71期](https://docs.corp.kuaishou.com/k/home/VK245efSlT5s/fcADXnsUduBuPgh7Ex205c43B) | ![大厂八卦日报信息图](/design-skills/skill-assets/图片-230e5e6c.png) |
+| [从设计师视角聊聊 Apple Watch](https://docs.corp.kuaishou.com/k/home/Vflxz_0I3rCA/fcADgRjt8YNkPFobdf6L7tc0Q) | ![Apple Watch 设计分析信息图](/design-skills/skill-assets/图片-45bb2dee.png) |

@@ -35,3 +35,9 @@ SVG 转 GIF 动图 Skill 会自动分析 SVG 矢量图的结构，为图形元�
 ## 安装链接
 
 [安装 pixel2motion](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=pixel2motion)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 上传 SVG 矢量图，生成循环 GIF 动图 | ![SVG 转 GIF 动图](/design-skills/skill-assets/图片-892d75b1.gif) |

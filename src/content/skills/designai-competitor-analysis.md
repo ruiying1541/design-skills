@@ -35,3 +35,9 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-competitor-analysis](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-competitor-analysis)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 飞程出行 vs 闪行科技（两个虚构的打车平台），生成完整的五要素分析报告 | 文档暂无效果图 |

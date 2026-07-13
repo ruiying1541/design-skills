@@ -35,3 +35,10 @@ updated: "2026-07"
 ## 安装链接
 
 [安装 designai-image-expansion](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-image-expansion)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| ![原图](/design-skills/skill-assets/图片-5f312d27.jpg) | ![扩图结果](/design-skills/skill-assets/图片-43d14f36.png) |
+| ![原图](/design-skills/skill-assets/图片-23aa8265.jpg) | ![扩图结果](/design-skills/skill-assets/图片-7d09c209.png) |

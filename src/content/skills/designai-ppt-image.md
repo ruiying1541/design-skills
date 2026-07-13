@@ -35,3 +35,9 @@ PPT 图片生成 Skill 面向快速汇报和视觉提案场景。输入主题、
 ## 安装链接
 
 [安装 designai-ppt-image](https://myflicker.corp.kuaishou.com/skillhub/skills?skillId=designai-ppt-image)
+
+## 测试案例与效果图
+
+| 测试指令 | 效果图 |
+| --- | --- |
+| 根据一个汇报主题生成完整 PPT 图片稿 | 文档暂无效果图 |
