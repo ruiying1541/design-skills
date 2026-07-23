@@ -524,6 +524,40 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/frontend-design.md"
   },
   {
+    "name": "guizang-ppt-skill",
+    "title": "归藏 PPT Skill",
+    "description": "面向 Claude Code、Codex 等 Agent 的网页 PPT 工作流，生成兼具杂志叙事感与瑞士网格秩序的单文件 HTML 演示稿。",
+    "category": "视觉生成",
+    "tags": [
+      "PPT",
+      "HTML",
+      "瑞士风",
+      "电子杂志",
+      "在线演示"
+    ],
+    "ai_trigger": [
+      "把文章或 Markdown 制作成可在线演示的 HTML PPT",
+      "生成瑞士国际主义或电子杂志风格的演示稿",
+      "为 PPT 生成统一风格的配图、信息图或封面",
+      "需要可翻页、可分享、可继续编辑的单文件网页演示"
+    ],
+    "ai_output": "一套可直接打开和分享的单文件 HTML PPT，可包含配图、动效、演示导航与多平台封面。",
+    "difficulty": "intermediate",
+    "tools": [
+      "Claude Code",
+      "Codex",
+      "GPT Image"
+    ],
+    "related": [
+      "designai-ppt-html",
+      "designai-ppt-image",
+      "designai-generate-image"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/guizang-ppt-skill",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/guizang-ppt-skill.md"
+  },
+  {
     "name": "html-animator",
     "title": "HTML 微动效",
     "description": "为静态 HTML 页面注入微交互与动画，包括淡入淡出、滚动触发、悬停反馈等，提升页面活力与专业感。",
