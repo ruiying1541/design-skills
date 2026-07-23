@@ -57,7 +57,55 @@ const cat = getCategoryColor(skill.data.category);
   .ds-prose blockquote p { color: #525252; margin: 0; }
 
   .detail-body { display: grid; grid-template-columns: 1fr 280px; gap: 24px; align-items: start; }
-  @media (max-width: 800px) { .detail-body { grid-template-columns: 1fr; } }
+  .detail-body > * { min-width: 0; }
+  .skill-showcase {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    background: #0639C7;
+    color: #fff;
+    text-decoration: none;
+    isolation: isolate;
+    box-shadow: 0 12px 36px rgba(0, 47, 167, 0.18);
+  }
+  .skill-showcase::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,.28) 1px, transparent 1.4px),
+      linear-gradient(110deg, rgba(255,255,255,.08), transparent 52%);
+    background-size: 18px 18px, 100% 100%;
+    mask-image: linear-gradient(90deg, #000 0%, rgba(0,0,0,.65) 55%, transparent 100%);
+  }
+  .skill-showcase::after {
+    content: '';
+    position: absolute;
+    width: 48%;
+    aspect-ratio: 1;
+    right: -12%;
+    top: -34%;
+    z-index: -1;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    box-shadow: 0 0 0 48px rgba(255,255,255,.025), 0 0 0 96px rgba(255,255,255,.018);
+  }
+  .showcase-play { transition: transform .2s ease, background .2s ease; }
+  .skill-showcase:hover .showcase-play { transform: scale(1.08); background: #fff; color: #002FA7; }
+  .skill-showcase:hover .showcase-arrow { transform: translate(3px, -3px); }
+  .showcase-arrow { display: inline-block; transition: transform .2s ease; }
+  @media (max-width: 800px) {
+    .detail-body { grid-template-columns: minmax(0, 1fr); }
+    .ds-prose pre { max-width: 100%; }
+  }
+  @media (max-width: 560px) {
+    .skill-showcase { aspect-ratio: 4 / 3; }
+    .showcase-title { font-size: 30px !important; }
+    .showcase-subtitle { max-width: 78% !important; }
+  }
 </style>
 
 <div style="max-width: 1060px; margin: 0 auto; padding: 28px 24px 80px;">
@@ -146,6 +194,49 @@ const cat = getCategoryColor(skill.data.category);
     <div>
     <!-- 隐藏的原文（供一键复制 Skill 使用）-->
       <pre id="raw-content" style="display:none;">{rawMarkdown}</pre>
+
+      {skill.data.showcase && (
+        <section style="margin-bottom: 32px;">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 12px;">
+            <h2 style="font-size: 16px; font-weight: 700; color: #0A0A0A; margin: 0;">效果展示</h2>
+            <span style="font-size: 11px; color: #A3A3A3; font-family: 'DM Mono', monospace; letter-spacing: .06em;">{skill.data.showcase.meta}</span>
+          </div>
+          <a
+            class="skill-showcase"
+            href={skill.data.showcase.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`在线体验：${skill.data.showcase.title}`}
+          >
+            <div style="position: absolute; inset: 0; padding: clamp(22px, 4vw, 42px); display: flex; flex-direction: column; justify-content: space-between;">
+              <div style="display: flex; justify-content: space-between; gap: 16px; font-size: 10px; font-family: 'DM Mono', monospace; letter-spacing: .15em; color: rgba(255,255,255,.72);">
+                <span>{skill.data.showcase.eyebrow}</span>
+                <span>IKB · SWISS · 01 / 16</span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+                <div>
+                  <h3 class="showcase-title" style="font-size: clamp(34px, 5vw, 60px); line-height: .98; letter-spacing: -.055em; font-weight: 300; margin: 0 0 18px; color: #fff; max-width: 570px;">
+                    {skill.data.showcase.title}
+                  </h3>
+                  <p class="showcase-subtitle" style="font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.72); margin: 0; max-width: 520px;">
+                    {skill.data.showcase.subtitle}
+                  </p>
+                </div>
+                <span class="showcase-play" style="width: 62px; height: 62px; flex: 0 0 auto; border: 1px solid rgba(255,255,255,.55); border-radius: 50%; display: grid; place-items: center; background: rgba(0,0,0,.08); color: #fff; backdrop-filter: blur(8px);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,.25); font-size: 10px; font-family: 'DM Mono', monospace; letter-spacing: .12em; color: rgba(255,255,255,.72);">
+                <span>STYLE B · INTERNATIONAL KLEIN BLUE</span>
+                <span>在线体验 <span class="showcase-arrow">↗</span></span>
+              </div>
+            </div>
+          </a>
+          <p style="font-size: 12px; line-height: 1.6; color: #737373; margin: 10px 2px 0;">
+            {skill.data.showcase.caption}
+          </p>
+        </section>
+      )}
 
       <!-- Markdown 正文 -->
       <div class="ds-prose" style={`--cat-dot: ${cat.dot}; --cat-bg: ${cat.badgeBg};`}>
