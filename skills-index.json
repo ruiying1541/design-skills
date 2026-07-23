@@ -589,6 +589,39 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/html-animator.md"
   },
   {
+    "name": "humanizer",
+    "title": "Humanizer 去 AI 味",
+    "description": "识别并改写 AI 文本中常见的套路表达、空泛修饰和机械节奏，在不编造事实的前提下，让文字更自然、更像真实的人在说话。",
+    "category": "审查交付",
+    "tags": [
+      "文案优化",
+      "去AI味",
+      "写作",
+      "语气校准",
+      "内容审查"
+    ],
+    "ai_trigger": [
+      "需要把 AI 生成的文案改得更自然",
+      "需要消除套路化、宣传腔或机械的写作痕迹",
+      "需要根据用户提供的样本文字匹配个人语气",
+      "发布文章、报告或产品文案前进行 AI 味审查"
+    ],
+    "ai_output": "一份保留原意与事实、表达更自然的改写文本，可根据写作样本匹配个人语气。",
+    "difficulty": "beginner",
+    "tools": [
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "related": [
+      "typography",
+      "design-handoff"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/humanizer",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/humanizer.md"
+  },
+  {
     "name": "impeccable",
     "title": "设计精炼命令集",
     "description": "17 个设计命令，极致细节把控。提供 /polish、/audit、/distill、/enhance、/refine 等专门命令，精确控制设计流程每个环节。",
