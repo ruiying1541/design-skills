@@ -1,0 +1,6 @@
+.git
+.github
+.tmp-*
+node_modules
+src
+
