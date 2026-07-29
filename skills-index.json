@@ -654,6 +654,39 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/impeccable.md"
   },
   {
+    "name": "middle-east-avatar-frame",
+    "title": "中东主题头像框 Skill",
+    "description": "根据主题或参考图生成中东风格头像框，规范中心留白、环形结构、装饰层级和材质表现，适合社交、直播、游戏与活动奖励资源。",
+    "category": "视觉生成",
+    "tags": [
+      "头像框",
+      "中东风格",
+      "3D",
+      "金属宝石",
+      "装扮资源"
+    ],
+    "ai_trigger": [
+      "需要生成中东、开斋节、阿拉伯宫廷或神灯主题头像框",
+      "需要把参考图的配色、材质或元素转译成头像框",
+      "需要生成低价款、中价款或高价款头像框方案",
+      "需要输出方便抠图和后续切图的纯色背景头像框"
+    ],
+    "ai_output": "一组中心留白清晰、轮廓完整、适合商业上线与后续抠图的中东主题头像框方案或生图提示词。",
+    "difficulty": "intermediate",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "designai-generate-image",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/middle-east-avatar-frame",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/middle-east-avatar-frame.md"
+  },
+  {
     "name": "pixel2motion",
     "title": "SVG 转 GIF 动图",
     "description": "上传 SVG 矢量图，AI 自动分析图形结构并生成循环动态 GIF，无需手动设置关键帧。",
