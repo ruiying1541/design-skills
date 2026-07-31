@@ -526,6 +526,40 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/designer-skills.md"
   },
   {
+    "name": "entrance-effect",
+    "title": "进场特效 Skill",
+    "description": "提供主题、档位和风格，自动生成符合规范的进场装扮，默认处理昵称区留白、左右结构衔接、主题爆点挂载、横向动势、透明背景、边缘清晰及方便抠图等要求。",
+    "category": "视觉生成",
+    "tags": [
+      "进场特效",
+      "进场装扮",
+      "直播平台",
+      "横向动效",
+      "虚拟装扮"
+    ],
+    "ai_trigger": [
+      "需要为直播平台、语聊房或娱乐社交 App 设计进场装扮",
+      "需要根据主题、档位和风格生成昵称进场条",
+      "需要把参考图转译成带右侧主题爆点的横向进场资源",
+      "需要检查昵称留白、结构衔接、横向动势或抠图质量"
+    ],
+    "ai_output": "一条昵称区清晰、主题爆点完整、动势明确且方便抠图的横向进场装扮资源或生图提示词。",
+    "difficulty": "intermediate",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "badge-design",
+      "designai-generate-image",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/entrance-effect",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/entrance-effect.md"
+  },
+  {
     "name": "frontend-design",
     "title": "前端界面设计",
     "description": "解决「AI 生成界面都一样」的问题。让 AI 生成有设计感的前端界面，内置组件规范和视觉原则，避免千篇一律的 UI。",
