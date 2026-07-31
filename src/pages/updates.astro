@@ -4,19 +4,6 @@ import Layout from '../layouts/Layout.astro';
 const updates = [
   {
     date: '2026.07.31',
-    label: 'FEATURE',
-    title: '全站 Skill 支持 Codex 下载',
-    summary: '所有站内 Skill 现已提供标准 ZIP 下载，解压后即可作为 Codex Skill 使用。',
-    items: [
-      '为全部站内 Skill 自动生成独立 ZIP 文件',
-      '每个压缩包均采用 skill-name/SKILL.md 标准目录结构',
-      'SKILL.md 仅保留 Codex 可识别的 name 与 description 元数据',
-      '所有详情页统一提供顶部与侧栏两个下载入口',
-      '后续新增 Skill 会在构建时自动生成下载包',
-    ],
-  },
-  {
-    date: '2026.07.31',
     label: 'NEW SKILL',
     title: '进场特效 Skill 上线',
     summary: '新增直播与娱乐社交产品的横向进场装扮设计工作流，支持主题、档位、风格及参考图转译。',
@@ -102,18 +89,6 @@ const updates = [
       '新增按发布时间查看最新 Skill 的排序方式',
     ],
   },
-  {
-    date: '2026.07.03',
-    label: 'LAUNCH',
-    title: 'Design Skills 平台发布',
-    summary: '设计师与 AI Agent 双栖的 Skill 工作台正式上线。',
-    items: [
-      '上线 Skill 分类、搜索、详情与一键复制能力',
-      '接入 GitHub 精选设计 Skill',
-      '提供 skills-index.json 供 AI Agent 读取',
-      '完成 GitHub Pages 部署和站点基础配置',
-    ],
-  },
 ];
 ---
 
@@ -122,7 +97,7 @@ const updates = [
     <div style="max-width: 620px; margin-bottom: 48px;">
       <p style="font-size: 11px; font-weight: 600; letter-spacing: .14em; color: #002FA7; font-family: 'DM Mono', monospace; margin-bottom: 12px;">CHANGELOG</p>
       <h1 style="font-size: clamp(30px, 5vw, 46px); line-height: 1.1; letter-spacing: -.04em; margin-bottom: 14px;">更新记录</h1>
-      <p style="font-size: 15px; line-height: 1.75; color: #737373;">记录平台新增的 Skill、体验优化与内容迭代。每一次更新，都让设计工作流更容易被复用。</p>
+      <p style="font-size: 15px; line-height: 1.75; color: #737373;">只记录新增 Skill 与 Skill 内容扩充，方便快速查看平台最近上线的设计工作流。</p>
     </div>
 
     <div style="position: relative;">
