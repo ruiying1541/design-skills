@@ -37,6 +37,40 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/accessibility-check.md"
   },
   {
+    "name": "badge-design",
+    "title": "勋章 Skill",
+    "description": "提供主题、档位和风格，自动生成符合规范的进场装扮，默认处理昵称区留白、左右结构衔接、主题爆点挂载、横向动势、透明背景、边缘清晰及方便抠图等要求。",
+    "category": "视觉生成",
+    "tags": [
+      "勋章",
+      "虚拟装扮",
+      "等级体系",
+      "游戏UI",
+      "材质设计"
+    ],
+    "ai_trigger": [
+      "需要根据主题、档位和风格生成虚拟装扮勋章",
+      "需要把人物、IP、活动海报或头像框转译成独立勋章",
+      "需要规划铜银金钻、S 到 SSSS 等等级套系",
+      "需要从已有勋章继续升级、降级或扩展完整等级"
+    ],
+    "ai_output": "一枚或一套主题清晰、等级统一、边缘完整且方便抠图的虚拟装扮勋章。",
+    "difficulty": "intermediate",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "designai-generate-image",
+      "middle-east-avatar-frame",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-07",
+    "url": "/skills/badge-design",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/badge-design.md"
+  },
+  {
     "name": "color-system",
     "title": "色彩系统设计",
     "description": "为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。",
