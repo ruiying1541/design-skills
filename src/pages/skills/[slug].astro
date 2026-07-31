@@ -156,7 +156,18 @@ const download = skill.data.download ?? {
         </div>
       </div>
 
-      <!-- 一键复制按钮 -->
+      {download && (
+        <a
+          href={download.url}
+          download={download.filename}
+          style={`display: inline-flex; align-items: center; gap: 6px; background: ${cat.dot}; color: #fff; border: 1px solid ${cat.dot}; padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0;`}
+          aria-label={`下载 ${skill.data.title} 文件`}
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
+          {download.label}
+        </a>
+      )}
+      <!-- 次级操作：复制 Skill 内容 -->
       <button
         id="install-btn"
         onclick={`
@@ -164,26 +175,15 @@ const download = skill.data.download ?? {
           navigator.clipboard.writeText(raw).then(() => {
             const btn = document.getElementById('install-btn');
             btn.textContent = '✓ 已复制';
-            setTimeout(() => { btn.textContent = '一键复制 Skill'; }, 2000);
+            setTimeout(() => { btn.textContent = '复制 Skill 内容'; }, 2000);
           });
         `}
-        style={`background: ${cat.dot}; color: #fff; border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; flex-shrink: 0;`}
-        onmouseover="this.style.opacity='0.85'"
-        onmouseout="this.style.opacity='1'"
+        style="background: transparent; color: #737373; border: none; padding: 8px 6px; font-size: 12px; font-weight: 600; cursor: pointer; transition: color 0.15s; white-space: nowrap; flex-shrink: 0;"
+        onmouseover={`this.style.color='${cat.dot}'`}
+        onmouseout="this.style.color='#737373'"
       >
-        一键复制 Skill
+        复制 Skill 内容
       </button>
-      {download && (
-        <a
-          href={download.url}
-          download={download.filename}
-          style={`display: inline-flex; align-items: center; gap: 6px; background: #fff; color: ${cat.dot}; border: 1px solid ${cat.dot}44; padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0;`}
-          aria-label={`下载 ${skill.data.title} 文件`}
-        >
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
-          {download.label}
-        </a>
-      )}
     </div>
 
     <!-- 描述 -->
