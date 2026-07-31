@@ -18,6 +18,11 @@ const skills = defineCollection({
     related: z.array(z.string()).optional(),
     updated: z.string().optional(),
     sortOrder: z.number().optional(),
+    download: z.object({
+      url: z.string(),
+      label: z.string(),
+      filename: z.string(),
+    }).optional(),
     showcase: z.object({
       url: z.string().url(),
       eyebrow: z.string(),
