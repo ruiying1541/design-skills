@@ -26,6 +26,11 @@ const diffMap: Record<string, { label: string; bg: string; color: string }> = {
 };
 const diffInfo = skill.data.difficulty ? diffMap[skill.data.difficulty] : null;
 const cat = getCategoryColor(skill.data.category);
+const download = skill.data.download ?? {
+  url: `/design-skills/skill-downloads/${skill.id}.zip`,
+  label: '下载 Skill',
+  filename: `${skill.id}.zip`,
+};
 ---
 
 <Layout title={skill.data.title} description={skill.data.description}>
@@ -168,15 +173,15 @@ const cat = getCategoryColor(skill.data.category);
       >
         一键复制 Skill
       </button>
-      {skill.data.download && (
+      {download && (
         <a
-          href={skill.data.download.url}
-          download={skill.data.download.filename}
+          href={download.url}
+          download={download.filename}
           style={`display: inline-flex; align-items: center; gap: 6px; background: #fff; color: ${cat.dot}; border: 1px solid ${cat.dot}44; padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0;`}
           aria-label={`下载 ${skill.data.title} 文件`}
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
-          {skill.data.download.label}
+          {download.label}
         </a>
       )}
     </div>
@@ -324,15 +329,15 @@ const cat = getCategoryColor(skill.data.category);
       )}
 
       <!-- Skill 文件下载 -->
-      {skill.data.download && (
+      {download && (
         <a
-          href={skill.data.download.url}
-          download={skill.data.download.filename}
+          href={download.url}
+          download={download.filename}
           style={`display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid ${cat.dot}33; border-radius: 12px; padding: 13px 14px; background: ${cat.badgeBg}; color: ${cat.dot}; text-decoration: none;`}
         >
           <span>
             <strong style="display: block; font-size: 13px; margin-bottom: 2px;">下载 Skill 文件</strong>
-            <span style="display: block; font-size: 11px; opacity: .78;">{skill.data.download.filename}</span>
+            <span style="display: block; font-size: 11px; opacity: .78;">{download.filename}</span>
           </span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"/></svg>
         </a>

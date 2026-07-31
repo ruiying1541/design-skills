@@ -15,10 +15,6 @@ tools: ["GPT Image", "DesignAI", "Codex"]
 related: ["designai-generate-image", "middle-east-avatar-frame", "design-ai-cutout"]
 updated: "2026-07"
 sortOrder: 2026073101
-download:
-  url: "/design-skills/skill-assets/badge-skill.zip"
-  label: "下载 Skill"
-  filename: "徽章skill.zip"
 ---
 
 ## 是什么
@@ -178,7 +174,4 @@ download:
 
 ## 原始 Skill 文件
 
-点击页面顶部或右侧的“下载 Skill”按钮，可下载完整 ZIP 文件。压缩包内包含：
-
-- 《虚拟装扮勋章设计 Skill v2.4｜等级统一梯度版》
-- 《虚拟装扮勋章设计｜使用提示词模板 Skill v1.0》
+点击页面顶部或右侧的“下载 Skill”按钮，可下载符合 Codex 规范的 ZIP 文件。解压后会得到 `badge-design/SKILL.md`，可直接放入 Codex 的 skills 目录使用。

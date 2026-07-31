@@ -15,10 +15,6 @@ tools: ["GPT Image", "DesignAI", "Codex"]
 related: ["badge-design", "designai-generate-image", "design-ai-cutout"]
 updated: "2026-07"
 sortOrder: 2026073102
-download:
-  url: "/design-skills/skill-assets/entrance-effect-skill.zip"
-  label: "下载 Skill"
-  filename: "进场装扮skill.zip"
 ---
 
 ## 是什么
@@ -202,7 +198,4 @@ download:
 
 ## 原始 Skill 文件
 
-点击页面顶部或右侧的“下载 Skill”按钮，可下载完整 ZIP 文件。压缩包内包含：
-
-- 《进场装扮设计 Skill｜终版 v5.0》
-- 《进场装扮设计 Skill 使用说明》
+点击页面顶部或右侧的“下载 Skill”按钮，可下载符合 Codex 规范的 ZIP 文件。解压后会得到 `entrance-effect/SKILL.md`，可直接放入 Codex 的 skills 目录使用。

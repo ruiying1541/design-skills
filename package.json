@@ -7,8 +7,9 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/fetch-github-skills.mjs && astro build && npx --yes pagefind --site dist",
-    "build:skip-fetch": "astro build && npx --yes pagefind --site dist",
+    "package:skills": "node scripts/package-codex-skills.mjs",
+    "build": "node scripts/package-codex-skills.mjs && node scripts/fetch-github-skills.mjs && astro build && npx --yes pagefind --site dist",
+    "build:skip-fetch": "node scripts/package-codex-skills.mjs && astro build && npx --yes pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro"
   },

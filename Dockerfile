@@ -8,7 +8,7 @@ RUN npm ci --ignore-scripts
 COPY astro.config.mjs tsconfig.json ./
 COPY public/ ./public/
 COPY src/ ./src/
-RUN npm run astro -- build
+RUN npm run package:skills && npm run astro -- build
 
 FROM registry.corp.kuaishou.com/base/knode-v14:1.0.20-v14.19.3-knode-0.4.x-580affea
 
