@@ -1,11 +1,12 @@
 import { execFileSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { basename, join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const sourceDir = join(root, 'src', 'content', 'skills');
 const outputDir = join(root, 'public', 'skill-downloads');
+const archiveTimestamp = new Date('2026-01-01T00:00:00Z');
 
 function readQuotedField(frontmatter, field) {
   const match = frontmatter.match(new RegExp(`^${field}:\\s*["']([^"']+)["']\\s*$`, 'm'));
@@ -33,8 +34,9 @@ for (const filename of readdirSync(sourceDir).filter((file) => file.endsWith('.m
   const zipPath = join(outputDir, `${basename(filename, '.md')}.zip`);
 
   mkdirSync(skillDir, { recursive: true });
+  const skillFile = join(skillDir, 'SKILL.md');
   writeFileSync(
-    join(skillDir, 'SKILL.md'),
+    skillFile,
     [
       '---',
       `name: ${escapeYaml(name)}`,
@@ -47,9 +49,11 @@ for (const filename of readdirSync(sourceDir).filter((file) => file.endsWith('.m
       '',
     ].join('\n'),
   );
+  utimesSync(skillFile, archiveTimestamp, archiveTimestamp);
+  utimesSync(skillDir, archiveTimestamp, archiveTimestamp);
 
   rmSync(zipPath, { force: true });
-  execFileSync('/usr/bin/zip', ['-q', '-r', zipPath, name], { cwd: stagingRoot });
+  execFileSync('/usr/bin/zip', ['-q', '-X', '-r', zipPath, name], { cwd: stagingRoot });
   rmSync(stagingRoot, { recursive: true, force: true });
 }
 
