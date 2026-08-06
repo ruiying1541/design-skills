@@ -71,6 +71,72 @@
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/badge-design.md"
   },
   {
+    "name": "chinese-title-wordmark-black",
+    "title": "中文标题字／字标设计 Skill·黑底版",
+    "description": "在默认纯黑背景上生成文字准确、重点突出、风格差异明确的中文标题字或字标，支持可爱 3D、二次元、乙女和高级赛事等方向。",
+    "category": "视觉生成",
+    "tags": [
+      "中文标题字",
+      "字标设计",
+      "黑底",
+      "字体视觉",
+      "标题生成"
+    ],
+    "ai_trigger": [
+      "需要生成中文标题字或活动字标",
+      "需要在纯黑背景上输出方便抠图的标题设计",
+      "需要生成多个构图和材质明显不同的标题方案",
+      "需要控制重点文字、复杂程度和商业质感"
+    ],
+    "ai_output": "文字准确、轮廓清晰、重点突出且方便抠图的中文标题字或字标方案。",
+    "difficulty": "intermediate",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "chinese-title-wordmark-guide",
+      "designai-generate-image"
+    ],
+    "updated": "2026-08",
+    "url": "/skills/chinese-title-wordmark-black",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/chinese-title-wordmark-black.md"
+  },
+  {
+    "name": "chinese-title-wordmark-guide",
+    "title": "中文标题字字标设计 Skill 使用说明",
+    "description": "提供中文标题字与字标的输入模板、风格关键词、黑底规则、质量要求、反重复策略、修改指令和从方向探索到精修适配的完整工作流。",
+    "category": "视觉生成",
+    "tags": [
+      "标题字",
+      "字标",
+      "提示词模板",
+      "使用说明",
+      "视觉生成"
+    ],
+    "ai_trigger": [
+      "需要学习如何调用中文标题字设计 Skill",
+      "需要生成单个或多个中文标题字方向",
+      "需要基于参考图转译标题字风格",
+      "需要精修重点文字、材质、背景或复杂度"
+    ],
+    "ai_output": "一份可直接使用的中文标题字设计指令、方案规划与精修流程。",
+    "difficulty": "beginner",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "chinese-title-wordmark-black",
+      "designai-generate-image"
+    ],
+    "updated": "2026-08",
+    "url": "/skills/chinese-title-wordmark-guide",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/chinese-title-wordmark-guide.md"
+  },
+  {
     "name": "color-system",
     "title": "色彩系统设计",
     "description": "为产品建立完整的色彩体系，包括品牌色、功能色、中性色和语义色，确保视觉一致性与可维护性。",
@@ -688,6 +754,104 @@
     "updated": "2026-07",
     "url": "/skills/humanizer",
     "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/humanizer.md"
+  },
+  {
+    "name": "image-layer-extraction",
+    "title": "图像拆图技能 2.2",
+    "description": "将 KV、插图、海报、场景图或 UI 视觉拆成可复用主体、底板、装饰、标题和独立背景，并执行结构补全、分组限制、比例锁定及失败重绘。",
+    "category": "审查交付",
+    "tags": [
+      "图像拆分",
+      "元素补全",
+      "背景拆分",
+      "比例锁定",
+      "资产复用"
+    ],
+    "ai_trigger": [
+      "需要把完整视觉图拆成可复用的独立资产",
+      "需要单独提取背景、标题、人物或装饰元素",
+      "需要补全被遮挡或裁切的结构",
+      "需要保持原图宽高比并输出纯色抠图底"
+    ],
+    "ai_output": "按组输出的完整独立元素与背景资源，边缘干净、结构补全并保持原图风格。",
+    "difficulty": "advanced",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "image-splitting-guide",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-08",
+    "url": "/skills/image-layer-extraction",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/image-layer-extraction.md"
+  },
+  {
+    "name": "image-splitting-guide",
+    "title": "拆图使用说明 Skill",
+    "description": "指导如何描述拆图需求、规划元素分组、单独拆分背景与标题，并规范纯色抠图底、原图比例、边缘补全和交付质量。",
+    "category": "审查交付",
+    "tags": [
+      "拆图",
+      "元素分组",
+      "抠图",
+      "资产交付",
+      "使用说明"
+    ],
+    "ai_trigger": [
+      "需要学习如何向 AI 描述拆图任务",
+      "需要把 KV、海报、插图或头像框拆成独立元素",
+      "需要规划背景、标题、主体和装饰的分组输出",
+      "需要控制拆图数量、宽高比与纯色抠图底"
+    ],
+    "ai_output": "一套清晰可执行的拆图指令、分组方案和交付规范。",
+    "difficulty": "beginner",
+    "tools": [
+      "GPT Image",
+      "DesignAI",
+      "Codex"
+    ],
+    "related": [
+      "image-layer-extraction",
+      "design-ai-cutout"
+    ],
+    "updated": "2026-08",
+    "url": "/skills/image-splitting-guide",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/image-splitting-guide.md"
+  },
+  {
+    "name": "image-variation-v3",
+    "title": "图片裂变 Skill v3.0",
+    "description": "基于参考图锁定视觉 DNA，使用 GPT Image 进行主题、材质、等级、名次、人物 IP 与拟人物体 IP 裂变，并自动检查数量、风格和结构一致性。",
+    "category": "视觉生成",
+    "tags": [
+      "图片裂变",
+      "参考图",
+      "IP设计",
+      "等级体系",
+      "材质转译"
+    ],
+    "ai_trigger": [
+      "需要基于参考图生成同风格的多个新方案",
+      "需要进行主题、材质、等级或名次裂变",
+      "需要把人物或物体转译成稳定 IP 系列",
+      "需要保证多张生成图的数量、顺序和风格一致"
+    ],
+    "ai_output": "一组保留核心视觉 DNA、变化维度明确且套系一致的裂变图像。",
+    "difficulty": "advanced",
+    "tools": [
+      "GPT Image",
+      "Codex"
+    ],
+    "related": [
+      "designai-generate-image",
+      "image-layer-extraction"
+    ],
+    "updated": "2026-08",
+    "url": "/skills/image-variation-v3",
+    "raw_url": "https://raw.githubusercontent.com/[YOUR_USERNAME]/design-skills/main/src/content/skills/image-variation-v3.md"
   },
   {
     "name": "impeccable",

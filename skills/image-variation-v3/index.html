@@ -1,0 +1,526 @@
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-ju4pidww><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>图片裂变 Skill v3.0</title><meta name="description" content="基于参考图锁定视觉 DNA，使用 GPT Image 进行主题、材质、等级、名次、人物 IP 与拟人物体 IP 裂变，并自动检查数量、风格和结构一致性。"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"><style>:root{--blue:#002fa7;--blue-light:#e8eeff;--text:#0a0a0a;--text-2:#525252;--text-3:#a3a3a3;--border:#e5e5e5;--bg:#fff;--bg-2:#f7f7f7;--bg-3:#f0f0f0;--radius:12px;--radius-sm:6px}[data-astro-cid-ju4pidww],[data-astro-cid-ju4pidww]:before,[data-astro-cid-ju4pidww]:after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:DM Sans,-apple-system,PingFang SC,Hiragino Sans GB,sans-serif;line-height:1.6}[data-astro-cid-ju4pidww]::-webkit-scrollbar{width:6px}[data-astro-cid-ju4pidww]::-webkit-scrollbar-track{background:0 0}[data-astro-cid-ju4pidww]::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}.prose[data-astro-cid-ju4pidww] h2[data-astro-cid-ju4pidww]{color:var(--text);margin:2rem 0 .75rem;font-size:1.25rem;font-weight:600}.prose[data-astro-cid-ju4pidww] h3[data-astro-cid-ju4pidww]{color:var(--text);margin:1.5rem 0 .5rem;font-size:1.05rem;font-weight:600}.prose[data-astro-cid-ju4pidww] p[data-astro-cid-ju4pidww]{color:var(--text-2);margin-bottom:1rem;line-height:1.75}.prose[data-astro-cid-ju4pidww] ul[data-astro-cid-ju4pidww],.prose[data-astro-cid-ju4pidww] ol[data-astro-cid-ju4pidww]{color:var(--text-2);margin-bottom:1rem;padding-left:1.5rem}.prose[data-astro-cid-ju4pidww] li[data-astro-cid-ju4pidww]{margin-bottom:.4rem;line-height:1.7}.prose[data-astro-cid-ju4pidww] code[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);color:var(--blue);border-radius:4px;padding:.15em .4em;font-family:DM Mono,monospace;font-size:.85em}.prose[data-astro-cid-ju4pidww] pre[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:1rem;padding:1.25rem;overflow-x:auto}.prose[data-astro-cid-ju4pidww] pre[data-astro-cid-ju4pidww] code[data-astro-cid-ju4pidww]{color:var(--text);background:0 0;border:none;padding:0;font-size:.875rem}.prose[data-astro-cid-ju4pidww] blockquote[data-astro-cid-ju4pidww]{border-left:3px solid var(--blue);background:var(--blue-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin-bottom:1rem;padding:.75rem 1rem}.prose[data-astro-cid-ju4pidww] blockquote[data-astro-cid-ju4pidww] p[data-astro-cid-ju4pidww]{color:var(--text);margin:0}.prose[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww]{color:var(--blue);text-decoration:none}.prose[data-astro-cid-ju4pidww] a[data-astro-cid-ju4pidww]:hover{text-decoration:underline}.prose[data-astro-cid-ju4pidww] strong[data-astro-cid-ju4pidww]{color:var(--text);font-weight:600}.prose[data-astro-cid-ju4pidww] hr[data-astro-cid-ju4pidww]{border:none;border-top:1px solid var(--border);margin:2rem 0}.prose[data-astro-cid-ju4pidww] table[data-astro-cid-ju4pidww]{border-collapse:collapse;width:100%;margin-bottom:1rem;font-size:.9rem}.prose[data-astro-cid-ju4pidww] thead[data-astro-cid-ju4pidww] th[data-astro-cid-ju4pidww]{background:var(--bg-2);border:1px solid var(--border);text-align:left;padding:.6rem .75rem;font-weight:600}.prose[data-astro-cid-ju4pidww] tbody[data-astro-cid-ju4pidww] td[data-astro-cid-ju4pidww]{border:1px solid var(--border);color:var(--text-2);padding:.6rem .75rem}.pagefind-ui[data-astro-cid-ju4pidww]{--pagefind-ui-primary:var(--blue)}html[data-page=index] #header-search-wrap[data-astro-cid-ju4pidww]{visibility:hidden;opacity:0;pointer-events:none;transition:opacity .2s}
+.ds-prose{color:#404040;font-size:14px;line-height:1.8}.ds-prose h2{color:#0a0a0a;letter-spacing:-.02em;border-bottom:1px solid #e5e5e5;margin:28px 0 10px;padding-bottom:6px;font-size:16px;font-weight:700}.ds-prose>:first-child{margin-top:0!important}.ds-prose h3{color:#262626;margin:18px 0 8px;font-size:14px;font-weight:700}.ds-prose p{margin:8px 0}.ds-prose ul,.ds-prose ol{margin:8px 0;padding-left:18px}.ds-prose li{margin:4px 0}.ds-prose strong{color:#0a0a0a;font-weight:600}.ds-prose a{color:var(--cat-dot);text-underline-offset:2px;text-decoration:underline}.ds-prose code{color:#262626;background:#f3f4f6;border:1px solid #e5e5e5;border-radius:4px;padding:1px 5px;font-family:DM Mono,monospace;font-size:12px}.ds-prose pre{background:#0f0f0f;border:1px solid #1e1e1e;border-radius:10px;margin:12px 0;padding:16px 20px;overflow-x:auto}.ds-prose pre code{color:#e2e8f0;background:0 0;border:none;padding:0;font-size:12.5px;line-height:1.7}.ds-prose table{border-collapse:collapse;table-layout:auto;width:100%;margin:14px 0;font-size:13px;display:block;overflow-x:auto}.ds-prose th{color:#525252;text-align:left;white-space:nowrap;background:#f7f7f7;border:1px solid #e5e5e5;padding:8px 12px;font-size:12px;font-weight:600}.ds-prose td{vertical-align:top;word-break:normal;border:1px solid #e5e5e5;padding:8px 12px}.ds-prose table:has(img){table-layout:fixed;display:table;overflow:visible}.ds-prose table:has(img) th:first-child,.ds-prose table:has(img) td:first-child{width:42%}.ds-prose table:has(img) th:last-child,.ds-prose table:has(img) td:last-child{width:58%}.ds-prose table:has(img) td{word-break:break-word;padding:10px 12px}.ds-prose table:has(img) img{object-fit:contain;background:#f7f7f7;border:1px solid #e5e5e5;border-radius:8px;width:auto;max-width:100%;height:auto;max-height:220px;display:block}.ds-prose table:has(img) td:first-child img{max-height:140px}.ds-prose tr:hover td{background:#fafafa}.ds-prose blockquote{border-left:3px solid var(--cat-dot);background:var(--cat-bg);border-radius:0 8px 8px 0;margin:12px 0;padding:8px 14px}.ds-prose blockquote p{color:#525252;margin:0}.ds-prose .skill-demo{margin:14px 0 24px}.ds-prose .skill-demo img{background:#f7f7f7;border:1px solid #e5e5e5;border-radius:14px;width:100%;height:auto;display:block}.ds-prose .skill-demo figcaption{color:#737373;margin-top:9px;font-size:12px;line-height:1.6}.detail-body{grid-template-columns:1fr 280px;align-items:start;gap:24px;display:grid}.detail-body>*{min-width:0}.skill-showcase{aspect-ratio:16/9;color:#fff;isolation:isolate;background:#0639c7;border-radius:14px;text-decoration:none;display:block;position:relative;overflow:hidden;box-shadow:0 12px 36px #002fa72e}.skill-showcase:before{content:"";z-index:-2;background-image:radial-gradient(circle at 1px 1px,#ffffff47 1px,#0000 1.4px),linear-gradient(110deg,#ffffff14,#0000 52%);background-size:18px 18px,100% 100%;position:absolute;inset:0;mask-image:linear-gradient(90deg,#000 0%,#000000a6 55%,#0000 100%)}.skill-showcase:after{content:"";aspect-ratio:1;z-index:-1;border:1px solid #fff3;border-radius:50%;width:48%;position:absolute;top:-34%;right:-12%;box-shadow:0 0 0 48px #ffffff06,0 0 0 96px #ffffff05}.showcase-play{transition:transform .2s,background .2s}.skill-showcase:hover .showcase-play{color:#002fa7;background:#fff;transform:scale(1.08)}.skill-showcase:hover .showcase-arrow{transform:translate(3px,-3px)}.showcase-arrow{transition:transform .2s;display:inline-block}@media (width<=800px){.detail-body{grid-template-columns:minmax(0,1fr)}.ds-prose pre{max-width:100%}}@media (width<=560px){.skill-showcase{aspect-ratio:4/3}.showcase-title{font-size:30px!important}.showcase-subtitle{max-width:78%!important}}
+</style></head><body data-astro-cid-ju4pidww><!-- Header --><header style="position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);" data-astro-cid-ju4pidww><div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 56px; display: flex; align-items: center; justify-content: space-between;" data-astro-cid-ju4pidww><a href="/design-skills/" style="display: flex; align-items: center; gap: 10px; text-decoration: none;" data-astro-cid-ju4pidww><img src="/design-skills/logo.svg" alt="Design Skills" style="width: 26px; height: 26px; border-radius: 6px; display: block;" data-astro-cid-ju4pidww><span style="font-weight: 600; color: var(--text); font-size: 15px; letter-spacing: -0.02em;" data-astro-cid-ju4pidww>Design Skills</span></a><!-- 搜索框 --><div id="header-search-wrap" style="flex: 1; max-width: 340px; margin: 0 32px; position: relative;" data-astro-cid-ju4pidww><svg style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; color: var(--text-3); pointer-events: none;" fill="none" viewBox="0 0 24 24" stroke="currentColor" data-astro-cid-ju4pidww><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" data-astro-cid-ju4pidww></path></svg><input id="header-search" type="text" placeholder="搜索 Skill…" autocomplete="off" style="
+            width: 100%;
+            padding: 7px 12px 7px 32px;
+            background: var(--bg-2);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+          " onfocus="this.style.borderColor='var(--blue)';this.style.background='#fff'" onblur="this.style.borderColor='var(--border)';this.style.background='var(--bg-2)'" data-astro-cid-ju4pidww></div><nav style="display: flex; align-items: center; gap: 6px;" data-astro-cid-ju4pidww><a href="/design-skills/updates" style="font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: background 0.15s;" onmouseover="this.style.background='var(--bg-2)'" onmouseout="this.style.background='transparent'" data-astro-cid-ju4pidww>更新记录</a><a href="/design-skills/about" style="font-size: 13px; color: var(--text-2); text-decoration: none; padding: 6px 12px; border-radius: var(--radius-sm); transition: background 0.15s;" onmouseover="this.style.background='var(--bg-2)'" onmouseout="this.style.background='transparent'" data-astro-cid-ju4pidww>关于</a></nav></div></header><main data-astro-cid-ju4pidww><div style="max-width: 1060px; margin: 0 auto; padding: 28px 24px 80px;"><!-- 返回 --><a href="/design-skills/" style="display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: #525252; text-decoration: none; margin-bottom: 16px; font-weight: 500;" onmouseover="this.style.color='#002FA7'" onmouseout="this.style.color='#A3A3A3'"><svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>返回</a><!-- ══ 头部：封面缩略图 + 标题行 + 描述 ══ --><div style="background: #E8EEFF; border: 1px solid #002FA722; border-radius: 16px; padding: 20px 24px; margin-bottom: 24px;"><!-- 标题行：封面小图 + 名称 + 标签 + 按钮 --><div style="display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap;"><!-- 封面图标（分类主色）--><div style="width: 48px; height: 48px; border-radius: 10px; background: #002FA7; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 2px 8px #002FA744;"><span style="font-size: 8px; font-weight: 800; color: rgba(255,255,255,0.9); letter-spacing: 0.06em; font-family: 'DM Mono', monospace; text-transform: uppercase; line-height: 1.2; text-align: center;">VISUAL</span></div><!-- 名称 + 标签 --><div style="flex: 1; min-width: 0;"><div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;"><h1 style="font-size: 20px; font-weight: 800; color: #0A0A0A; letter-spacing: -0.03em; margin: 0;">图片裂变 Skill v3.0</h1><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #002FA7; background: #fff; padding: 2px 9px; border-radius: 20px;">视觉生成</span><span style="font-size: 11px; font-weight: 600; padding: 2px 9px; border-radius: 20px; background: #fff; color: #E11D48;">高阶</span></div></div><a href="/design-skills/skill-downloads/image-variation-v3.zip" download="image-variation-v3.zip" style="display: inline-flex; align-items: center; gap: 6px; background: #002FA7; color: #fff; border: 1px solid #002FA7; padding: 8px 15px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; white-space: nowrap; flex-shrink: 0;" aria-label="下载 图片裂变 Skill v3.0 文件"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14"></path></svg>一键下载 Skill</a></div><!-- 描述 --><p style="font-size: 14px; color: #737373; line-height: 1.65; margin: 0 0 10px; max-width: 800px;">基于参考图锁定视觉 DNA，使用 GPT Image 进行主题、材质、等级、名次、人物 IP 与拟人物体 IP 裂变，并自动检查数量、风格和结构一致性。</p><!-- Tags --><div style="display: flex; gap: 5px; flex-wrap: wrap;"><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#图片裂变</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#参考图</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#IP设计</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#等级体系</span><span style="font-size: 11px; color: #002FA7; background: #E8EEFF; border: 1px solid #002FA733; padding: 2px 10px; border-radius: 20px; font-weight: 500;">#材质转译</span><span style="font-size: 11px; color: #A3A3A3; font-family: 'DM Mono', monospace; padding: 2px 6px;">updated 2026-08</span></div></div><!-- ══ 主体：左内容 + 右侧边栏 ══ --><div class="detail-body"><!-- 左：内容区 --><div><!-- Markdown 正文 --><div class="ds-prose" style="--cat-dot: #002FA7; --cat-bg: #E8EEFF;"><h2 id="1-定位">1. 定位</h2>
+<p>本 Skill 不是随机生成多个相似方案，而是把一张参考图稳定延展为一套风格统一、差异明确、数量准确、可商业上线的独立视觉资产。</p>
+<p>核心目标：</p>
+<ol>
+<li>提取并保留参考图真正有价值的设计 DNA；</li>
+<li>先建立统一风格母体，再改变主题、主体、材质、构图或等级；</li>
+<li>所有结果同系列但不重复；</li>
+<li>用户要求几张，就生成几张独立图片；</li>
+<li>出现宫格、风格漂移、角色变脸等问题时自动重做当前张。</li>
+</ol>
+<h2 id="2-唯一生图工具">2. 唯一生图工具</h2>
+<p>所有生成、重绘、修复和裂变只能使用 GPT Image。</p>
+<p>禁止：Midjourney、Stable Diffusion、ComfyUI、第三方 API，以及用文字假装已经完成生图。</p>
+<p>数量 4 的正确执行流程：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>第1张独立生成 → 检查</span></span>
+<span class="line"><span>第2张独立生成 → 检查</span></span>
+<span class="line"><span>第3张独立生成 → 检查</span></span>
+<span class="line"><span>第4张独立生成 → 检查</span></span></code></pre>
+<p>禁止合集图、三联图、四宫格、资产展示板、对比排版、编号说明图。</p>
+<h2 id="3-自动路由">3. 自动路由</h2>
+<p>收到任务后自动识别一个主裂变维度：</p>
+<ul>
+<li>主题裂变：主体和风格不变，改变世界观、专属元素、动作与情绪；</li>
+<li>主体裂变：风格、构图骨架与材质不变，替换主视觉主体；</li>
+<li>材质裂变：主体、主题、构图不变，改变表面、厚度和光学表现；</li>
+<li>构图裂变：主题与主体不变，改变视觉重心、动线、层级和空间组织；</li>
+<li>等级裂变：生成高、中、低等连续等级；</li>
+<li>名次裂变：生成冠军、亚军、季军；</li>
+<li>人物 IP 裂变：先提炼稳定角色识别点，再做主题或材质延展；</li>
+<li>拟人物体 IP 裂变：将物体功能转化为人格、五官、动作和世界观；</li>
+<li>资源类型裂变：把同一设计 DNA 延展为头像框、勋章、称号条、资料卡等资产。</li>
+</ul>
+<p>多个维度同时出现时，只允许一个维度做大幅变化，其他维度作为辅助控制，避免风格失控。</p>
+<h2 id="4-自动前置风格锚定">4. 自动前置：风格锚定</h2>
+<p>只要用户上传参考图，或出现风格、画风、材质、同套系、统一风格、C4D、毛绒、二次元、乙女、Q版等要求，必须先执行风格锚定。</p>
+<h3 id="41-风格母体">4.1 风格母体</h3>
+<p>每次只设定：</p>
+<ul>
+<li>1 个主风格；</li>
+<li>最多 3 个辅助特征；</li>
+<li>明确冲突风格和禁止项。</li>
+</ul>
+<h3 id="42-风格指纹八维">4.2 风格指纹八维</h3>
+<p>必须明确：</p>
+<ol>
+<li>形体；</li>
+<li>轮廓；</li>
+<li>色彩；</li>
+<li>上色；</li>
+<li>光影；</li>
+<li>材质；</li>
+<li>构图；</li>
+<li>细节密度。</li>
+</ol>
+<p>至少 3 个维度必须与其他风格明显不同。</p>
+<h3 id="43-优先级">4.3 优先级</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>用户明确风格要求</span></span>
+<span class="line"><span>> 用户上传的风格参考图</span></span>
+<span class="line"><span>> 上一轮已确认风格母体</span></span>
+<span class="line"><span>> 当前参考图可提取的视觉语言</span></span>
+<span class="line"><span>> 模型默认审美</span></span></code></pre>
+<p>风格锚定只控制“怎么画”，不能擅自改变“画什么”。</p>
+<h2 id="5-设计-dna-分析">5. 设计 DNA 分析</h2>
+<p>裂变前先提取：</p>
+<h3 id="核心识别">核心识别</h3>
+<ul>
+<li>主体；</li>
+<li>一眼可认的轮廓；</li>
+<li>必须保留的主题符号；</li>
+<li>视觉爆点。</li>
+</ul>
+<h3 id="结构骨架">结构骨架</h3>
+<ul>
+<li>外轮廓；</li>
+<li>顶部主装饰；</li>
+<li>左右辅助结构；</li>
+<li>底部承接；</li>
+<li>中央留白或内容区；</li>
+<li>主要动线与层级。</li>
+</ul>
+<h3 id="风格语言">风格语言</h3>
+<ul>
+<li>配色比例；</li>
+<li>材质组合；</li>
+<li>光源方向；</li>
+<li>高光类型；</li>
+<li>体积感；</li>
+<li>边缘处理；</li>
+<li>细节密度。</li>
+</ul>
+<h3 id="可变与不可变">可变与不可变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>不可变：核心身份、主风格、核心结构、关键识别符号、资产功能</span></span>
+<span class="line"><span>可变：主题元素、材质、配色、装饰数量、动作、情绪、等级复杂度</span></span></code></pre>
+<h2 id="6-人物与拟人物体-ip-裂变">6. 人物与拟人物体 IP 裂变</h2>
+<h3 id="61-人物-ip-最低识别标准">6.1 人物 IP 最低识别标准</h3>
+<p>每个角色至少固定：</p>
+<ul>
+<li>1 个头部符号；</li>
+<li>1 个服装符号；</li>
+<li>1 个固定配色；</li>
+<li>1 个固定表情或情绪；</li>
+<li>1 个小伙伴、道具或标志图形。</li>
+</ul>
+<p>必须锁定脸型、眼型、发型剪影、服装和标志物，禁止每张换脸。</p>
+<h3 id="62-卡通化规则">6.2 卡通化规则</h3>
+<p>用户要求“不要太真人、夸张五官、卡通化”时：</p>
+<ul>
+<li>头大身短；</li>
+<li>扁圆脸；</li>
+<li>眼睛放大并固定眼型；</li>
+<li>鼻子弱化；</li>
+<li>嘴型简化；</li>
+<li>手脚缩短；</li>
+<li>轮廓圆润；</li>
+<li>降低真实皮肤纹理；</li>
+<li>增强毛绒、搪胶、软陶或潮玩感；</li>
+<li>禁止写实毛孔、真实摄影脸和成人比例。</li>
+</ul>
+<h3 id="63-拟人物体逻辑">6.3 拟人物体逻辑</h3>
+<p>不能只给物体加眼睛和手脚，必须完成：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>物体功能 → 性格 → 行为 → 五官位置 → 肢体结构 → 情绪 → 标志动作 → 世界观</span></span></code></pre>
+<p>主题元素必须与角色形成内在关系，禁止机械贴图。</p>
+<h2 id="7-等级裂变-v30">7. 等级裂变 v3.0</h2>
+<p>高、中、低必须连续递减：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>高级：100%</span></span>
+<span class="line"><span>中级：75%–85%</span></span>
+<span class="line"><span>低级：45%–55%</span></span></code></pre>
+<h3 id="高级款">高级款</h3>
+<ul>
+<li>结构最完整；</li>
+<li>装饰最多；</li>
+<li>材质最丰富；</li>
+<li>光效和体积感最强；</li>
+<li>稀有感与仪式感最强。</li>
+</ul>
+<h3 id="中级款保护机制">中级款保护机制</h3>
+<p>中级款必须是完整商业主流版，保留：</p>
+<ul>
+<li>高级款核心骨架；</li>
+<li>顶部主装饰；</li>
+<li>主要侧边结构；</li>
+<li>底部承接；</li>
+<li>主宝石或主符号；</li>
+<li>中等偏上的材质完成度。</li>
+</ul>
+<p>禁止只剩一圈框、像残缺版、或过度接近低级款。</p>
+<h3 id="低级款">低级款</h3>
+<ul>
+<li>保留核心识别；</li>
+<li>保留完整基础框架；</li>
+<li>减少装饰、材质层级和光效；</li>
+<li>仍然必须是可上线成品。</li>
+</ul>
+<h2 id="8-名次裂变">8. 名次裂变</h2>
+<p>默认映射：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>冠军 → 金</span></span>
+<span class="line"><span>亚军 → 银</span></span>
+<span class="line"><span>季军 → 铜</span></span></code></pre>
+<p>用户指定优先。</p>
+<p>冠军最完整、最尊贵；亚军保留约 80% 的结构与完成度；季军收缩外轮廓并减少辅装饰，但必须保持同一主体、骨架和主题。</p>
+<h2 id="9-材质裂变">9. 材质裂变</h2>
+<p>材质变化必须体现在表面、厚度、边缘、反射和光学行为，而不是只换颜色。</p>
+<h3 id="c4d--搪胶">C4D / 搪胶</h3>
+<p>平滑表面、清晰倒角、棚拍高光、接触阴影、真实体积。</p>
+<h3 id="毛绒--毛毡">毛绒 / 毛毡</h3>
+<p>短绒纤维、缝线、填充体积、柔软边缘、漫反射；禁止塑料镜面高光。</p>
+<h3 id="透明塑料--水晶">透明塑料 / 水晶</h3>
+<p>透光、折射、边缘高光、内部厚度和接触阴影；禁止透明贴纸感。</p>
+<h3 id="软陶--黏土">软陶 / 黏土</h3>
+<p>手工捏塑、轻微不规则、哑光表面、圆润体积；禁止玻璃反射。</p>
+<h2 id="10-主题裂变">10. 主题裂变</h2>
+<p>不同主题至少改变 4 项：</p>
+<ul>
+<li>核心意象；</li>
+<li>专属道具；</li>
+<li>角色动作；</li>
+<li>场景语义；</li>
+<li>配色比例；</li>
+<li>装饰形状；</li>
+<li>光效类型；</li>
+<li>情绪关键词。</li>
+</ul>
+<p>禁止只改颜色。</p>
+<p>情侣主题示例应区分月光誓约、深海共生、星河婚礼、蝶梦花园等不同专属事件和高潮符号。</p>
+<h2 id="11-数量锁定">11. 数量锁定</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>数量：3 = 3 张独立图片</span></span>
+<span class="line"><span>数量：4 = 4 张独立图片</span></span></code></pre>
+<h3 id="顺序锁定">顺序锁定</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>高、中、低 → 第1张高，第2张中，第3张低</span></span>
+<span class="line"><span>冠军、亚军、季军 → 第1张冠军，第2张亚军，第3张季军</span></span></code></pre>
+<p>材质、主题、主体按用户列出的顺序逐张生成。</p>
+<h3 id="任务状态">任务状态</h3>
+<p>每次生成前建立：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>目标数量：</span></span>
+<span class="line"><span>已生成：</span></span>
+<span class="line"><span>剩余数量：</span></span>
+<span class="line"><span>当前序号：</span></span>
+<span class="line"><span>当前方向：</span></span></code></pre>
+<p>直到剩余数量为 0。</p>
+<h2 id="12-单张提示词结构">12. 单张提示词结构</h2>
+<p>每张图使用独立提示词：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>风格锁定句</span></span>
+<span class="line"><span>→ 设计 DNA 保留项</span></span>
+<span class="line"><span>→ 本张裂变方向</span></span>
+<span class="line"><span>→ 主体与结构</span></span>
+<span class="line"><span>→ 材质与光影</span></span>
+<span class="line"><span>→ 构图与安全区</span></span>
+<span class="line"><span>→ 画幅与背景</span></span>
+<span class="line"><span>→ 画质修复</span></span>
+<span class="line"><span>→ 负面约束</span></span></code></pre>
+<p>通用负面约束：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>不要合集图，不要多宫格，不要方案展示板，不要编号说明，不要水印，不要品牌Logo，不要多个版本同时出现，不要文字乱码，不要结构断裂，不要多余肢体，不要风格漂移，不要完整照搬参考图。</span></span></code></pre>
+<h2 id="13-生成后自动检测">13. 生成后自动检测</h2>
+<p>每张生成后检查：</p>
+<h3 id="数量">数量</h3>
+<ul>
+<li>是否只有一个独立成品；</li>
+<li>是否误生成多个版本；</li>
+<li>是否出现宫格或合集。</li>
+</ul>
+<h3 id="风格">风格</h3>
+<ul>
+<li>是否继承同一风格母体；</li>
+<li>是否突然变成不相关风格；</li>
+<li>材质是否符合要求。</li>
+</ul>
+<h3 id="结构">结构</h3>
+<ul>
+<li>主体是否完整；</li>
+<li>外轮廓是否清楚；</li>
+<li>安全区是否正确；</li>
+<li>是否断裂、粘连或裁切。</li>
+</ul>
+<h3 id="ip">IP</h3>
+<ul>
+<li>脸型、眼型、发型、服装、标志物是否一致；</li>
+<li>是否仍然是同一个角色。</li>
+</ul>
+<h3 id="等级">等级</h3>
+<ul>
+<li>中级是否完整；</li>
+<li>高与中是否差距过大；</li>
+<li>中与低是否难以区分；</li>
+<li>三档是否同系列。</li>
+</ul>
+<h2 id="14-自动纠错">14. 自动纠错</h2>
+<p>出现以下情况时，停止下一张并重做当前张：</p>
+<ul>
+<li>宫格或合集；</li>
+<li>数量错误；</li>
+<li>风格漂移；</li>
+<li>IP 角色变脸；</li>
+<li>中级缩水严重；</li>
+<li>材质不明显；</li>
+<li>主题只换颜色；</li>
+<li>结构破碎；</li>
+<li>乱码影响主体；</li>
+<li>主体被裁切；</li>
+<li>安全区被占用。</li>
+</ul>
+<p>重做提示必须强化：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>本次只生成一个独立成品；严格保持角色脸型、眼型、发型和服装；不要其他角色；不要对比排版；不要文字；保持与上一张同一风格母体。</span></span></code></pre>
+<p>最多自动纠错 2 次。连续失败后必须如实指出失败点，不得虚假声称完成。</p>
+<h2 id="15-参考图转译边界">15. 参考图转译边界</h2>
+<p>可以提取：风格、材质、配色、结构骨架、主体特征和构图节奏。</p>
+<p>不得复制：品牌 Logo、水印、原始文字、独特角色身份、完整构图和独特元素组合。</p>
+<p>必须至少改变两项：主题、主体、动作、场景、构图、资产用途或装饰组合。</p>
+<h2 id="16-输出格式">16. 输出格式</h2>
+<h3 id="生图前">生图前</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>【任务识别】</span></span>
+<span class="line"><span>裂变类型：</span></span>
+<span class="line"><span>目标数量：</span></span>
+<span class="line"><span>生成顺序：</span></span>
+<span class="line"><span>画幅：</span></span>
+<span class="line"><span>背景：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【风格母体】</span></span>
+<span class="line"><span>主风格：</span></span>
+<span class="line"><span>辅助特征：</span></span>
+<span class="line"><span>必须保留：</span></span>
+<span class="line"><span>禁止出现：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【设计DNA】</span></span>
+<span class="line"><span>核心主体：</span></span>
+<span class="line"><span>结构骨架：</span></span>
+<span class="line"><span>核心识别：</span></span>
+<span class="line"><span>可变项：</span></span>
+<span class="line"><span>不可变项：</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>【生成清单】</span></span>
+<span class="line"><span>第1张：</span></span>
+<span class="line"><span>第2张：</span></span>
+<span class="line"><span>第3张：</span></span>
+<span class="line"><span>……</span></span></code></pre>
+<h3 id="生图过程中">生图过程中</h3>
+<p>每次只生成一张，只需简短提示：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>正在生成第1/4张：草莓蛋糕主题。</span></span></code></pre>
+<h3 id="完成后">完成后</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>已完成4张独立图片：</span></span>
+<span class="line"><span>1. …</span></span>
+<span class="line"><span>2. …</span></span>
+<span class="line"><span>3. …</span></span>
+<span class="line"><span>4. …</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>检查结果：数量正确、无合集图、风格统一、主体一致、裂变差异明确。</span></span></code></pre>
+<h2 id="17-调用模板">17. 调用模板</h2>
+<h3 id="主题裂变">主题裂变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>上传参考图</span></span>
+<span class="line"><span>主题裂变</span></span>
+<span class="line"><span>主题：随机 / 指定主题</span></span>
+<span class="line"><span>数量：4</span></span>
+<span class="line"><span>画幅：1:1</span></span></code></pre>
+<h3 id="材质裂变">材质裂变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>上传参考图</span></span>
+<span class="line"><span>材质裂变</span></span>
+<span class="line"><span>材质：C4D、毛绒、搪胶、水晶</span></span>
+<span class="line"><span>数量：4</span></span>
+<span class="line"><span>画幅：1:1</span></span></code></pre>
+<h3 id="等级裂变">等级裂变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>上传参考图</span></span>
+<span class="line"><span>等级裂变</span></span>
+<span class="line"><span>等级：高、中、低</span></span>
+<span class="line"><span>数量：3</span></span>
+<span class="line"><span>画幅：1:1</span></span>
+<span class="line"><span>按顺序生成</span></span></code></pre>
+<h3 id="人物-ip-裂变">人物 IP 裂变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>上传人物参考图</span></span>
+<span class="line"><span>人物IP裂变</span></span>
+<span class="line"><span>主题：草莓蛋糕、爆米花、牛奶盒、糖果</span></span>
+<span class="line"><span>数量：4</span></span>
+<span class="line"><span>画幅：1:1</span></span>
+<span class="line"><span>要求：卡通化、夸张五官、不要太真人、角色识别点不变</span></span></code></pre>
+<h3 id="拟人物体-ip-裂变">拟人物体 IP 裂变</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>上传物体参考图</span></span>
+<span class="line"><span>拟人物体IP裂变</span></span>
+<span class="line"><span>主体：自动识别</span></span>
+<span class="line"><span>主题：随机</span></span>
+<span class="line"><span>数量：4</span></span>
+<span class="line"><span>画幅：1:1</span></span>
+<span class="line"><span>要求：建立固定五官、性格、动作和标志物</span></span></code></pre>
+<h2 id="18-最终自检">18. 最终自检</h2>
+<p>生成前：</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 是否识别主裂变维度；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 是否建立风格母体；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 是否提取不可变核心；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 是否锁定数量与顺序；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 是否为每张建立独立任务。</li>
+</ul>
+<p>生成后：</p>
+<ul class="contains-task-list">
+<li class="task-list-item"><input type="checkbox" disabled> 数量完全正确；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 每张为独立图片；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 无宫格、无合集；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 风格统一；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 裂变差异真实；</li>
+<li class="task-list-item"><input type="checkbox" disabled> IP 保持同一角色；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 中级保持完整；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 材质一眼可辨；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 画幅与背景正确；</li>
+<li class="task-list-item"><input type="checkbox" disabled> 无水印、乱码和复制痕迹。</li>
+</ul>
+<p>任一项不通过，先纠错再继续。</p>
+<h2 id="19-最终执行口径">19. 最终执行口径</h2>
+<p>默认先执行风格锚定，再执行图片裂变。用户无需重复说“调用风格锚定 Skill”。</p>
+<p>多张任务必须逐张独立生成；同系列任务必须保持同一风格母体、角色识别和结构骨架；主题、材质、主体或等级裂变时，只改变指定维度。</p>
+<p>最终交付标准：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>数量准确</span></span>
+<span class="line"><span>顺序准确</span></span>
+<span class="line"><span>单张输出</span></span>
+<span class="line"><span>风格统一</span></span>
+<span class="line"><span>差异明确</span></span>
+<span class="line"><span>结构完整</span></span>
+<span class="line"><span>商业可用</span></span></code></pre>
+</div><!-- 相关 Skill --><div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid #E5E5E5;"><h3 style="font-size: 14px; font-weight: 700; color: #0A0A0A; margin-bottom: 14px;">相关 Skill</h3><div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;"><a href="/design-skills/skills/designai-generate-image" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #E8EEFF;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #002FA7;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">VISUAL</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #002FA7;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">视觉生成</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 30px;
+      font-weight: 700;
+      color: #001057;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">通用图像生成</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #002FA7; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #002FA7;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">designai generate image</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">通用图像生成</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">支持文本描述生成图像，以及基于参考图的风格延展与内容再创作，适用于海报、插画、场景渲染和营销物料。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">图像生成</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">文生图</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #059669; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">入门</span></div></div></div></a><a href="/design-skills/skills/image-layer-extraction" class="skill-card" style="
+    display: block;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  " onmouseover="this.style.boxShadow='0 8px 30px rgba(0,0,0,0.10)';this.style.borderColor='#C5C5C5';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='#E5E5E5';this.style.transform='translateY(0)'"><!-- 封面 --><div class="skill-cover-wrap" style="
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #FFF4ED;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    user-select: none;
+  "><!-- 右下角装饰英文大字（极低透明度叠底）--><div style="
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: #EA580C;
+    opacity: 0.07;
+    letter-spacing: -0.04em;
+    font-family: 'DM Sans', sans-serif;
+    pointer-events: none;
+    white-space: nowrap;
+  ">REVIEW</div><!-- 顶部：category label --><div style="display: flex; align-items: center; gap: 8px;"><span style="
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #EA580C;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'DM Mono', monospace;
+    ">审查交付</span></div><!-- 中间：主标题大字 --><div style="flex: 1; display: flex; align-items: center; padding: 8px 0; overflow: hidden;"><h3 style="
+      font-size: 26px;
+      font-weight: 700;
+      color: #431407;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-family: 'DM Sans', -apple-system, 'PingFang SC', sans-serif;
+      position: relative;
+      z-index: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    ">图像拆图技能 2.2</h3></div><!-- 底部：英文 name + 色条 --><div style="display: flex; align-items: center; gap: 8px; padding-top: 4px;"><div style="height: 2px; width: 24px; background: #EA580C; border-radius: 1px; flex-shrink: 0;"></div><span style="
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #EA580C;
+      opacity: 0.6;
+      font-family: 'DM Mono', monospace;
+      text-transform: uppercase;
+    ">image layer extraction</span></div></div><!-- 卡片内容 --><div style="padding: 16px 16px 14px;"><h2 style="font-size: 15px; font-weight: 600; color: #0A0A0A; line-height: 1.35; margin-bottom: 6px; letter-spacing: -0.01em;">图像拆图技能 2.2</h2><p style="font-size: 13px; color: #737373; line-height: 1.6; margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 40px;">将 KV、插图、海报、场景图或 UI 视觉拆成可复用主体、底板、装饰、标题和独立背景，并执行结构补全、分组限制、比例锁定及失败重绘。</p><!-- 底部 --><div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid #F0F0F0;"><div style="display: flex; gap: 4px; flex-wrap: wrap; min-width: 0;"><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">图像拆分</span><span style="font-size: 11px; color: #737373; background: #F7F7F7; border: 1px solid #E5E5E5; padding: 2px 8px; border-radius: 20px; white-space: nowrap; max-width: 90px; overflow: hidden; text-overflow: ellipsis;">元素补全</span></div><div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #E11D48; display: inline-block;"></span><span style="font-size: 11px; color: #A3A3A3;">高阶</span></div></div></div></a></div></div></div><!-- ── 右：侧边栏 ── --><aside style="position: sticky; top: 80px; display: flex; flex-direction: column; gap: 16px;"><!-- 配置信息 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;"><div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;"><span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">配置信息</span></div><div style="padding: 0 16px;"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; "><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">分类</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">视觉生成</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">难度</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">高阶</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">适合人群</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">资深设计师</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">产出结果</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">一组保留核心视觉 DNA、变化维度明确且套系一致的裂变图像。</span></div><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; padding: 9px 0; font-size: 13px; border-top: 1px solid #F5F5F5;"><span style="color: #A3A3A3; font-weight: 500; flex-shrink: 0;">推荐工具</span><span style="color: #0A0A0A; font-weight: 600; text-align: right; line-height: 1.4;">GPT Image · Codex</span></div></div><!-- 统计数字 --><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid #F0F0F0; margin-top: 4px;"><div style="text-align: center; padding: 12px 8px; "><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">浏览量</div></div><div style="text-align: center; padding: 12px 8px; border-left: 1px solid #F0F0F0;"><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">关联应用</div></div><div style="text-align: center; padding: 12px 8px; border-left: 1px solid #F0F0F0;"><div style="font-size: 18px; font-weight: 800; color: #0A0A0A; line-height: 1;">—</div><div style="font-size: 11px; color: #A3A3A3; margin-top: 4px;">复制量</div></div></div></div><!-- 何时调用 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; overflow: hidden; background: #fff;"><div style="padding: 12px 16px; border-bottom: 1px solid #F0F0F0;"><span style="font-size: 13px; font-weight: 700; color: #0A0A0A;">何时调用</span></div><ul style="padding: 10px 16px; list-style: none; margin: 0; display: flex; flex-direction: column; gap: 6px;"><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>需要基于参考图生成同风格的多个新方案</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>需要进行主题、材质、等级或名次裂变</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>需要把人物或物体转译成稳定 IP 系列</li><li style="display: flex; gap: 7px; font-size: 12px; color: #525252; line-height: 1.5;"><span style="color: #002FA7; font-weight: 700; flex-shrink: 0;">→</span>需要保证多张生成图的数量、顺序和风格一致</li></ul></div><!-- Raw 地址 --><div style="border: 1px solid #E5E5E5; border-radius: 12px; padding: 12px 14px; background: #fff;"><div style="font-size: 11px; color: #A3A3A3; margin-bottom: 6px; font-family: 'DM Mono', monospace; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;">Raw 地址</div><code style="font-size: 10.5px; color: #002FA7; font-family: 'DM Mono', monospace; word-break: break-all; line-height: 1.6; display: block;">https://raw.githubusercontent.com/ruiying1541/design-skills/main/src/content/skills/image-variation-v3.md</code></div></aside></div></div></main><!-- Footer --><footer style="border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px;" data-astro-cid-ju4pidww><div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;" data-astro-cid-ju4pidww><div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;" data-astro-cid-ju4pidww><span style="font-size: 13px; color: var(--text-3);" data-astro-cid-ju4pidww>Design Skills — 设计师 + AI Agent 双栖平台</span><div style="display: flex; align-items: center; gap: 16px;" data-astro-cid-ju4pidww><a href="/design-skills/skills-index.json" target="_blank" style="font-size: 13px; color: var(--text-3); text-decoration: none; font-family: 'DM Mono', monospace;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text-3)'" data-astro-cid-ju4pidww>skills-index.json</a><a href="https://github.com/liruiying/design-skills" target="_blank" style="font-size: 13px; color: var(--text-3); text-decoration: none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text-3)'" data-astro-cid-ju4pidww>GitHub ↗</a></div></div></div></footer></body></html><script>(function(){const skillId = "image-variation-v3";
+const skillCategory = "视觉生成";
+
+  try {
+    const KEY = 'ds_skill_views';
+    const raw = localStorage.getItem(KEY);
+    const views = raw ? JSON.parse(raw) : {};
+    views[skillId] = (views[skillId] ?? 0) + 1;
+    localStorage.setItem(KEY, JSON.stringify(views));
+  } catch (e) {}
+})();</script>
